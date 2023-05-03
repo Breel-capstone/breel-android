@@ -1,5 +1,7 @@
 package com.example.breel.data.repository.user
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.login.LoginRequest
@@ -39,5 +41,9 @@ class UserRepository @Inject constructor(
     runBlocking {
       userPreferences.saveToken(token)
     }
+  }
+
+  override fun getToken(): LiveData<String> {
+    return userPreferences.getToken().asLiveData()
   }
 }

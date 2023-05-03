@@ -37,4 +37,8 @@ class HomeViewModel @Inject constructor(
             userRepository.saveToken(token)
         }
     }
+
+    fun getToken(): LiveData<String> {
+        return userRepository.getToken()
+    }
 }
