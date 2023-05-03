@@ -12,6 +12,7 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.coroutineScope
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observeViewModel()
+        binding.tvDummyToken.text = viewModel.getDummyString()
     }
 
     private fun observeViewModel() {
@@ -48,6 +50,8 @@ class HomeFragment : Fragment() {
             is Resource.Success -> {
                 status.data?.let {
                     Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
+                    viewModel.saveToken(status.data.loginResult.token)
+                    Toast.makeText(requireContext(), "Token saved", Toast.LENGTH_SHORT).show()
                 }
             }
             is Resource.DataError -> {

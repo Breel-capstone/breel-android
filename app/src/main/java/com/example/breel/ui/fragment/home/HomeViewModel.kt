@@ -27,4 +27,14 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    fun getDummyString(): String {
+        return userRepository.getDummyString()
+    }
+
+    fun saveToken(token: String) {
+        viewModelScope.launch {
+            userRepository.saveToken(token)
+        }
+    }
 }

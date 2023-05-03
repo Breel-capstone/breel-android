@@ -7,4 +7,8 @@ import kotlinx.coroutines.flow.Flow
 interface UserRepositorySource {
 
     suspend fun login(): Flow<Resource<LoginResponse>>
+
+    fun getDummyString(): String
+
+    fun saveToken(token: String)
 }
