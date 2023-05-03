@@ -51,7 +51,8 @@ class HomeFragment : Fragment() {
                 status.data?.let {
                     Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
                     viewModel.saveToken(status.data.loginResult.token)
-                    Toast.makeText(requireContext(), "Token saved", Toast.LENGTH_SHORT).show()
+                    val token = viewModel.getToken()
+                    Toast.makeText(requireContext(), "Token : $token", Toast.LENGTH_SHORT).show()
                 }
             }
             is Resource.DataError -> {
