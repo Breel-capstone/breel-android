@@ -11,7 +11,7 @@ interface UserRepositorySource {
 
     fun getDummyString(): String
 
-    fun saveToken(token: String)
+    suspend fun saveToken(token: String)
 
-    fun getToken(): LiveData<String>
+    fun getToken(): Flow<String>
 }

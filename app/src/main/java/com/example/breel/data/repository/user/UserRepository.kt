@@ -37,13 +37,13 @@ class UserRepository @Inject constructor(
     return userPreferences.dummyString
   }
 
-  override fun saveToken(token: String) {
+  override suspend fun saveToken(token: String) {
     runBlocking {
       userPreferences.saveToken(token)
     }
   }
 
-  override fun getToken(): LiveData<String> {
-    return userPreferences.getToken().asLiveData()
+  override fun getToken(): Flow<String> {
+    return userPreferences.getToken()
   }
 }
