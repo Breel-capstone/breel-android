@@ -8,6 +8,7 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.data.repository.user.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -26,5 +27,23 @@ class HomeViewModel @Inject constructor(
                 resultLiveData.postValue(it)
             }
         }
+    }
+
+    fun getDummyString(): String {
+        return userRepository.getDummyString()
+    }
+
+    fun saveToken(token: String) {
+        viewModelScope.launch {
+            userRepository.saveToken(token)
+        }
+    }
+
+    suspend fun getToken(): String {
+        var token = ""
+        viewModelScope.launch {
+            token = userRepository.getToken().first()
+        }.join()
+        return token
     }
 }

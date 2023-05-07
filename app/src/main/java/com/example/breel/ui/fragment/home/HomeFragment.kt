@@ -7,11 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.breel.R
 import com.example.breel.data.Resource
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -32,6 +35,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observeViewModel()
+        binding.tvDummyToken.text = viewModel.getDummyString()
     }
 
     private fun observeViewModel() {
@@ -48,6 +52,7 @@ class HomeFragment : Fragment() {
             is Resource.Success -> {
                 status.data?.let {
                     Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_SHORT).show()
+                    handleToken(it.loginResult.token)
                 }
             }
             is Resource.DataError -> {
@@ -56,6 +61,15 @@ class HomeFragment : Fragment() {
                 }
             }
             else -> Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun handleToken(tokenResult: String) {
+        viewModel.saveToken(tokenResult)
+        var token = ""
+        lifecycleScope.launch {
+            token = viewModel.getToken()
+            Toast.makeText(requireContext(), "Token : $token", Toast.LENGTH_SHORT).show()
         }
     }
 }
