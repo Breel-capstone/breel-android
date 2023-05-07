@@ -7,4 +7,31 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green_hookers_50">#FDF2F5</color>
+    <color name="green_hookers_100">#D2DEDA</color>
+    <color name="green_hookers_200">#A6CAC0</color>
+    <color name="green_hookers_300">#7DB5A4</color>
+    <color name="green_hookers_400">#65A692</color>
+    <color name="green_hookers_500">#579681</color>
+    <color name="green_hookers_600">#508874</color>
+    <color name="green_hookers_700">#4B7A68</color>
+    <color name="green_hookers_800">#426A5A</color>
+    <color name="green_hookers_900">#334D41</color>
+    <color name="green_hookers_a100">#D1FFE9</color>
+    <color name="green_hookers_a200">#A6FFD1</color>
+    <color name="green_hookers_a400">#81E7AA</color>
+    <color name="green_hookers_a700">#6CBF9C</color>
+
+    <color name="green_pakistan_50">#33752D</color>
+    <color name="green_pakistan_100">#BEB5BE</color>
+    <color name="green_pakistan_200">#A3A9A2</color>
+    <color name="green_pakistan_300">#82997F</color>
+    <color name="green_pakistan_400">#618B5D</color>
+    <color name="green_pakistan_500">#4B8045</color>
+    <color name="green_pakistan_600">#33752D</color>
+    <color name="green_pakistan_700">#2A6825</color>
+    <color name="green_pakistan_800">#1E561B</color>
+    <color name="green_pakistan_900">#134611</color>
+    <color name="green_pakistan_1000">#072C00</color>
+
 </resources>
