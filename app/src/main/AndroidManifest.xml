@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Breel"
         tools:targetApi="31">
         <activity
-            android:name=".AuthenticationActivity"
+            android:name=".ui.activity.authentication.AuthenticationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

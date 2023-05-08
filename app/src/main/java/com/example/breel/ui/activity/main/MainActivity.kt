@@ -1,9 +1,11 @@
 package com.example.breel.ui.activity.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.breel.databinding.ActivityMainBinding
+import com.example.breel.ui.activity.authentication.AuthenticationActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -27,5 +29,8 @@ class MainActivity : AppCompatActivity() {
         jika user sudah logged in, navigate ke home.
         jika belum, navigate ke authentication
          */
+
+        val intent = Intent(this@MainActivity, AuthenticationActivity::class.java)
+        startActivity(intent)
     }
 }
