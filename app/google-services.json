@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "378040649573",
+    "project_id": "breel-547d4",
+    "storage_bucket": "breel-547d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378040649573:android:5a0f747f19a410ea2e838c",
+        "android_client_info": {
+          "package_name": "com.example.breel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378040649573-lbc0brj0n04tupf6ua0ne5msnpc9vkau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.breel",
+            "certificate_hash": "60c48c2746243de19ad1a6167e489070dc2ddcc9"
+          }
+        },
+        {
+          "client_id": "378040649573-h0v3to3f9gi11uh521a6088nio7e47m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrUQjWmc9iy7pjWQkJ7t8Ju02SM89waJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378040649573-h0v3to3f9gi11uh521a6088nio7e47m8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

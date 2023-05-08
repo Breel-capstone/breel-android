@@ -21,5 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tvHelloWorld.text = viewModel.getHelloWorld()
+
+        /*
+        todo
+        jika user sudah logged in, navigate ke home.
+        jika belum, navigate ke authentication
+         */
     }
 }

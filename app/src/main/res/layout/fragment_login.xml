@@ -3,19 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.home.HomeFragment">
+    tools:context=".ui.fragment.authentication.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="This is Login Fragment" />
 
-    <Button
-        android:id="@+id/btn_to_auth"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go To Authentication Page"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
 </FrameLayout>
