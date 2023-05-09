@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvHelloWorld.text = viewModel.getHelloWorld()
         binding.btnLogout.setOnClickListener {
             firebaseAuth.signOut()
             finish()
