@@ -23,26 +23,15 @@ class AuthenticationActivity : AppCompatActivity() {
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnTest.setOnClickListener {
-            viewModel.register("adiva456@gmail.com", "456adiva")
-        }
-
-        observe()
-
         val mFragmentManager = supportFragmentManager
         val mLoginFragment = LoginFragment()
         val fragment = mFragmentManager.findFragmentByTag(LoginFragment::class.java.simpleName)
-    }
 
-    private fun observe() {
-        viewModel.registerResultLiveData.observe(this) {
-            handleRegisterResult(it)
+        if (fragment != mLoginFragment) {
+            mFragmentManager
+                .beginTransaction()
+                .add(R.id.frame_auth, mLoginFragment, LoginFragment::class.java.simpleName)
+                .commit()
         }
     }
-
-    private fun handleRegisterResult(status: Resource<AuthResult>) {
-        Toast.makeText(this, status.toString(), Toast.LENGTH_LONG).show()
-    }
-
-
 }

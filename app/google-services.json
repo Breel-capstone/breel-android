@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "378040649573",
-    "project_id": "breel-547d4",
-    "storage_bucket": "breel-547d4.appspot.com"
+    "project_number": "426482247038",
+    "project_id": "bangkit-freelancing",
+    "storage_bucket": "bangkit-freelancing.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:378040649573:android:5a0f747f19a410ea2e838c",
+        "mobilesdk_app_id": "1:426482247038:android:89f6a0db940b930597ff2f",
         "android_client_info": {
           "package_name": "com.example.breel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "378040649573-lbc0brj0n04tupf6ua0ne5msnpc9vkau.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.breel",
-            "certificate_hash": "60c48c2746243de19ad1a6167e489070dc2ddcc9"
-          }
-        },
-        {
-          "client_id": "378040649573-h0v3to3f9gi11uh521a6088nio7e47m8.apps.googleusercontent.com",
+          "client_id": "426482247038-su03j12aan90ktv4cdkg9cvhhorrgf4q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBrUQjWmc9iy7pjWQkJ7t8Ju02SM89waJw"
+          "current_key": "AIzaSyCn2RoV68XaINAGdeFgBT0Lxwywhn3aqWg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "378040649573-h0v3to3f9gi11uh521a6088nio7e47m8.apps.googleusercontent.com",
+              "client_id": "426482247038-epjbnikd8jfhtmn8efs8ikdn5ritojs3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

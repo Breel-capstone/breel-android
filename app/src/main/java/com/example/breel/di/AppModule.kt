@@ -30,6 +30,7 @@ class AppModule {
     fun provideApiService(): ApiService = ApiConfig.getApiService()
 
     @Provides
+    @Singleton
     fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
 
     @Provides

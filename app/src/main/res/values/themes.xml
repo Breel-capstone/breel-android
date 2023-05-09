@@ -15,7 +15,7 @@
         <item name="colorOnSecondaryContainer">@color/green_pakistan_900</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+<!--        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>-->
 
     </style>
 </resources>
