@@ -72,7 +72,6 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MyApp.LabelLarge"
             android:text="Atau masuk dengan cara lain:"
             app:layout_constraintEnd_toEndOf="@+id/tv_to_register"
             app:layout_constraintStart_toStartOf="@+id/tv_question"
