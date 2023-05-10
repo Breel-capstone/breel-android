@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <Button
+        style="@style/Widget.Breel.OutlinedButton.small"
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
