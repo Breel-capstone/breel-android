@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "426482247038",
+    "project_id": "bangkit-freelancing",
+    "storage_bucket": "bangkit-freelancing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426482247038:android:89f6a0db940b930597ff2f",
+        "android_client_info": {
+          "package_name": "com.example.breel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426482247038-su03j12aan90ktv4cdkg9cvhhorrgf4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn2RoV68XaINAGdeFgBT0Lxwywhn3aqWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426482247038-epjbnikd8jfhtmn8efs8ikdn5ritojs3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
