@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/MyIndicator</item>
+    </style>
+    <style name="MyIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="color">@color/white</item>
+<!--        ini kayak ga pernah kepanggil-->
+    </style>
+</resources>

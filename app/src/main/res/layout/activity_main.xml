@@ -80,5 +80,15 @@
         android:layout_height="wrap_content"
         android:text="with style"/>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        style="@style/Widget.Breel.BottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/menu"
+        app:labelVisibilityMode="labeled"
+        android:background="@drawable/nav_corner"
+        app:itemIconTint="@color/green_hookers_800"
+        app:itemActiveIndicatorStyle="@style/MyIndicator"/>
+
 
 </LinearLayout>
