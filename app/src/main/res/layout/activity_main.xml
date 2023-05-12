@@ -20,5 +20,20 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <ImageButton
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/green_hookers_900"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/outline_settings_24" />
+
+    <ImageButton
+        style="Widget.Breel.IconButton.Primary.Large"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/outline_settings_24"/>
+
 
 </LinearLayout>

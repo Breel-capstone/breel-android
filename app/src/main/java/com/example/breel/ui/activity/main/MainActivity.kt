@@ -24,18 +24,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnLogout.setOnClickListener {
-            firebaseAuth.signOut()
-            finish()
-        }
+//        binding.btnLogout.setOnClickListener {
+//            firebaseAuth.signOut()
+//            finish()
+//        }
 
         val user = firebaseAuth.currentUser
 
-        if (user == null) {
-            val intent = Intent(this@MainActivity, AuthenticationActivity::class.java)
-            startActivity(intent)
-
-        }
+//        if (user == null) {
+//            val intent = Intent(this@MainActivity, AuthenticationActivity::class.java)
+//            startActivity(intent)
+//
+//        }
 
         /*
         todo
