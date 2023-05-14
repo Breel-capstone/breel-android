@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.Breel.OutlinedButton.Small" parent="Widget.Material3.Button.OutlinedButton">
+    <style name="Widget.Breel.Button.Outline.Small" parent="Widget.Material3.Button.OutlinedButton">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Medium</item>
         <item name="strokeColor">?attr/colorPrimary</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="Widget.Breel.OutlinedButton.Medium" parent="Widget.Material3.Button.OutlinedButton">
+    <style name="Widget.Breel.Button.Outline.Medium" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:paddingLeft">24dp</item>
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingRight">24dp</item>
@@ -16,7 +16,7 @@
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="Widget.Breel.OutlinedButton.Large" parent="Widget.Material3.Button.OutlinedButton">
+    <style name="Widget.Breel.Button.Outline.Large" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:paddingLeft">36dp</item>
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingRight">36dp</item>
@@ -28,13 +28,13 @@
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="Widget.Breel.FilledButton.Small" parent="Widget.Material3.Button">
+    <style name="Widget.Breel.Button.Filled.Small" parent="Widget.Material3.Button">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Medium</item>
         <item name="android:backgroundTint">?attr/colorPrimary</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
-    <style name="Widget.Breel.FilledButton.Medium" parent="Widget.Material3.Button">
+    <style name="Widget.Breel.Button.Filled.Medium" parent="Widget.Material3.Button">
         <item name="android:paddingLeft">24dp</item>
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingRight">24dp</item>
@@ -44,7 +44,7 @@
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
-    <style name="Widget.Breel.FilledButton.Large" parent="Widget.Material3.Button">
+    <style name="Widget.Breel.Button.Filled.Large" parent="Widget.Material3.Button">
         <item name="android:paddingLeft">36dp</item>
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingRight">36dp</item>
