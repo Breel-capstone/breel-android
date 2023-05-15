@@ -30,7 +30,7 @@
         android:src="@drawable/outline_settings_24" />
 
     <ImageButton
-        style="Widget.Breel.IconButton.Primary.Large"
+        style="@style/Widget.Breel.IconButton.Primary.Large"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@drawable/outline_settings_24"/>
@@ -46,7 +46,26 @@
         style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Breel.IconButton.Primary.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/outline_settings_24"
+        app:iconSize="24dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Breel.IconButton.Primary.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/outline_settings_24"
+        app:iconSize="24dp"
+        android:clickable="true"
+        android:focusable="true" />
 
     <com.google.android.material.chip.Chip
         style="@style/Widget.Material3.Chip.Suggestion"
@@ -88,7 +107,8 @@
         app:labelVisibilityMode="labeled"
         android:background="@drawable/nav_corner"
         app:itemIconTint="@color/green_hookers_800"
-        app:itemActiveIndicatorStyle="@style/MyIndicator"/>
+        app:itemActiveIndicatorStyle="@style/MyIndicator"
+        />
 
 
 </LinearLayout>
