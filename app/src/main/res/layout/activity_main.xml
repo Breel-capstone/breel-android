@@ -19,14 +19,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
-    <com.google.android.material.tabs.TabLayout
-        style="@style/Widget.Breel.TabLayout"
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="aasfjaslkj"
+        android:minEms="10"
+        app:boxBackgroundColor="@color/green_hookers_100"
         app:layout_constraintBottom_toTopOf="@+id/btn_logout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
-
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large">
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Widget.Breel.TextInputEditText.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
