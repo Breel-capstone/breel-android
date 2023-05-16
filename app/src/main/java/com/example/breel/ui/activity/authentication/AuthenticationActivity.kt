@@ -22,6 +22,8 @@ class AuthenticationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
     }
 
     /*

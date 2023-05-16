@@ -44,8 +44,8 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnRegister.setOnClickListener {
-            val email = binding.edtEmail.text.trim().toString()
-            val password = binding.edtPassword.text.trim().toString()
+            val email = binding.edtEmail.text?.trim().toString()
+            val password = binding.edtPassword.text?.trim().toString()
             viewModel.register(email, password)
         }
 
