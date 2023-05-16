@@ -39,8 +39,10 @@ class MainActivity : AppCompatActivity() {
 
         /*
         todo
+        tampilin splash screen.
+        cek user sudah login atau belum.
         jika user sudah logged in, navigate ke home.
-        jika belum, navigate ke authentication
+        jika belum, navigate ke authentication.
          */
 
     }

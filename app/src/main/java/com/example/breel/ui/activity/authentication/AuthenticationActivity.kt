@@ -22,16 +22,10 @@ class AuthenticationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val mFragmentManager = supportFragmentManager
-        val mLoginFragment = LoginFragment()
-        val fragment = mFragmentManager.findFragmentByTag(LoginFragment::class.java.simpleName)
-
-        if (fragment != mLoginFragment) {
-            mFragmentManager
-                .beginTransaction()
-                .add(R.id.frame_auth, mLoginFragment, LoginFragment::class.java.simpleName)
-                .commit()
-        }
     }
+
+    /*
+    todo
+    start destination ubah jadi onboarding
+     */
 }

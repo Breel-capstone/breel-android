@@ -13,6 +13,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.breel.R
 import com.example.breel.data.Resource
 import com.example.breel.databinding.FragmentLoginBinding
@@ -60,13 +61,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.tvToRegister.setOnClickListener {
-            val mRegisterFragment = RegisterFragment()
-            val mFragmentManager = parentFragmentManager
-            mFragmentManager.beginTransaction().apply {
-                replace(R.id.frame_auth, mRegisterFragment, RegisterFragment::class.java.simpleName)
-                addToBackStack(null)
-                commit()
-            }
+            it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
         observe()

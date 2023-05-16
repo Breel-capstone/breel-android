@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.TextField.FilledBox.Medium" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <!-- Text input layout box background color -->
+        <item name="boxBackgroundColor">@color/green_hookers_100</item>
+        <!-- Text input layout box corner radius -->
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <!-- Text input layout hint color -->
+        <item name="android:textColorHint">@color/green_pakistan_900</item>
+        <!-- Text input layout counter text color -->
+        <item name="android:textColor">@color/green_pakistan_900</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+    <style name="Widget.Breel.TextField.OutlinedBox.Medium" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <!-- Text input layout box corner radius -->
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <!-- Text input layout box stroke color -->
+
+        <item name="boxStrokeColor">@color/green_hookers_800</item>
+        <item name="android:strokeColor">@color/green_hookers_800</item>
+        <!-- Text input layout hint color -->
+        <item name="android:textColorHint">@color/green_pakistan_900</item>
+        <!-- Text input layout counter text color -->
+        <item name="android:textColor">@color/green_pakistan_900</item>
+    </style>
+    <style name="Widget.Breel.TextInputEditText.Large" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+</resources>
