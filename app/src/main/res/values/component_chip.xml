@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.Chip.Filled" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipCornerRadius">100dp</item>
+        <item name="chipBackgroundColor">@color/green_hookers_100</item>
+        <item name="android:textColor">@color/green_hookers_500</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
+    <style name="Widget.Breel.Chip.Outlined" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipStrokeColor">@color/green_hookers_500</item>
+        <item name="chipCornerRadius">100dp</item>
+        <item name="chipBackgroundColor">@color/white</item>
+        <item name="android:textColor">@color/green_hookers_500</item>
+    </style>
+</resources>

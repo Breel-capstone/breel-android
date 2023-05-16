@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.IconButton.Primary.Large" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="background">@drawable/rounded_corner</item>
+        <item name="android:backgroundTint">@color/green_hookers_900</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:padding">8dp</item>
+    </style>
+</resources>
+<!--https://github.com/material-components/material-components-android/blob/master/docs/components/Button.md#icon-button-->

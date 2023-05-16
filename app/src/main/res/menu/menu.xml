@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_beranda"
+        android:enabled="true"
+        android:title="Beranda"
+        android:icon="@drawable/outline_home_24"/>
+    <item
+        android:id="@+id/menu_chat"
+        android:enabled="true"
+        android:title="Chat"
+        android:icon="@drawable/outline_chat_bubble_outline_24"/>
+    <item
+        android:id="@+id/menu_mentor"
+        android:enabled="true"
+        android:title="Mentor"
+        android:icon="@drawable/baseline_people_outline_24"/>
+    <item
+        android:id="@+id/menu_notifikasi"
+        android:enabled="true"
+        android:title="Notifikasi"
+        android:icon="@drawable/outline_notifications_24"/>
+    <item
+        android:id="@+id/menu_akun"
+        android:enabled="true"
+        android:title="Akun"
+        android:icon="@drawable/outline_person_outline_24"/>
+</menu>
