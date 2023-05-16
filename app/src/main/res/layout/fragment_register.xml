@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.authentication.RegisterFragment"
-    android:padding="16dp">
+    tools:context=".ui.fragment.authentication.RegisterFragment">
 
     <ProgressBar
         android:id="@+id/progress_circular"
@@ -14,38 +13,120 @@
         android:layout_gravity="center"
         android:visibility="gone"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/green_hookers_50"
+        android:scaleType="center"
+        android:src="@drawable/iv_register" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar untuk Memulai!"
+        android:textAppearance="@style/TextAppearance.Breel.HeadlineLarge"
+        android:textColor="@color/green_hookers_900"
+        android:textStyle="bold" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="300dp">
 
-        <EditText
-            android:id="@+id/edt_email"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username / Email"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:hint="Email"/>
+            android:layout_marginTop="4dp">
 
-        <EditText
-            android:id="@+id/edt_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/edt_email"
-            app:layout_constraintStart_toStartOf="@id/edt_email"
-            app:layout_constraintTop_toBottomOf="@id/edt_email"
-            android:hint="Password"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kata Sandi"
+                android:inputType="textPassword" />
 
-        <Button
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_register"
+            style="@style/Widget.Breel.Button.Filled.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="true"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="atau daftar dengan"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
-            app:layout_constraintEnd_toEndOf="@id/edt_password"
-            app:layout_constraintStart_toStartOf="@id/edt_password"
-            app:layout_constraintTop_toBottomOf="@id/edt_password" />
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah punya akun?" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masuk di sini"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>
