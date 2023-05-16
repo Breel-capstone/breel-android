@@ -14,6 +14,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "426482247038-1ana2cgut3nrkfva0c5kj7dc9jdomqd1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.breel",
+            "certificate_hash": "3c06a1208d96aa1d60dd1014cc6e87037d2dceff"
+          }
+        },
+        {
+          "client_id": "426482247038-36s1uqvkoco4vnbtfh6mm1sp1i17krsg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.breel",
+            "certificate_hash": "f2f394fa53568db18a1cfdc1c8063b7f5d2d7e0d"
+          }
+        },
+        {
           "client_id": "426482247038-su03j12aan90ktv4cdkg9cvhhorrgf4q.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.SearchBar" parent="Widget.Material3.SearchBar.Outlined">
+        <item name="strokeColor">@color/green_hookers_900</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+</resources>
