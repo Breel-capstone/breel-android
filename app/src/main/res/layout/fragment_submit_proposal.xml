@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context=".ui.fragment.project.detail.ProjectDetail">
+
+    <TextView
+        style="@style/TextAppearance.Breel.TitleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Pengembangan Web untuk Main Page Perusahaan"
+        android:textFontWeight="600" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/green_hookers_200" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                style="@style/TextAppearance.Breel.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Proyek ini bertujuan untuk mengembangkan sebuah halaman landing (Landing Page) yang menarik dan fungsional untuk perusahaan. Halaman landing merupakan halaman pertama yang akan dilihat oleh pengunjung ketika mereka mengakses situs web perusahaan. Tujuan dari halaman ini adalah untuk memberikan gambaran yang jelas dan menarik tentang perusahaan, produk, atau layanan yang ditawarkan."
+                android:textColor="@color/green_hookers_900"
+                android:textFontWeight="600" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/green_hookers_200" />
+
+
+            <LinearLayout
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.Breel.LabelLarge"
+                    android:textFontWeight="600"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Harga Tawaran Anda (RP)" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="1.000.000"
+                    app:startIconDrawable="@drawable/ic_rupiah"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.Breel.TextInputEditText.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.Breel.LabelLarge"
+                    android:textFontWeight="600"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Durasi (bulan)" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="1"
+                    app:startIconDrawable="@drawable/ic_time"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.Breel.TextInputEditText.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.Breel.LabelLarge"
+                    android:textFontWeight="600"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Surat Lamaran" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.Breel.TextInputEditText.Large"
+                        android:gravity="start|top"
+                        android:lines="5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                style="@style/Widget.Breel.Button.Outline.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Batal"
+                android:layout_marginEnd="8dp"
+                />
+            <Button
+                style="@style/Widget.Breel.Button.Filled.Medium"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Kirim"
+                android:layout_marginStart="8dp"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

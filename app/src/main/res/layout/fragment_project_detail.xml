@@ -16,19 +16,19 @@
         android:text="Pengembangan Web untuk Main Page Perusahaan"
         android:textFontWeight="600" />
 
+    <TextView
+        style="@style/TextAppearance.Breel.TitleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Dibuat 3 hari lalu"
+        android:textColor="@color/green_hookers_900"
+        android:textFontWeight="600" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <Button
-            style="@style/Widget.Breel.Button.Filled.Large"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="Buat Proposal"
-            tools:layout_editor_absoluteY="859dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,15 +45,6 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/green_hookers_200" />
 
-            <TextView
-                style="@style/TextAppearance.Breel.TitleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Dibuat 3 hari lalu"
-                android:textColor="@color/green_hookers_900"
-                android:textFontWeight="600" />
 
             <TextView
                 style="@style/TextAppearance.Breel.BodyLarge"
@@ -173,10 +164,16 @@
                         android:text="1 Bulan" />
                 </LinearLayout>
             </com.google.android.flexbox.FlexboxLayout>
-
-
-
         </LinearLayout>
+        <Button
+            style="@style/Widget.Breel.Button.Filled.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Buat Proposal"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
