@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.breel.R
 import com.example.breel.databinding.FragmentSubmitProposalBinding
 
 class SubmitProposalFragment : Fragment() {

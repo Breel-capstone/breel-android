@@ -5,176 +5,196 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="16dp"
     tools:context=".ui.fragment.project.detail.ProjectDetail">
 
-    <TextView
-        style="@style/TextAppearance.Breel.TitleLarge"
+    <androidx.appcompat.widget.Toolbar
+        style="@style/Widget.Material3.Toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Pengembangan Web untuk Main Page Perusahaan"
-        android:textFontWeight="600" />
+        android:background="?attr/colorSurface"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
-    <TextView
-        style="@style/TextAppearance.Breel.TitleSmall"
+    <LinearLayout
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Dibuat 3 hari lalu"
-        android:textColor="@color/green_hookers_900"
-        android:textFontWeight="600" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <TextView
+            style="@style/TextAppearance.Breel.TitleLarge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginBottom="8dp"
+            android:text="Pengembangan Web untuk Main Page Perusahaan"
+            android:textFontWeight="600" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/green_hookers_200" />
+        <TextView
+            style="@style/TextAppearance.Breel.TitleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Dibuat 3 hari lalu"
+            android:textColor="@color/green_hookers_900"
+            android:textFontWeight="600" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <TextView
-                style="@style/TextAppearance.Breel.BodyLarge"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Proyek ini bertujuan untuk mengembangkan sebuah halaman landing (Landing Page) yang menarik dan fungsional untuk perusahaan. Halaman landing merupakan halaman pertama yang akan dilihat oleh pengunjung ketika mereka mengakses situs web perusahaan. Tujuan dari halaman ini adalah untuk memberikan gambaran yang jelas dan menarik tentang perusahaan, produk, atau layanan yang ditawarkan."
-                android:textColor="@color/green_hookers_900"
-                android:textFontWeight="600" />
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/green_hookers_200" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/green_hookers_200" />
 
-            <com.google.android.flexbox.FlexboxLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:flexWrap="wrap"
-                app:flexDirection="row"
-                >
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
+
+                <TextView
+                    style="@style/TextAppearance.Breel.BodyLarge"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Web Development" />
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="React js" />
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="HTML/CSS" />
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Proyek ini bertujuan untuk mengembangkan sebuah halaman landing (Landing Page) yang menarik dan fungsional untuk perusahaan. Halaman landing merupakan halaman pertama yang akan dilihat oleh pengunjung ketika mereka mengakses situs web perusahaan. Tujuan dari halaman ini adalah untuk memberikan gambaran yang jelas dan menarik tentang perusahaan, produk, atau layanan yang ditawarkan."
+                    android:textColor="@color/green_hookers_900"
+                    android:textFontWeight="600" />
 
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Responsive" />
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Javascript" />
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Tailwind CSS" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/green_hookers_200" />
 
-            </com.google.android.flexbox.FlexboxLayout>
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/green_hookers_200" />
-
-            <com.google.android.flexbox.FlexboxLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:flexWrap="wrap"
-                app:flexDirection="row"
-                app:justifyContent="space_between"
-                 >
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    >
-
-                    <ImageView
-                        android:id="@+id/imageView"
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_rupiah" />
-                    <TextView
-                        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
-                        android:layout_marginStart="5dp"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="1.000.000" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    >
+                        android:layout_marginEnd="5dp"
+                        android:text="Web Development" />
 
-                    <ImageView
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_time" />
-                    <TextView
-                        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
-                        android:layout_marginStart="5dp"
-                        android:layout_width="0dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="React js" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="1 Bulan" />
-                </LinearLayout>
-            </com.google.android.flexbox.FlexboxLayout>
-        </LinearLayout>
-        <Button
-            style="@style/Widget.Breel.Button.Filled.Large"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:text="Buat Proposal"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:layout_marginEnd="5dp"
+                        android:text="HTML/CSS" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Responsive" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Javascript" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Tailwind CSS" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/green_hookers_200" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_rupiah" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:text="1.000.000"
+                            android:textAppearance="@style/TextAppearance.Breel.BodyLarge" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_time" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:text="1 Bulan"
+                            android:textAppearance="@style/TextAppearance.Breel.BodyLarge" />
+                    </LinearLayout>
+                </com.google.android.flexbox.FlexboxLayout>
+            </LinearLayout>
+
+            <Button
+                style="@style/Widget.Breel.Button.Filled.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buat Proposal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </LinearLayout>
