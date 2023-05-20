@@ -1,114 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.main.MainActivity"
-    android:padding="16dp">
-
-    <com.google.android.material.appbar.AppBarLayout
+    tools:context=".ui.activity.main.MainActivity">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.search.SearchBar
-            style="@style/Widget.Breel.SearchBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search"/>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <ImageButton
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/green_hookers_900"
-        android:padding="8dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/outline_settings_24" />
-
-    <ImageButton
-        style="@style/Widget.Breel.IconButton.Primary.Large"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:src="@drawable/outline_settings_24"/>
-
-    <ImageButton
-        style="@style/Widget.Material3.Button.IconButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/outline_settings_24"
-        android:backgroundTint="@color/green_hookers_900"/>
-
-    <Button
-        style="@style/Widget.Material3.Button.IconButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        />
-
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.Breel.IconButton.Primary.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/outline_settings_24"
-        app:iconSize="24dp"
-        android:clickable="true"
-        android:focusable="true" />
-
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.Breel.IconButton.Primary.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:icon="@drawable/outline_settings_24"
-        app:iconSize="24dp"
-        android:clickable="true"
-        android:focusable="true" />
-
-    <com.google.android.material.chip.Chip
-        style="@style/Widget.Material3.Chip.Suggestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:chipBackgroundColor="@color/green_hookers_100"
-        android:text="xhip xhip"
-        android:textColor="@color/green_hookers_500"
-        app:chipCornerRadius="100dp"
-        app:chipStrokeWidth="0dp" />
-
-    <com.google.android.material.chip.Chip
-        style="@style/Widget.Material3.Chip.Suggestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="xhip xhip"
-        app:chipCornerRadius="100dp"
-        app:chipStrokeColor="@color/green_hookers_500"
-        android:textColor="@color/green_hookers_500"
-        app:chipBackgroundColor="@color/white" />
-
-    <com.google.android.material.chip.Chip
-        style="@style/Widget.Breel.Chip.Filled"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="with style"/>
-
-    <com.google.android.material.chip.Chip
-        style="@style/Widget.Breel.Chip.Outlined"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="with style"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        style="@style/Widget.Breel.BottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/menu"
-        app:labelVisibilityMode="labeled"
-        android:background="@drawable/nav_corner"
-        app:itemIconTint="@color/green_hookers_800"
-        app:itemActiveIndicatorStyle="@style/MyIndicator"
-        />
-
-
-</LinearLayout>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_navigation" />
+</FrameLayout>
