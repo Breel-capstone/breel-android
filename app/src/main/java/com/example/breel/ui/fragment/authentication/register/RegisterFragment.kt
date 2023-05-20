@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.authentication
+package com.example.breel.ui.fragment.authentication.register
 
 import android.os.Bundle
 import android.util.Log
@@ -7,34 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
-import com.example.breel.R
+import androidx.fragment.app.viewModels
 import com.example.breel.data.Resource
-import com.example.breel.databinding.FragmentLoginBinding
 import com.example.breel.databinding.FragmentRegisterBinding
-import com.example.breel.ui.activity.authentication.AuthenticationViewModel
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.GetTokenResult
-import kotlinx.coroutines.tasks.await
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     private lateinit var binding: FragmentRegisterBinding
-    private lateinit var viewModel: AuthenticationViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = activity?.run {
-            ViewModelProvider(this).get(AuthenticationViewModel::class.java)
-        } ?: throw Exception("Invalid Activity")
-    }
+    private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
