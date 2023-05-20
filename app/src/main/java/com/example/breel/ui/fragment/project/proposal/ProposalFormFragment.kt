@@ -5,17 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.breel.databinding.FragmentSubmitProposalBinding
+import com.example.breel.databinding.FragmentProposalFormBinding
 
-class SubmitProposalFragment : Fragment() {
-    private var _binding: FragmentSubmitProposalBinding? = null
-    private val binding:FragmentSubmitProposalBinding get() = _binding!!
+class ProposalFormFragment : Fragment() {
+    private var _binding: FragmentProposalFormBinding? = null
+    private val binding: FragmentProposalFormBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSubmitProposalBinding.inflate(inflater, container, false)
+        _binding =  FragmentProposalFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 
