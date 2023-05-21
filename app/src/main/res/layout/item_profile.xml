@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Heading" />
+
+    <TextView
+        android:id="@+id/tv_subheading"
+        android:textAppearance="@style/TextAppearance.Breel.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subheading" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:textAppearance="@style/TextAppearance.Breel.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_1pg" />
+
+</LinearLayout>
