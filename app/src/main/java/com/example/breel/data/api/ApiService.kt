@@ -6,6 +6,7 @@ import com.example.breel.data.api.user.detail.RegisterDetailRequest
 import com.example.breel.data.api.user.profile.ProfileResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 
@@ -20,7 +21,7 @@ interface ApiService {
         @Body registerDetailRequest: RegisterDetailRequest
     ): Call<BackendResponseNoData>
 
-    @POST("user/profile")
+    @GET("user/profile")
     fun getProfile(
         @Header("Authorization") token: String,
     ): Call<BackendResponse<ProfileResponse>>

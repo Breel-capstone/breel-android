@@ -12,9 +12,9 @@ data class ProfileResponse(
     val description: String,
     val profileUrl: String,
     val isActive: Boolean,
-    val createdAt: LocalDateTime,
-    val updatedAt: LocalDateTime,
-    val deletedAt: LocalDateTime?,
+    val createdAt: String,
+    val updatedAt: String,
+    val deletedAt: String,
     val createdBy: String,
     val updatedBy: String,
     val deletedBy: String

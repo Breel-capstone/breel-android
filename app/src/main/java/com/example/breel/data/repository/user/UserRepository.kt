@@ -1,5 +1,6 @@
 package com.example.breel.data.repository.user
 
+import android.util.Log
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
@@ -77,6 +78,7 @@ class UserRepository @Inject constructor(
         return flow {
             emit(Resource.Loading())
             val token = getUserBearerToken().first()
+//            Log.d("getProfile", "getProfile: $token")
             val result = apiService.getProfile("Bearer $token").await()
             emitAll(processResult(result))
         }
@@ -89,14 +91,16 @@ class UserRepository @Inject constructor(
         try {
             val tokenResult: GetTokenResult? = currentUser?.getIdToken(true)?.await()
             val bearerToken = tokenResult?.token
+            bearerToken?.let {
+                emit(it)
+            }
 
-            if (bearerToken != null) {
-                emit(bearerToken)
-            } else {
+            if (bearerToken == null) {
                 throw Exception("Failed to retrieve user bearer token")
             }
         } catch (e: Exception) {
-            throw Exception("Failed to retrieve user bearer token", e)
+            Log.e("UserRepository", "getUserBearerToken: $e")
+//            throw Exception("Failed to retrieve user bearer token", e)
         }
     }
 
