@@ -53,7 +53,8 @@
                 android:layout_alignBottom="@+id/iv_rp"
                 android:layout_toEndOf="@+id/iv_rp"
                 android:text="800.000"
-                android:textAppearance="@style/TextAppearance.Breel.TitleMedium" />
+                android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+                android:layout_marginStart="6dp"/>
 
             <ImageView
                 android:id="@+id/iv_clock"
@@ -72,6 +73,7 @@
                 android:layout_alignBottom="@+id/iv_clock"
                 android:layout_toEndOf="@+id/iv_clock"
                 android:text="1 bulan"
+                android:layout_marginStart="6dp"
                 android:textAppearance="@style/TextAppearance.Breel.TitleMedium" />
 
             <TextView
@@ -88,6 +90,7 @@
 
         <TextView
             android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Freelance" />
@@ -100,6 +103,7 @@
 
         <TextView
             android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Proyek" />
@@ -112,6 +116,7 @@
 
         <TextView
             android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pengalaman" />
