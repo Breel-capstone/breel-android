@@ -8,6 +8,7 @@ import com.example.breel.R
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
+import com.example.breel.data.api.BackendResponseNoData
 import com.example.breel.data.api.login.LoginRequest
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.data.api.register.detail.RegisterDetailRequest
@@ -64,12 +65,12 @@ class UserRepository @Inject constructor(
         userExperiences: List<UserExperience>,
         userSkills: List<UserSkill>,
         userProjectExperiences: List<UserProjectExperience>
-    ): Flow<Resource<BackendResponse<Any>>> {
+    ): Flow<Resource<BackendResponseNoData>> {
         return flow {
             emit(Resource.Loading())
-            val registerdetailRequest =
+            val registerDetailRequest =
                 RegisterDetailRequest(user, userExperiences, userSkills, userProjectExperiences)
-            val result = apiService.registerDetail(registerdetailRequest).await()
+            val result = apiService.registerDetail(registerDetailRequest).await()
             val statusCode = result.meta.statusCode
             val successStatusCodeRange = 200..399
             if (statusCode in successStatusCodeRange) {

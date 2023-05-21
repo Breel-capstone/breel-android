@@ -13,7 +13,7 @@ interface ApiService {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     @POST("user/register-detail")
-    fun registerDetail(@Body registerDetailRequest: RegisterDetailRequest): Call<BackendResponse<Any>>
+    fun registerDetail(@Body registerDetailRequest: RegisterDetailRequest): Call<BackendResponseNoData>
 
 
 }

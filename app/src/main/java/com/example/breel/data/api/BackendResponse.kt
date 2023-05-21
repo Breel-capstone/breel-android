@@ -27,3 +27,9 @@ data class BackendResponse<T>(
     val data: T?,
     val pagination: Pagination?
 )
+
+data class BackendResponseNoData(
+    val message: ResponseMessage,
+    val meta: ResponseMeta,
+)
+
