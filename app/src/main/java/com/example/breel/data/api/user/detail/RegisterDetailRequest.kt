@@ -1,4 +1,4 @@
-package com.example.breel.data.api.register.detail
+package com.example.breel.data.api.user.detail
 
 data class User(
     val fullName: String,

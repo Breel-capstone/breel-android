@@ -1,37 +1,28 @@
 package com.example.breel.data.repository.user
 
-import android.content.Intent
-import android.provider.Settings.Global.getString
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import com.example.breel.R
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
-import com.example.breel.data.api.login.LoginRequest
-import com.example.breel.data.api.login.LoginResponse
-import com.example.breel.data.api.register.detail.RegisterDetailRequest
-import com.example.breel.data.api.register.detail.User
-import com.example.breel.data.api.register.detail.UserExperience
-import com.example.breel.data.api.register.detail.UserProjectExperience
-import com.example.breel.data.api.register.detail.UserSkill
+import com.example.breel.data.api.user.detail.RegisterDetailRequest
+import com.example.breel.data.api.user.detail.User
+import com.example.breel.data.api.user.detail.UserExperience
+import com.example.breel.data.api.user.detail.UserProjectExperience
+import com.example.breel.data.api.user.detail.UserSkill
+import com.example.breel.data.api.user.profile.ProfileResponse
 import com.example.breel.data.local.UserPreferences
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.example.breel.data.repository.processResult
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.auth.GetTokenResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import retrofit2.await
-import retrofit2.awaitResponse
 import javax.inject.Inject
 
 class UserRepository @Inject constructor(
@@ -70,7 +61,8 @@ class UserRepository @Inject constructor(
             emit(Resource.Loading())
             val registerDetailRequest =
                 RegisterDetailRequest(user, userExperiences, userSkills, userProjectExperiences)
-            val result = apiService.registerDetail(registerDetailRequest).await()
+            val token = getUserBearerToken().first()
+            val result = apiService.registerDetail("Bearer $token", registerDetailRequest).await()
             val statusCode = result.meta.statusCode
             val successStatusCodeRange = 200..399
             if (statusCode in successStatusCodeRange) {
@@ -78,6 +70,33 @@ class UserRepository @Inject constructor(
             } else {
                 emit(Resource.DataError(errorCode = statusCode))
             }
+        }
+    }
+
+    override fun getProfile(): Flow<Resource<BackendResponse<ProfileResponse>>> {
+        return flow {
+            emit(Resource.Loading())
+            val token = getUserBearerToken().first()
+            val result = apiService.getProfile("Bearer $token").await()
+            emitAll(processResult(result))
+        }
+    }
+
+    override fun getUserBearerToken(): Flow<String> = flow {
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val currentUser = firebaseAuth.currentUser
+
+        try {
+            val tokenResult: GetTokenResult? = currentUser?.getIdToken(true)?.await()
+            val bearerToken = tokenResult?.token
+
+            if (bearerToken != null) {
+                emit(bearerToken)
+            } else {
+                throw Exception("Failed to retrieve user bearer token")
+            }
+        } catch (e: Exception) {
+            throw Exception("Failed to retrieve user bearer token", e)
         }
     }
 

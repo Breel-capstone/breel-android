@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.example.breel.R
 import com.example.breel.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
