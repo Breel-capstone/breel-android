@@ -9,6 +9,7 @@
         <item name="android:textColorHint">@color/green_pakistan_900</item>
         <!-- Text input layout counter text color -->
         <item name="android:textColor">@color/green_pakistan_900</item>
+        <item name="startIconTint">@color/green_pakistan_900</item>
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="boxStrokeWidth">0dp</item>
     </style>
@@ -23,6 +24,7 @@
         <item name="android:textColorHint">@color/green_pakistan_900</item>
         <!-- Text input layout counter text color -->
         <item name="android:textColor">@color/green_pakistan_900</item>
+        <item name="startIconTint">@color/green_pakistan_900</item>
     </style>
     <style name="Widget.Breel.TextInputEditText.Large" parent="Widget.Material3.TextInputEditText.OutlinedBox">
         <item name="android:paddingLeft">15dp</item>
