@@ -136,6 +136,10 @@ class LoginFragment : Fragment() {
 
     private fun handleLoginResult(status: Resource<AuthResult>) {
         Toast.makeText(requireContext(), status.toString(), Toast.LENGTH_LONG).show()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            findNavController().navigate(R.id.action_global_home_navigation)
+        }
     }
 
 

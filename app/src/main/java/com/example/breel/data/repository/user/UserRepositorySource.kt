@@ -3,6 +3,7 @@ package com.example.breel.data.repository.user
 import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
+import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.user.detail.User
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
@@ -29,4 +30,10 @@ interface UserRepositorySource {
     fun getUserBearerToken(): Flow<String>
 
     fun signInWithGoogle(credential: AuthCredential): Flow<Resource<AuthResult>>
+    fun getUserMentors(
+        page: Int? = null,
+        limit: Int? = null,
+        disableLimit: Boolean? = null
+    ): Flow<Resource<BackendResponse<List<Mentor>>>>
+
 }

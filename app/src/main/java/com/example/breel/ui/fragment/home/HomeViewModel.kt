@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.breel.data.repository.user.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,6 +18,9 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             userRepository.getProfile().collect {
                 Log.d("HomeViewModel", "$it")
+            }
+            userRepository.getUserMentors().collect {
+                Log.d("getUserMentors", "$it")
             }
         }
     }
