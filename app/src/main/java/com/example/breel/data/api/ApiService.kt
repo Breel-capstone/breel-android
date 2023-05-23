@@ -4,12 +4,13 @@ import com.example.breel.data.api.login.LoginRequest
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.user.detail.RegisterDetailRequest
-import com.example.breel.data.api.user.profile.ProfileResponse
+import com.example.breel.data.api.user.profile.Profile
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -26,7 +27,13 @@ interface ApiService {
     @GET("user/profile")
     fun getProfile(
         @Header("Authorization") token: String,
-    ): Call<BackendResponse<ProfileResponse>>
+    ): Call<BackendResponse<Profile>>
+
+    @GET("user/profile/{userId}")
+    fun getProfile(
+        @Path("userId") userId: String,
+        @Header("Authorization") token: String
+    ): Call<BackendResponse<Profile>>
 
     @GET("user/mentor")
     fun getUserMentors(

@@ -8,7 +8,7 @@ import com.example.breel.data.api.user.detail.User
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
-import com.example.breel.data.api.user.profile.ProfileResponse
+import com.example.breel.data.api.user.profile.Profile
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
 import kotlinx.coroutines.flow.Flow
@@ -26,7 +26,8 @@ interface UserRepositorySource {
         userProjectExperiences: List<UserProjectExperience>
     ): Flow<Resource<BackendResponseNoData>>
 
-    fun getProfile(): Flow<Resource<BackendResponse<ProfileResponse>>>
+    fun getProfile(): Flow<Resource<BackendResponse<Profile>>>
+    fun getProfile(userId: String): Flow<Resource<BackendResponse<Profile>>>
     fun getUserBearerToken(): Flow<String>
 
     fun signInWithGoogle(credential: AuthCredential): Flow<Resource<AuthResult>>

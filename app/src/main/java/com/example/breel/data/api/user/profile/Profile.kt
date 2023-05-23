@@ -1,8 +1,6 @@
 package com.example.breel.data.api.user.profile
 
-import java.time.LocalDateTime
-
-data class ProfileResponse(
+data class Profile(
     val id: Int,
     val uid: String,
     val email: String,

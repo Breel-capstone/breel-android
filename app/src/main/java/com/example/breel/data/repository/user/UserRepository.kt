@@ -11,8 +11,7 @@ import com.example.breel.data.api.user.detail.User
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
-import com.example.breel.data.api.user.profile.ProfileResponse
-import com.example.breel.data.local.UserPreferences
+import com.example.breel.data.api.user.profile.Profile
 import com.example.breel.data.repository.processResult
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
@@ -29,7 +28,6 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(
     private val firebaseAuth: FirebaseAuth,
-    private val userPreferences: UserPreferences,
     private val apiService: ApiService
 ) : UserRepositorySource {
 
@@ -75,12 +73,20 @@ class UserRepository @Inject constructor(
         }
     }
 
-    override fun getProfile(): Flow<Resource<BackendResponse<ProfileResponse>>> {
+    override fun getProfile(): Flow<Resource<BackendResponse<Profile>>> {
         return flow {
             emit(Resource.Loading())
             val token = getUserBearerToken().first()
-//            Log.d("getProfile", "getProfile: $token")
             val result = apiService.getProfile("Bearer $token").await()
+            emitAll(processResult(result))
+        }
+    }
+
+    override fun getProfile(userId: String): Flow<Resource<BackendResponse<Profile>>> {
+        return flow {
+            emit(Resource.Loading())
+            val token = getUserBearerToken().first()
+            val result = apiService.getProfile(userId, "Bearer $token").await()
             emitAll(processResult(result))
         }
     }
@@ -113,7 +119,8 @@ class UserRepository @Inject constructor(
         return flow {
             emit(Resource.Loading())
             val token = getUserBearerToken().first()
-            val result = apiService.getUserMentors(page, limit, disableLimit, "Bearer $token").await()
+            val result =
+                apiService.getUserMentors(page, limit, disableLimit, "Bearer $token").await()
             emitAll(processResult(result))
         }
     }
