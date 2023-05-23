@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.breel.R
 import com.example.breel.data.Resource
 import com.example.breel.databinding.FragmentLoginBinding
@@ -22,7 +24,10 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -32,6 +37,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private val viewModel: LoginViewModel by viewModels()
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,25 +49,35 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = Firebase.auth
         setUpAction()
         observeViewModel()
         setGoogleSignInClient()
     }
 
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            findNavController().navigate(R.id.action_global_home_navigation)
+        }
+    }
+
 
     private fun setUpAction() {
-//        binding.btnLogin.setOnClickListener {
-//            val email = binding.edtEmail.text.trim().toString()
-//            val password = binding.edtPassword.text.trim().toString()
-//            viewModel.login(email, password)
-//        }
-//
-//        binding.tvToRegister.setOnClickListener {
-//            it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
-//        }
-//        binding.btnSigninGoogle.setOnClickListener {
-//            signInWithGoogle()
-//        }
+        binding.btnLogin.setOnClickListener {
+            val email = binding.edtEmail.text?.trim().toString()
+            val password = binding.edtPassword.text?.trim().toString()
+            viewModel.login(email, password)
+        }
+
+        binding.tvToRegister.setOnClickListener {
+            it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment2)
+        }
+        binding.btnSigninGoogle.setOnClickListener {
+            signInWithGoogle()
+        }
     }
 
     private fun setGoogleSignInClient() {
@@ -116,38 +132,14 @@ class LoginFragment : Fragment() {
     private fun handleSignInResult(status: Resource<AuthResult>) {
         Toast.makeText(requireContext(), status.toString(), Toast.LENGTH_LONG).show()
 
-        Log.i(TAG, "sign in result function")
-
-        val mUser = status.data?.user?.getIdToken(true)
-            ?.addOnCompleteListener {
-                if (it.isSuccessful) {
-                    val token = it.result.token
-                    Toast.makeText(requireContext(), "Token", Toast.LENGTH_SHORT).show()
-                    Log.i(TAG, "Token: $token")
-                } else {
-                    Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
-                }
-            }
     }
 
     private fun handleLoginResult(status: Resource<AuthResult>) {
         Toast.makeText(requireContext(), status.toString(), Toast.LENGTH_LONG).show()
-
-        // todo: save credential di datastore
-
-//        val token = status.data?.user?.getIdToken(false)
-//        Log.i(TAG, "Token: ${token?.result?.token.toString()}")
-
-        val mUser = status.data?.user?.getIdToken(true)
-            ?.addOnCompleteListener {
-                if (it.isSuccessful) {
-                    val token = it.result.token
-                    Toast.makeText(requireContext(), "Token", Toast.LENGTH_SHORT).show()
-                    Log.i(TAG, "Token: $token")
-                } else {
-                    Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
-                }
-            }
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            findNavController().navigate(R.id.action_global_home_navigation)
+        }
     }
 
 

@@ -15,7 +15,7 @@ object ApiConfig {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://story-api.dicoding.dev/v1/")
+            .baseUrl("https://breel-service-67fn7hvfma-as.a.run.app/v1/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
