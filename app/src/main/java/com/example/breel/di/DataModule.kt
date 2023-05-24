@@ -1,5 +1,7 @@
 package com.example.breel.di
 
+import com.example.breel.data.repository.project.ProjectRepository
+import com.example.breel.data.repository.project.ProjectRepositorySource
 import com.example.breel.data.repository.user.UserRepository
 import com.example.breel.data.repository.user.UserRepositorySource
 import dagger.Binds
@@ -17,4 +19,10 @@ abstract class DataModule {
     abstract fun provideUserRepository(
         userRepository: UserRepository
     ): UserRepositorySource
+
+    @Binds
+    @Singleton
+    abstract fun provideProjectRepository(
+        projectRepository: ProjectRepository
+    ): ProjectRepositorySource
 }
