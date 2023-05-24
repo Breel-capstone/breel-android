@@ -7,6 +7,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.breel.data.api.ApiConfig
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.local.UserPreferences
+import com.example.breel.utils.UserUtil
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides
@@ -28,6 +29,11 @@ class AppModule {
     @Provides
     @Singleton
     fun provideApiService(): ApiService = ApiConfig.getApiService()
+
+    @Provides
+    @Singleton
+    fun provideUserUtil(): UserUtil = UserUtil
+
 
     @Provides
     @Singleton
