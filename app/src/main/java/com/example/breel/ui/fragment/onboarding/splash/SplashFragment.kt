@@ -29,7 +29,7 @@ class SplashFragment : Fragment() {
     private fun startSplashTimer() {
         Handler(Looper.getMainLooper()).postDelayed({
             // Navigate to the desired destination after the splash delay
-            findNavController().navigate(R.id.action_splashFragment_to_notificationFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
         }, splashDelay)
     }
 }
