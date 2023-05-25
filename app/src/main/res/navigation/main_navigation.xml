@@ -12,9 +12,6 @@
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/auth_group" />
         <action
-            android:id="@+id/action_splashFragment_to_dummyFragment"
-            app:destination="@id/dummyFragment" />
-        <action
             android:id="@+id/action_splashFragment_to_notificationFragment"
             app:destination="@id/notificationFragment" />
     </fragment>
@@ -68,11 +65,6 @@
             android:label="fragment_mentoring_form"
             tools:layout="@layout/fragment_mentoring_form" />
     </navigation>
-    <fragment
-        android:id="@+id/dummyFragment"
-        android:name="com.example.breel.ui.fragment.dummy.DummyFragment"
-        android:label="fragment_dummy"
-        tools:layout="@layout/fragment_dummy" />
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.example.breel.ui.fragment.notification.NotificationFragment"

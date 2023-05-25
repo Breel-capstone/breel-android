@@ -82,7 +82,7 @@ class UserRepository @Inject constructor(
             val result = apiService.getProfile("Bearer $token").await()
             val title = result.data?.title
             if (title == null) {
-                emit(Resource.DataError(-1))
+                emit(Resource.Success(false))
             } else {
                 emit(Resource.Success(true))
             }
