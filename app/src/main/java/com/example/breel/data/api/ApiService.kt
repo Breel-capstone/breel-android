@@ -3,6 +3,7 @@ package com.example.breel.data.api
 import com.example.breel.data.api.login.LoginRequest
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.project.Project
 import com.example.breel.data.api.project.Proposal
 import com.example.breel.data.api.user.detail.RegisterDetailRequest
 import com.example.breel.data.api.user.profile.Profile
@@ -52,5 +53,15 @@ interface ApiService {
         @Body body: Proposal,
         @Header("Authorization") token: String
     ): Call<BackendResponseNoData>
+    @GET("project")
+    fun getProjects(
+        @Query("page") page: Int?,
+        @Query("limit") limit: Int?,
+        @Query("disableLimit") disableLimit: Boolean?,
+        @Query("status") status: String?,
+        @Query("isMentored") isMentored: Boolean?,
+        @Query("keyword") keyword: String?,
+        @Header("Authorization") token: String
+    ): Call<BackendResponse<List<Project>>>
 
 }
