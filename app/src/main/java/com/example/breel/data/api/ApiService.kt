@@ -3,6 +3,7 @@ package com.example.breel.data.api
 import com.example.breel.data.api.login.LoginRequest
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.project.Proposal
 import com.example.breel.data.api.user.detail.RegisterDetailRequest
 import com.example.breel.data.api.user.profile.Profile
 import retrofit2.Call
@@ -15,6 +16,7 @@ import retrofit2.http.Query
 
 interface ApiService {
 
+    //    User
     @POST("login")
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
@@ -42,5 +44,13 @@ interface ApiService {
         @Query("disableLimit") disableLimit: Boolean?,
         @Header("Authorization") token: String
     ): Call<BackendResponse<List<Mentor>>>
+
+    //    Project
+    @POST("project/{projectId}/proposal")
+    fun submitProposal(
+        @Path("projectId") projectId: Int,
+        @Body body: Proposal,
+        @Header("Authorization") token: String
+    ): Call<BackendResponseNoData>
 
 }

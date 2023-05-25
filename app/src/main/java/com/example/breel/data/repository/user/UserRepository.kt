@@ -62,13 +62,7 @@ class UserRepository @Inject constructor(
                 RegisterDetailRequest(user, userExperiences, userSkills, userProjectExperiences)
             val token = userUtil.getUserBearerToken()
             val result = apiService.registerDetail("Bearer $token", registerDetailRequest).await()
-            val statusCode = result.meta.statusCode
-            val successStatusCodeRange = 200..399
-            if (statusCode in successStatusCodeRange) {
-                emit(Resource.Success(result))
-            } else {
-                emit(Resource.DataError(errorCode = statusCode))
-            }
+            emitAll(processResult(result))
         }
     }
 
