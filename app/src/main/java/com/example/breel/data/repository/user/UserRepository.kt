@@ -75,6 +75,21 @@ class UserRepository @Inject constructor(
         }
     }
 
+    override fun userDetailComplete(): Flow<Resource<Boolean>> {
+        return flow {
+            emit(Resource.Loading())
+            val token = userUtil.getUserBearerToken()
+            val result = apiService.getProfile("Bearer $token").await()
+            val title = result.data?.title
+            if (title == null) {
+                emit(Resource.DataError(-1))
+            } else {
+                emit(Resource.Success(true))
+            }
+        }
+
+    }
+
     override fun getProfile(userId: String): Flow<Resource<BackendResponse<Profile>>> {
         return flow {
             emit(Resource.Loading())

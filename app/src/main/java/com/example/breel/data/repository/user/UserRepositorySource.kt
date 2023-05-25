@@ -36,4 +36,6 @@ interface UserRepositorySource {
         disableLimit: Boolean? = null
     ): Flow<Resource<BackendResponse<List<Mentor>>>>
 
+    fun userDetailComplete(): Flow<Resource<Boolean>>
+
 }
