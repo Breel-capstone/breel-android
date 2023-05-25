@@ -48,41 +48,9 @@ class RegisterFragment : Fragment() {
 
     private fun handleRegisterResult(status: Resource<AuthResult>) {
         Toast.makeText(requireContext(), status.toString(), Toast.LENGTH_LONG).show()
-
-        // todo: save credential di datastore
-
-//        val token = status.data?.user?.getIdToken(false)
-//        Log.i(TAG, "Token: ${token?.result?.token}")
-
-        val mUser = status.data?.user?.getIdToken(true)
-            ?.addOnCompleteListener {
-                if (it.isSuccessful) {
-                    val token = it.result.token
-                    Toast.makeText(requireContext(), "Token", Toast.LENGTH_SHORT).show()
-                    Log.i(TAG, "Token: $token")
-                } else {
-                    Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
-                }
-            }
     }
 
     companion object {
         private const val TAG = "Register Fragment"
     }
 }
-
-/*
-FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
-mUser.getIdToken(true)
-    .addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
-        public void onComplete(@NonNull Task<GetTokenResult> task) {
-            if (task.isSuccessful()) {
-                String idToken = task.getResult().getToken();
-                // Send token to your backend via HTTPS
-                // ...
-            } else {
-                // Handle error -> task.getException();
-            }
-        }
-    });
- */
