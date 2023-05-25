@@ -6,7 +6,8 @@ import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
 import com.example.breel.data.api.project.Project
 import com.example.breel.data.api.project.ProjectMentorshipRequest
-import com.example.breel.data.api.project.Proposal
+import com.example.breel.data.api.project.proposal.Proposal
+import com.example.breel.data.api.project.proposal.RespondProposalRequest
 import com.example.breel.data.repository.processResult
 import com.example.breel.utils.UserUtil
 import kotlinx.coroutines.flow.Flow
@@ -70,6 +71,23 @@ class ProjectRepository @Inject constructor(
             val requestBody = ProjectMentorshipRequest(budgetPercentage, restriction)
             val result =
                 apiService.requestProjectMentorship(projectId, requestBody, "Bearer $token").await()
+            emitAll(processResult(result))
+        }
+    }
+
+    override fun respondProposal(
+        projectId: Int,
+        proposalId: Int,
+        status: String,
+        applicantId: Int
+    ): Flow<Resource<BackendResponseNoData>> {
+        return flow {
+            emit(Resource.Loading())
+            val token = userUtil.getUserBearerToken()
+            val requestBody = RespondProposalRequest(status, applicantId)
+            val result =
+                apiService.respondProposal(projectId, proposalId, requestBody, "Bearer $token")
+                    .await()
             emitAll(processResult(result))
         }
     }

@@ -1,4 +1,4 @@
-package com.example.breel.data.api.project
+package com.example.breel.data.api.project.proposal
 
 data class Proposal(
     val price: Int,

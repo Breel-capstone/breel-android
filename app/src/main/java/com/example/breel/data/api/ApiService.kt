@@ -4,14 +4,16 @@ import com.example.breel.data.api.login.LoginRequest
 import com.example.breel.data.api.login.LoginResponse
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
-import com.example.breel.data.api.project.Proposal
+import com.example.breel.data.api.project.proposal.Proposal
 import com.example.breel.data.api.user.detail.RegisterDetailRequest
 import com.example.breel.data.api.user.profile.Profile
 import com.example.breel.data.api.project.ProjectMentorshipRequest
+import com.example.breel.data.api.project.proposal.RespondProposalRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -70,6 +72,14 @@ interface ApiService {
     fun requestProjectMentorship(
         @Path("projectId") projectId: Int,
         @Body body: ProjectMentorshipRequest,
+        @Header("Authorization") token: String
+    ): Call<BackendResponseNoData>
+
+    @PATCH("project/{projectId}/proposal/{proposalId}")
+    fun respondProposal(
+        @Path("projectId") projectId: Int,
+        @Path("proposalId") proposalId: Int,
+        @Body requestBody: RespondProposalRequest,
         @Header("Authorization") token: String
     ): Call<BackendResponseNoData>
 

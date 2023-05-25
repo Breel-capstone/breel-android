@@ -4,7 +4,6 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
 import com.example.breel.data.api.project.Project
-import com.example.breel.data.api.project.Proposal
 import kotlinx.coroutines.flow.Flow
 
 interface ProjectRepositorySource {
@@ -28,5 +27,12 @@ interface ProjectRepositorySource {
         projectId: Int,
         budgetPercentage: Int,
         restriction: String
+    ): Flow<Resource<BackendResponseNoData>>
+
+    fun respondProposal(
+        projectId: Int,
+        proposalId: Int,
+        status: String,
+        applicantId: Int
     ): Flow<Resource<BackendResponseNoData>>
 }

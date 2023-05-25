@@ -3,12 +3,9 @@ package com.example.breel.ui.activity.testing
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.breel.data.api.project.ProjectMentorshipRequest
-import com.example.breel.data.api.project.Proposal
 import com.example.breel.data.repository.project.ProjectRepository
 import com.example.breel.data.repository.user.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -19,7 +16,7 @@ class TestViewModel @Inject constructor(
 ) : ViewModel() {
     fun test() {
         viewModelScope.launch {
-            projectRepository.requestProjectMentorship(1, 5, "ingin bla bla").collect {
+            projectRepository.respondProposal(1, 1, "Accepted", 1).collect {
                 Log.d(this.toString(), "$it")
             }
         }
