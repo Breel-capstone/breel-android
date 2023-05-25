@@ -7,6 +7,7 @@ import com.example.breel.data.api.project.Project
 import com.example.breel.data.api.project.Proposal
 import com.example.breel.data.api.user.detail.RegisterDetailRequest
 import com.example.breel.data.api.user.profile.Profile
+import com.example.breel.data.api.project.ProjectMentorshipRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -53,6 +54,7 @@ interface ApiService {
         @Body body: Proposal,
         @Header("Authorization") token: String
     ): Call<BackendResponseNoData>
+
     @GET("project")
     fun getProjects(
         @Query("page") page: Int?,
@@ -63,5 +65,12 @@ interface ApiService {
         @Query("keyword") keyword: String?,
         @Header("Authorization") token: String
     ): Call<BackendResponse<List<Project>>>
+
+    @POST("project/{projectId}/mentorship")
+    fun requestProjectMentorship(
+        @Path("projectId") projectId: Int,
+        @Body body: ProjectMentorshipRequest,
+        @Header("Authorization") token: String
+    ): Call<BackendResponseNoData>
 
 }

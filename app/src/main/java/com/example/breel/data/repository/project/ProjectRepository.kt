@@ -5,6 +5,7 @@ import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
 import com.example.breel.data.api.project.Project
+import com.example.breel.data.api.project.ProjectMentorshipRequest
 import com.example.breel.data.api.project.Proposal
 import com.example.breel.data.repository.processResult
 import com.example.breel.utils.UserUtil
@@ -20,10 +21,14 @@ class ProjectRepository @Inject constructor(
 ) : ProjectRepositorySource {
     override fun submitProposal(
         projectId: Int,
-        proposal: Proposal
+        price: Int,
+        durationMonth: Int,
+        coverLetter: String
     ): Flow<Resource<BackendResponseNoData>> {
         return flow {
             emit(Resource.Loading())
+
+            val proposal = Proposal(price, durationMonth, coverLetter)
             val token = userUtil.getUserBearerToken()
             val result = apiService.submitProposal(projectId, proposal, "Bearer $token").await()
             emitAll(processResult(result))
@@ -50,6 +55,21 @@ class ProjectRepository @Inject constructor(
                 keyword,
                 "Bearer $token"
             ).await()
+            emitAll(processResult(result))
+        }
+    }
+
+    override fun requestProjectMentorship(
+        projectId: Int,
+        budgetPercentage: Int,
+        restriction: String
+    ): Flow<Resource<BackendResponseNoData>> {
+        return flow {
+            emit(Resource.Loading())
+            val token = userUtil.getUserBearerToken()
+            val requestBody = ProjectMentorshipRequest(budgetPercentage, restriction)
+            val result =
+                apiService.requestProjectMentorship(projectId, requestBody, "Bearer $token").await()
             emitAll(processResult(result))
         }
     }

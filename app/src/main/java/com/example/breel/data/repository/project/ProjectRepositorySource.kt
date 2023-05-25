@@ -8,7 +8,13 @@ import com.example.breel.data.api.project.Proposal
 import kotlinx.coroutines.flow.Flow
 
 interface ProjectRepositorySource {
-    fun submitProposal(projectId: Int, proposal: Proposal): Flow<Resource<BackendResponseNoData>>
+    fun submitProposal(
+        projectId: Int,
+        price: Int,
+        durationMonth: Int,
+        coverLetter: String
+    ): Flow<Resource<BackendResponseNoData>>
+
     fun getProjects(
         page: Int? = null,
         limit: Int? = null,
@@ -17,4 +23,10 @@ interface ProjectRepositorySource {
         isMentored: Boolean? = null,
         keyword: String? = null
     ): Flow<Resource<BackendResponse<List<Project>>>>
+
+    fun requestProjectMentorship(
+        projectId: Int,
+        budgetPercentage: Int,
+        restriction: String
+    ): Flow<Resource<BackendResponseNoData>>
 }
