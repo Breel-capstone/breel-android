@@ -7,6 +7,8 @@
     tools:context=".ui.fragment.authentication.register.RegisterFragment">
 
     <ProgressBar
+        android:id="@+id/progress_circular"
+        android:alpha="0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -55,7 +57,7 @@
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username / Email" />
+                android:hint="Email" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,12 +86,12 @@
             android:onClick="onClick"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_login"
             style="@style/Widget.Breel.Button.Filled.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Daftar" />
+            android:text="Masuk" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,6 +122,7 @@
         </LinearLayout>
 
         <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_signin_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp" />
@@ -134,15 +137,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sudah punya akun?" />
+                android:text="Belum punya akun?" />
 
             <TextView
+                android:id="@+id/tv_to_register"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:clickable="true"
                 android:onClick="onClick"
-                android:text="Masuk di sini"
+                android:text="Daftar di sini"
                 android:textStyle="bold" />
 
         </LinearLayout>
