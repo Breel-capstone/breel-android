@@ -1,6 +1,5 @@
 package com.example.breel.data.repository.user
 
-import android.util.Log
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
@@ -13,14 +12,13 @@ import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
 import com.example.breel.data.api.user.profile.Profile
 import com.example.breel.data.repository.processResult
+import com.example.breel.utils.UserUtil
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GetTokenResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.tasks.await
 import retrofit2.await
@@ -28,7 +26,8 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(
     private val firebaseAuth: FirebaseAuth,
-    private val apiService: ApiService
+    private val apiService: ApiService,
+    private val userUtil: UserUtil
 ) : UserRepositorySource {
 
     override fun login(email: String, password: String): Flow<Resource<AuthResult>> {
@@ -61,22 +60,16 @@ class UserRepository @Inject constructor(
             emit(Resource.Loading())
             val registerDetailRequest =
                 RegisterDetailRequest(user, userExperiences, userSkills, userProjectExperiences)
-            val token = getUserBearerToken().first()
+            val token = userUtil.getUserBearerToken()
             val result = apiService.registerDetail("Bearer $token", registerDetailRequest).await()
-            val statusCode = result.meta.statusCode
-            val successStatusCodeRange = 200..399
-            if (statusCode in successStatusCodeRange) {
-                emit(Resource.Success(result))
-            } else {
-                emit(Resource.DataError(errorCode = statusCode))
-            }
+            emitAll(processResult(result))
         }
     }
 
     override fun getProfile(): Flow<Resource<BackendResponse<Profile>>> {
         return flow {
             emit(Resource.Loading())
-            val token = getUserBearerToken().first()
+            val token = userUtil.getUserBearerToken()
             val result = apiService.getProfile("Bearer $token").await()
             emitAll(processResult(result))
         }
@@ -85,29 +78,9 @@ class UserRepository @Inject constructor(
     override fun getProfile(userId: String): Flow<Resource<BackendResponse<Profile>>> {
         return flow {
             emit(Resource.Loading())
-            val token = getUserBearerToken().first()
+            val token = userUtil.getUserBearerToken()
             val result = apiService.getProfile(userId, "Bearer $token").await()
             emitAll(processResult(result))
-        }
-    }
-
-    override fun getUserBearerToken(): Flow<String> = flow {
-        val firebaseAuth = FirebaseAuth.getInstance()
-        val currentUser = firebaseAuth.currentUser
-
-        try {
-            val tokenResult: GetTokenResult? = currentUser?.getIdToken(true)?.await()
-            val bearerToken = tokenResult?.token
-            bearerToken?.let {
-                emit(it)
-            }
-
-            if (bearerToken == null) {
-                throw Exception("Failed to retrieve user bearer token")
-            }
-        } catch (e: Exception) {
-            Log.e("UserRepository", "getUserBearerToken: $e")
-//            throw Exception("Failed to retrieve user bearer token", e)
         }
     }
 
@@ -118,7 +91,7 @@ class UserRepository @Inject constructor(
     ): Flow<Resource<BackendResponse<List<Mentor>>>> {
         return flow {
             emit(Resource.Loading())
-            val token = getUserBearerToken().first()
+            val token = userUtil.getUserBearerToken()
             val result =
                 apiService.getUserMentors(page, limit, disableLimit, "Bearer $token").await()
             emitAll(processResult(result))

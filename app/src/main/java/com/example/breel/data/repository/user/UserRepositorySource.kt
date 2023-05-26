@@ -28,7 +28,6 @@ interface UserRepositorySource {
 
     fun getProfile(): Flow<Resource<BackendResponse<Profile>>>
     fun getProfile(userId: String): Flow<Resource<BackendResponse<Profile>>>
-    fun getUserBearerToken(): Flow<String>
 
     fun signInWithGoogle(credential: AuthCredential): Flow<Resource<AuthResult>>
     fun getUserMentors(
