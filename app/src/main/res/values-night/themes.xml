@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Breel" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -12,5 +12,6 @@
         <item name="colorSecondaryContainer">@color/green_pakistan_800</item>
         <item name="colorOnSecondaryContainer">@color/green_hookers_50</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/green_hookers_900</item>    </style>
+        <item name="android:statusBarColor">@color/green_hookers_900</item>
+    </style>
 </resources>
