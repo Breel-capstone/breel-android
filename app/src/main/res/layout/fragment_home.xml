@@ -1,27 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.home.HomeFragment"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    tools:context=".ui.fragment.home.HomeFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_greeting"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello from Home Fragment" />
+        android:text="Hai, User!"
+        android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_to_project_form"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_wording"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="To Project Form"/>
+        android:text="Proyek menantimu."
+        android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium"
+        app:layout_constraintTop_toBottomOf="@+id/tv_greeting"/>
 
-    <Button
-        android:id="@+id/btn_to_mentoring_form"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        style="@style/Widget.Breel.SearchBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="To Mentoring Form"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_wording"/>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="382dp"
+        android:layout_height="386dp"
+        android:background="@color/green_hookers_900"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_proyek_client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Proyek Client"
+                android:textColor="#ffffff"
+                android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/btn_lihat_semua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lihat Semua"
+                android:textColor="#ffffff"
+                android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_client_project"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linear_layout"
+            android:layout_alignParentBottom="true"
+            android:align="@id/linear_layout" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        style="@style/Widget.Breel.BottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nav_corner"
+        app:itemActiveIndicatorStyle="@style/MyIndicator"
+        app:itemIconTint="@color/green_hookers_800"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

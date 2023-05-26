@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.R
 import com.example.breel.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,11 +34,38 @@ class HomeFragment : Fragment() {
 
         viewModel.getUserProfile()
 
-        binding.btnToProjectForm.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_projectFormFragment)
-        }
-        binding.btnToMentoringForm.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_mentoringFormFragment)
-        }
+        val rv_project: RecyclerView = binding.rvClientProject
+        rv_project.layoutManager = LinearLayoutManager(requireActivity())
+
+        var lst = listOf<DummyProject>(
+            DummyProject(
+                "Title 1",
+                R.string.lorem_2sen.toString(),
+                "1.000.000",
+                "1 Month",
+                false,
+                listOf("Skill 1", "Skill 2")
+            ),
+            DummyProject(
+                "Title 2",
+                R.string.lorem_2sen.toString(),
+                "1.000.000",
+                "1 Month",
+                false,
+                listOf("Skill 1", "Skill 2")
+            ),
+            DummyProject(
+                "Title 3",
+                R.string.lorem_2sen.toString(),
+                "1.000.000",
+                "1 Month",
+                false,
+                listOf("Skill 1", "Skill 2")
+            )
+        )
+
+        val adapter = ProjectAdapter(lst)
+        rv_project.adapter = adapter
+
     }
 }
