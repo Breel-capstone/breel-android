@@ -8,11 +8,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:paddingTop="6dp"
-        android:paddingBottom="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="16dp">
+        android:paddingHorizontal="16dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,6 +54,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/test"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Posisi" />
@@ -81,10 +82,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Pengalaman (Opsional)"
-            android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
-            android:textStyle="bold" />
+            android:layout_marginTop="6dp"
+            android:text="Skill"
+            android:textAppearance="@style/TextAppearance.Breel.LabelLarge" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -112,6 +112,14 @@
                 app:iconPadding="0dp" />
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Pengalaman (Opsional)"
+            android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold" />
 
         <!--    Nama    -->
         <TextView
@@ -226,64 +234,17 @@
             android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
             android:textStyle="bold" />
 
-        <!--    Nama    -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Posisi"
-            android:textAppearance="@style/TextAppearance.Breel.LabelLarge" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+        <LinearLayout
+            android:id="@+id/project_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Posisi" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!--    Posisi    -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Thumbnail"
-            android:textAppearance="@style/TextAppearance.Breel.LabelLarge" />
+            android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Thumbnail" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!--    Deskripsi    -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Deskripsi"
-            android:textAppearance="@style/TextAppearance.Breel.LabelLarge" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Deskripsi" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/addProjectButton"
             style="@style/Widget.Breel.IconButton.Primary.Large"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -295,6 +256,7 @@
             app:iconPadding="0dp" />
 
         <Button
+            android:id="@+id/submitButton"
             style="@style/Widget.Breel.Button.Filled.Large"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
