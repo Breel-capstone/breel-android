@@ -17,7 +17,7 @@ import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
 import com.example.breel.databinding.FragmentRegisterDetailBinding
-import com.example.breel.ui.activity.main.MainActionBar
+import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.component.StatusSnackBar
 import com.google.android.material.chip.Chip
 import com.google.android.material.textfield.TextInputEditText

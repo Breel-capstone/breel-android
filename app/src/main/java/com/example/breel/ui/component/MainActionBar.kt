@@ -1,4 +1,4 @@
-package com.example.breel.ui.activity.main
+package com.example.breel.ui.component
 
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
