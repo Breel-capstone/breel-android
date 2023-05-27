@@ -51,12 +51,20 @@ class UserRepository @Inject constructor(
     }
 
     override fun registerDetail(
-        user: User,
+        fullName: String,
+        title: String,
+        description: String,
         userExperiences: List<UserExperience>,
         userSkills: List<UserSkill>,
         userProjectExperiences: List<UserProjectExperience>
     ): Flow<Resource<BackendResponseNoData>> {
         return flow {
+            val user = User(
+                fullName,
+                title,
+                description,
+                "https://api.dicebear.com/6.x/open-peeps/svg?clothingColor=17231d&skinColor=fdf2f5&seed=$fullName"
+            )
             emit(Resource.Loading())
             val registerDetailRequest =
                 RegisterDetailRequest(user, userExperiences, userSkills, userProjectExperiences)

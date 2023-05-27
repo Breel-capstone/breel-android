@@ -14,10 +14,10 @@ fun <T> processResult(result: BackendResponse<T>): Flow<Resource<BackendResponse
     if (statusCode in successStatusCodeRange) {
         emit(Resource.Success(result))
     } else {
-        emit(Resource.DataError(errorCode = statusCode))
+        emit(Resource.DataError(errorCode = statusCode, errorMessage = result.message.title))
     }
 }.catch {
-    emit(Resource.DataError(errorCode = -1)) // Handle any exceptions by emitting a generic error
+    emit(Resource.DataError(errorCode = -1, errorMessage = it.message)) // Handle any exceptions by emitting a generic error
 }
 
 fun processResult(result: BackendResponseNoData): Flow<Resource<BackendResponseNoData>> = flow {
@@ -27,8 +27,8 @@ fun processResult(result: BackendResponseNoData): Flow<Resource<BackendResponseN
     if (statusCode in successStatusCodeRange) {
         emit(Resource.Success(result))
     } else {
-        emit(Resource.DataError(errorCode = statusCode))
+        emit(Resource.DataError(errorCode = statusCode, errorMessage = result.message.title))
     }
 }.catch {
-    emit(Resource.DataError(errorCode = -1)) // Handle any exceptions by emitting a generic error
+    emit(Resource.DataError(errorCode = -1, errorMessage = it.message)) // Handle any exceptions by emitting a generic error
 }

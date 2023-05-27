@@ -20,7 +20,9 @@ interface UserRepositorySource {
     fun register(email: String, password: String): Flow<Resource<AuthResult>>
 
     fun registerDetail(
-        user: User,
+        fullName: String,
+        title: String,
+        description: String,
         userExperiences: List<UserExperience>,
         userSkills: List<UserSkill>,
         userProjectExperiences: List<UserProjectExperience>
