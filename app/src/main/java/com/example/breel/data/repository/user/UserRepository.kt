@@ -71,6 +71,8 @@ class UserRepository @Inject constructor(
             val token = userUtil.getUserBearerToken()
             val result = apiService.registerDetail("Bearer $token", registerDetailRequest).await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -80,6 +82,8 @@ class UserRepository @Inject constructor(
             val token = userUtil.getUserBearerToken()
             val result = apiService.getProfile("Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -94,8 +98,9 @@ class UserRepository @Inject constructor(
             } else {
                 emit(Resource.Success(true))
             }
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
-
     }
 
     override fun getProfile(userId: String): Flow<Resource<BackendResponse<Profile>>> {

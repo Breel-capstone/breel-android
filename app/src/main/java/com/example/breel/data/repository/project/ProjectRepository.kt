@@ -11,6 +11,7 @@ import com.example.breel.data.api.project.proposal.RespondProposalRequest
 import com.example.breel.data.repository.processResult
 import com.example.breel.utils.UserUtil
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import retrofit2.await
@@ -33,6 +34,8 @@ class ProjectRepository @Inject constructor(
             val token = userUtil.getUserBearerToken()
             val result = apiService.submitProposal(projectId, proposal, "Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -57,6 +60,8 @@ class ProjectRepository @Inject constructor(
                 "Bearer $token"
             ).await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -72,6 +77,8 @@ class ProjectRepository @Inject constructor(
             val result =
                 apiService.requestProjectMentorship(projectId, requestBody, "Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -89,6 +96,8 @@ class ProjectRepository @Inject constructor(
                 apiService.respondProposal(projectId, proposalId, requestBody, "Bearer $token")
                     .await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 }
