@@ -34,13 +34,10 @@ class HomeFragment : Fragment() {
 
         viewModel.getUserProfile()
 
-        val rv_project: RecyclerView = binding.rvClientProject
-        rv_project.layoutManager = LinearLayoutManager(requireActivity())
-
-        var lst = listOf<DummyProject>(
+        var lstProject = listOf<DummyProject>(
             DummyProject(
                 "Title 1",
-                R.string.lorem_2sen.toString(),
+                getString(R.string.lorem_2sen),
                 "1.000.000",
                 "1 Month",
                 false,
@@ -48,7 +45,7 @@ class HomeFragment : Fragment() {
             ),
             DummyProject(
                 "Title 2",
-                R.string.lorem_2sen.toString(),
+                getString(R.string.lorem_2sen),
                 "1.000.000",
                 "1 Month",
                 false,
@@ -56,16 +53,41 @@ class HomeFragment : Fragment() {
             ),
             DummyProject(
                 "Title 3",
-                R.string.lorem_2sen.toString(),
+                getString(R.string.lorem_2sen),
                 "1.000.000",
                 "1 Month",
                 false,
                 listOf("Skill 1", "Skill 2")
             )
         )
+        var lstMentor = listOf<DummyMentor>(
+            DummyMentor("Lorem Ipsum", "1.000.000"),
+            DummyMentor("Lorem Ipsum", "2.000.000"),
+            DummyMentor("Lorem Ipsum", "3.000.000"),
+            DummyMentor("Lorem Ipsum", "4.000.000"),
 
-        val adapter = ProjectAdapter(lst)
-        rv_project.adapter = adapter
+            )
+
+        // First RV
+        val rv_client_project: RecyclerView = binding.rvClientProject
+        rv_client_project.layoutManager = LinearLayoutManager(requireActivity())
+
+        val adapter = ProjectAdapter(lstProject)
+        rv_client_project.adapter = adapter
+
+        // Second RV
+        val rv_mentor_project: RecyclerView = binding.rvMentorProject
+        rv_mentor_project.layoutManager = LinearLayoutManager(requireActivity())
+
+        val adapter2 = ProjectAdapter(lstProject)
+        rv_mentor_project.adapter = adapter2
+
+        // Third RV
+        val rv_mentor = binding.rvMentor
+        rv_mentor.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+
+        val adapter3 = MentorAdapter(lstMentor)
+        rv_mentor.adapter = adapter3
 
     }
 }

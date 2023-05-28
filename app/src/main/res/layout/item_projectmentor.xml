@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/background_projectclient"
+    android:background="@drawable/background_projectmentor"
     android:layout_marginBottom="12dp">
 
     <TextView
