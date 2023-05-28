@@ -21,9 +21,9 @@ class HomeViewModel @Inject constructor(
 //            userRepository.getUserMentors().collect {
 //                Log.d("getUserMentors", "$it")
 //            }
-            userRepository.getProfile("ogrlVRdYjIOzGYmxDhQdCXTQzi62").collect {
-                Log.d("getUserMentors", "$it")
-            }
+//            userRepository.getProfile("ogrlVRdYjIOzGYmxDhQdCXTQzi62").collect {
+//                Log.d("getUserMentors", "$it")
+//            }
         }
     }
 }

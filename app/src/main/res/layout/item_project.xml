@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/background_projectclient"
+    android:layout_marginBottom="12dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/TextAppearance.Breel.TitleMedium"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dummy Title"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/TextAppearance.Breel.BodySmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem_1pg"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:layout_marginTop="12dp"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:justifyContent="space_between"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/tv_salary"
+            style="@style/TextAppearance.Breel.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_rp"
+            android:drawablePadding="5dp"
+            android:text="Dummy Salary" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            style="@style/TextAppearance.Breel.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/icon_clock"
+            android:drawablePadding="5dp"
+            android:text="Dummy Duration" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fl_skills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.Breel.Chip.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chip Chip"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+</LinearLayout>
