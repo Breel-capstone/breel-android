@@ -1,5 +1,6 @@
 package com.example.breel.data.repository.user
 
+import android.util.Log
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
@@ -51,18 +52,28 @@ class UserRepository @Inject constructor(
     }
 
     override fun registerDetail(
-        user: User,
+        fullName: String,
+        title: String,
+        description: String,
         userExperiences: List<UserExperience>,
         userSkills: List<UserSkill>,
         userProjectExperiences: List<UserProjectExperience>
     ): Flow<Resource<BackendResponseNoData>> {
         return flow {
+            val user = User(
+                fullName,
+                title,
+                description,
+                "https://api.dicebear.com/6.x/open-peeps/svg?clothingColor=17231d&skinColor=fdf2f5&seed=$fullName"
+            )
             emit(Resource.Loading())
             val registerDetailRequest =
                 RegisterDetailRequest(user, userExperiences, userSkills, userProjectExperiences)
             val token = userUtil.getUserBearerToken()
             val result = apiService.registerDetail("Bearer $token", registerDetailRequest).await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -72,6 +83,25 @@ class UserRepository @Inject constructor(
             val token = userUtil.getUserBearerToken()
             val result = apiService.getProfile("Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
+        }
+    }
+
+    override fun checkUserDetailComplete(): Flow<Resource<Boolean>> {
+        return flow {
+            emit(Resource.Loading())
+            val token = userUtil.getUserBearerToken()
+            Log.d("UserRepository", "checkUserDetailComplete: $token")
+            val result = apiService.getProfile("Bearer $token").await()
+            val title = result.data?.title
+            if (title == null) {
+                emit(Resource.Success(false))
+            } else {
+                emit(Resource.Success(true))
+            }
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -81,6 +111,8 @@ class UserRepository @Inject constructor(
             val token = userUtil.getUserBearerToken()
             val result = apiService.getProfile(userId, "Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -95,6 +127,8 @@ class UserRepository @Inject constructor(
             val result =
                 apiService.getUserMentors(page, limit, disableLimit, "Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 

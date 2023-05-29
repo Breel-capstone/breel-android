@@ -12,14 +12,16 @@
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/auth_group" />
         <action
-            android:id="@+id/action_splashFragment_to_dummyFragment"
-            app:destination="@id/dummyFragment" />
-        <action
             android:id="@+id/action_splashFragment_to_notificationFragment"
             app:destination="@id/notificationFragment" />
     </fragment>
     <navigation android:id="@+id/auth_group"
         app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/registerDetailFragment2"
+            android:name="com.example.breel.ui.fragment.authentication.detail.RegisterDetailFragment"
+            android:label="fragment_register_detail"
+            tools:layout="@layout/fragment_register_detail" />
         <fragment
             android:id="@+id/registerFragment2"
             android:name="com.example.breel.ui.fragment.authentication.register.RegisterFragment"
@@ -28,6 +30,9 @@
             <action
                 android:id="@+id/action_registerFragment2_to_loginFragment"
                 app:destination="@id/loginFragment" />
+            <action
+                android:id="@+id/action_registerFragment2_to_registerDetailFragment2"
+                app:destination="@id/registerDetailFragment2" />
         </fragment>
         <fragment
             android:id="@+id/loginFragment"
@@ -36,6 +41,9 @@
             <action
                 android:id="@+id/action_loginFragment_to_registerFragment2"
                 app:destination="@id/registerFragment2" />
+            <action
+                android:id="@+id/action_loginFragment_to_registerDetailFragment2"
+                app:destination="@id/registerDetailFragment2" />
         </fragment>
         <action
             android:id="@+id/action_global_home_navigation"
@@ -68,11 +76,6 @@
             android:label="fragment_mentoring_form"
             tools:layout="@layout/fragment_mentoring_form" />
     </navigation>
-    <fragment
-        android:id="@+id/dummyFragment"
-        android:name="com.example.breel.ui.fragment.dummy.DummyFragment"
-        android:label="fragment_dummy"
-        tools:layout="@layout/fragment_dummy" />
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.example.breel.ui.fragment.notification.NotificationFragment"

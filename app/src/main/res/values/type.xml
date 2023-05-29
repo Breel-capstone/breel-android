@@ -61,6 +61,12 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="TextAppearance.Breel.TitleLargeBold" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
     <style name="TextAppearance.Breel.BodySmall" parent="TextAppearance.Material3.BodySmall">
         <item name="fontFamily">@font/open_sans</item>
         <item name="android:textStyle">normal</item>

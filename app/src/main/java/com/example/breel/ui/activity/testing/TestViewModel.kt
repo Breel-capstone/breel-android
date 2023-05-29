@@ -16,8 +16,11 @@ class TestViewModel @Inject constructor(
 ) : ViewModel() {
     fun test() {
         viewModelScope.launch {
-            projectRepository.respondProposal(1, 1, "Accepted", 1).collect {
-                Log.d(this.toString(), "$it")
+//            projectRepository.respondProposal(1, 1, "Accepted", 1).collect {
+//                Log.d(this.toString(), "$it")
+//            }
+            userRepository.checkUserDetailComplete().collect {
+                Log.d("TestViewModel", "${it}")
             }
         }
     }

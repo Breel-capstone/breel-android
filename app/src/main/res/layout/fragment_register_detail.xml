@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.authentication.detail.RegisterDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informasi*"
+            android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold" />
+
+        <!--    Nama    -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--    Posisi    -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/positionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Posisi" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--    Deskripsi    -->
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Deskripsi" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            app:helperText="Pencet enter untuk menambah skill"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/skillTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Skill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/skillLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:showDivider="middle"
+            app:dividerDrawable="@drawable/divider_profile_register_detail_chip"
+            >
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Pengalaman (Opsional)"
+            android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/experience_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addExperienceButton"
+            style="@style/Widget.Breel.IconButton.Primary.Large"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            app:icon="@drawable/baseline_add_24"
+            app:iconPadding="0dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proyek (Opsional)"
+            android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/project_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addProjectButton"
+            style="@style/Widget.Breel.IconButton.Primary.Large"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            app:icon="@drawable/baseline_add_24"
+            app:iconPadding="0dp" />
+
+        <Button
+            android:id="@+id/submitButton"
+            style="@style/Widget.Breel.Button.Filled.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Submit" />
+    </LinearLayout>
+</ScrollView>

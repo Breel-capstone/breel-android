@@ -24,6 +24,10 @@ class LoginViewModel @Inject constructor(
         MutableLiveData<Resource<AuthResult>>()
     }
 
+    val checkProfileResult: MutableLiveData<Resource<Boolean>> by lazy {
+        MutableLiveData<Resource<Boolean>>()
+    }
+
     fun login(email: String, password: String) {
         viewModelScope.launch {
             userRepository.login(email, password).collect {
@@ -36,6 +40,14 @@ class LoginViewModel @Inject constructor(
         viewModelScope.launch {
             userRepository.signInWithGoogle(credential).collect {
                 signInGoogleResultLiveData.postValue(it)
+            }
+        }
+    }
+
+    fun checkProfileDetail() {
+        viewModelScope.launch {
+            userRepository.checkUserDetailComplete().collect {
+                checkProfileResult.postValue(it)
             }
         }
     }

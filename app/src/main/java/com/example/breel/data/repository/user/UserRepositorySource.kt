@@ -4,7 +4,6 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
 import com.example.breel.data.api.mentor.Mentor
-import com.example.breel.data.api.user.detail.User
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
@@ -20,7 +19,9 @@ interface UserRepositorySource {
     fun register(email: String, password: String): Flow<Resource<AuthResult>>
 
     fun registerDetail(
-        user: User,
+        fullName: String,
+        title: String,
+        description: String,
         userExperiences: List<UserExperience>,
         userSkills: List<UserSkill>,
         userProjectExperiences: List<UserProjectExperience>
@@ -35,5 +36,7 @@ interface UserRepositorySource {
         limit: Int? = null,
         disableLimit: Boolean? = null
     ): Flow<Resource<BackendResponse<List<Mentor>>>>
+
+    fun checkUserDetailComplete(): Flow<Resource<Boolean>>
 
 }
