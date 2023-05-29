@@ -18,6 +18,11 @@
     <navigation android:id="@+id/auth_group"
         app:startDestination="@id/loginFragment">
         <fragment
+            android:id="@+id/registerDetailFragment2"
+            android:name="com.example.breel.ui.fragment.authentication.detail.RegisterDetailFragment"
+            android:label="fragment_register_detail"
+            tools:layout="@layout/fragment_register_detail" />
+        <fragment
             android:id="@+id/registerFragment2"
             android:name="com.example.breel.ui.fragment.authentication.register.RegisterFragment"
             android:label="fragment_register"
@@ -25,6 +30,9 @@
             <action
                 android:id="@+id/action_registerFragment2_to_loginFragment"
                 app:destination="@id/loginFragment" />
+            <action
+                android:id="@+id/action_registerFragment2_to_registerDetailFragment2"
+                app:destination="@id/registerDetailFragment2" />
         </fragment>
         <fragment
             android:id="@+id/loginFragment"
@@ -33,6 +41,9 @@
             <action
                 android:id="@+id/action_loginFragment_to_registerFragment2"
                 app:destination="@id/registerFragment2" />
+            <action
+                android:id="@+id/action_loginFragment_to_registerDetailFragment2"
+                app:destination="@id/registerDetailFragment2" />
         </fragment>
         <action
             android:id="@+id/action_global_home_navigation"

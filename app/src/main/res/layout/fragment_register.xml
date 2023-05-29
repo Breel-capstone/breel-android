@@ -7,6 +7,8 @@
     tools:context=".ui.fragment.authentication.register.RegisterFragment">
 
     <ProgressBar
+        android:id="@+id/progressbar"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,14 +30,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="Daftar untuk Memulai!"
         android:textAppearance="@style/TextAppearance.Breel.HeadlineLarge"
         android:textColor="@color/green_hookers_900"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@id/imageView"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="8dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -128,11 +130,11 @@
                 android:text="Sudah punya akun?" />
 
             <TextView
+                android:id="@+id/toLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:clickable="true"
-                android:onClick="onClick"
                 android:text="Masuk di sini"
                 android:textStyle="bold" />
 

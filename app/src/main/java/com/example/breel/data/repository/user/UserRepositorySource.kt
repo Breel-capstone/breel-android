@@ -4,7 +4,6 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
 import com.example.breel.data.api.mentor.Mentor
-import com.example.breel.data.api.user.detail.User
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
@@ -38,6 +37,6 @@ interface UserRepositorySource {
         disableLimit: Boolean? = null
     ): Flow<Resource<BackendResponse<List<Mentor>>>>
 
-    fun userDetailComplete(): Flow<Resource<Boolean>>
+    fun checkUserDetailComplete(): Flow<Resource<Boolean>>
 
 }

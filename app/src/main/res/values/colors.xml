@@ -34,4 +34,6 @@
     <color name="green_pakistan_900">#134611</color>
     <color name="green_pakistan_1000">#072C00</color>
 
+    <color name="errorColor">#FF0000</color>
+
 </resources>

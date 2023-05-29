@@ -10,6 +10,8 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.breel.AuthGroupDirections
 import com.example.breel.R
 import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponseNoData
@@ -64,6 +66,7 @@ class RegisterDetailFragment : Fragment() {
         when (status) {
             is Resource.Success -> status.data?.let {
                 statusSnackBar.showSuccess(it.message.title)
+                findNavController().navigate(AuthGroupDirections.actionGlobalHomeNavigation())
             }
 
             is Resource.DataError -> {

@@ -1,5 +1,6 @@
 package com.example.breel.data.repository.user
 
+import android.util.Log
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
@@ -87,10 +88,11 @@ class UserRepository @Inject constructor(
         }
     }
 
-    override fun userDetailComplete(): Flow<Resource<Boolean>> {
+    override fun checkUserDetailComplete(): Flow<Resource<Boolean>> {
         return flow {
             emit(Resource.Loading())
             val token = userUtil.getUserBearerToken()
+            Log.d("UserRepository", "checkUserDetailComplete: $token")
             val result = apiService.getProfile("Bearer $token").await()
             val title = result.data?.title
             if (title == null) {
@@ -109,6 +111,8 @@ class UserRepository @Inject constructor(
             val token = userUtil.getUserBearerToken()
             val result = apiService.getProfile(userId, "Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
@@ -123,6 +127,8 @@ class UserRepository @Inject constructor(
             val result =
                 apiService.getUserMentors(page, limit, disableLimit, "Bearer $token").await()
             emitAll(processResult(result))
+        }.catch {
+            emit(Resource.DataError(errorCode = 0, it.message))
         }
     }
 
