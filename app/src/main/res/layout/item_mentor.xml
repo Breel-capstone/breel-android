@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="144dp"
+    android:layout_height="212dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/background_mentor"
+    android:paddingVertical="20dp"
+    android:paddingHorizontal="6dp"
+    android:layout_marginRight="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_salary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.000.000"
+        android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

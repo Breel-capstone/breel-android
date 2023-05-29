@@ -1,27 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.home.HomeFragment"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    tools:context=".ui.fragment.home.HomeFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello from Home Fragment" />
+        app:layout_constraintBaseline_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"
+        android:fadeScrollbars="true">
 
-    <Button
-        android:id="@+id/btn_to_project_form"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_greeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hai, User!"
+                android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium" />
+
+            <TextView
+                android:id="@+id/tv_wording"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Proyek menantimu."
+                android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium"
+                android:layout_marginBottom="28dp"/>
+
+            <com.google.android.material.search.SearchBar
+                android:id="@+id/search_view"
+                style="@style/Widget.Breel.SearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:hint="Cari proyek atau mentor"/>
+
+            <RelativeLayout
+                android:id="@+id/project_client"
+                android:layout_width="match_parent"
+                android:layout_height="386dp"
+                android:background="@drawable/background_rv_projectclient"
+                android:padding="24dp"
+                android:layout_marginBottom="40dp">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/ll_project_client"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:justifyContent="space_between"
+                    app:alignItems="baseline"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_project_client"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proyek Client"
+                        android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btn_lihat_semua_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:text="Lihat Semua"
+                        android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_client_project"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_project_client"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/project_mentor"
+                android:layout_width="match_parent"
+                android:layout_height="386dp"
+                android:background="@drawable/background_rv_projectmentor"
+                android:padding="24dp"
+                android:layout_marginBottom="40dp">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/ll_project_mentor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:justifyContent="space_between"
+                    app:alignItems="baseline"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_project_mentor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proyek Mentor"
+                        android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                        android:textColor="@color/green_hookers_900"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btn_lihat_semua_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:text="Lihat Semua"
+                        android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
+                        android:textColor="@color/green_hookers_900"
+                        android:textStyle="bold" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_mentor_project"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_project_mentor"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mentor"
+                android:layout_width="match_parent"
+                android:layout_height="306dp"
+                android:background="@drawable/background_rv_mentor"
+                android:padding="24dp"
+                android:layout_marginBottom="100dp">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/ll_mentor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:justifyContent="space_between"
+                    app:alignItems="baseline"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_mentor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proyek Mentor"
+                        android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                        android:textColor="@color/green_hookers_900"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btn_lihat_semua_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:onClick="onClick"
+                        android:text="Lihat Semua"
+                        android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
+                        android:textColor="@color/green_hookers_900"
+                        android:textStyle="bold" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_mentor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_mentor"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        style="@style/Widget.Breel.BottomNav"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="To Project Form"/>
+        android:background="@drawable/nav_corner"
+        app:itemActiveIndicatorStyle="@style/MyIndicator"
+        app:itemIconTint="@color/green_hookers_800"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
 
-    <Button
-        android:id="@+id/btn_to_mentoring_form"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="To Mentoring Form"/>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
