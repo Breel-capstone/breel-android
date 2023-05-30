@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,20 +23,18 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var projectAdapter: ProjectAdapter
     private lateinit var mentorProjectAdapter: ProjectAdapter
+    private lateinit var mentorAdapter: MentorAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-//        viewModel.getUserProfile()
         setUpRecyclerView()
         observeViewModel()
     }
@@ -44,13 +43,10 @@ class HomeFragment : Fragment() {
     private fun setUpRecyclerView() {
         projectAdapter = ProjectAdapter()
         mentorProjectAdapter = ProjectAdapter()
+        mentorAdapter = MentorAdapter(requireContext())
         setClientProject()
         setMentorProject()
         setMentor()
-
-
-//        val adapter3 = MentorAdapter(lstMentor)
-//        rv_mentor.adapter = adapter3
     }
 
 
@@ -67,19 +63,25 @@ class HomeFragment : Fragment() {
     private fun setMentor() {
         binding.rvMentor.layoutManager =
             LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvMentor.adapter = mentorAdapter
     }
 
     private fun observeViewModel() {
         viewModel.getProjects()
         viewModel.getMentorProjects()
+        viewModel.getMentors()
         viewModel.projectPagingLiveData.observe(viewLifecycleOwner) {
             handleProjectResult(it)
         }
         viewModel.mentorProjectPagingLiveData.observe(viewLifecycleOwner) {
             handleMentorProjectResult(it)
         }
+        viewModel.mentorPagingLiveData.observe(viewLifecycleOwner) {
+            handleMentorResult(it)
+        }
 
     }
+
 
     private fun handleProjectResult(pagingData: PagingData<Project>) {
         lifecycleScope.launch {
@@ -90,6 +92,12 @@ class HomeFragment : Fragment() {
     private fun handleMentorProjectResult(pagingData: PagingData<Project>) {
         lifecycleScope.launch {
             mentorProjectAdapter.submitData(pagingData)
+        }
+    }
+
+    private fun handleMentorResult(pagingData: PagingData<Mentor>) {
+        lifecycleScope.launch {
+            mentorAdapter.submitData(pagingData)
         }
     }
 }

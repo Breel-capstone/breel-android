@@ -153,7 +153,7 @@
             <RelativeLayout
                 android:id="@+id/mentor"
                 android:layout_width="match_parent"
-                android:layout_height="306dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="100dp"
                 android:background="@drawable/background_rv_mentor"
                 android:padding="24dp">
@@ -170,7 +170,7 @@
                         android:id="@+id/tv_mentor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proyek Mentor"
+                        android:text="Mentor"
                         android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
                         android:textColor="?attr/colorPrimaryDark"
                         android:textStyle="bold" />
@@ -191,7 +191,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_mentor"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/ll_mentor"
                     android:layout_alignParentBottom="true" />
 
