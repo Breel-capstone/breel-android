@@ -1,5 +1,8 @@
 package com.example.breel.data.repository.project
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
 import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
@@ -8,12 +11,15 @@ import com.example.breel.data.api.project.Project
 import com.example.breel.data.api.project.ProjectMentorshipRequest
 import com.example.breel.data.api.project.proposal.Proposal
 import com.example.breel.data.api.project.proposal.RespondProposalRequest
+import com.example.breel.data.paging.ProjectPagingSource
 import com.example.breel.data.repository.processResult
 import com.example.breel.utils.UserUtil
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.flatMapConcat
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import retrofit2.await
 import javax.inject.Inject
 
@@ -37,6 +43,38 @@ class ProjectRepository @Inject constructor(
         }.catch {
             emit(Resource.DataError(errorCode = 0, it.message))
         }
+    }
+
+    override fun getProjectsPaging(
+        page: Int?,
+        limit: Int?,
+        disableLimit: Boolean?,
+        status: String?,
+        isMentored: Boolean?,
+        keyword: String?
+    ): Flow<PagingData<Project>> = flow {
+        val token = userUtil.getUserBearerToken()
+        emit(token)
+    }.flatMapConcat { token ->
+        val pagingConfig = PagingConfig(
+            pageSize = limit ?: 10,
+            enablePlaceholders = false
+        )
+
+        Pager(
+            config = pagingConfig,
+            pagingSourceFactory = {
+                ProjectPagingSource(
+                    apiService,
+                    token,
+                    limit,
+                    disableLimit,
+                    status,
+                    isMentored,
+                    keyword
+                )
+            }
+        ).flow
     }
 
     override fun getProjects(

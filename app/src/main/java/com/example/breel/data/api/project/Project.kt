@@ -8,7 +8,7 @@ data class Project(
     val durationMonth: Int,
     val budget: Int,
     val status: String,
-    val skills: String,
+    val skills: List<String>,
     val mentorId: Int,
     val assigneeId: Int,
     val createdAt: String,

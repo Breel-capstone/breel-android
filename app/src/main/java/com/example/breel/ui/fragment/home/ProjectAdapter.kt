@@ -1,14 +1,27 @@
 package com.example.breel.ui.fragment.home
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.ItemProjectBinding
 
-class ProjectAdapter(private val listProject: List<DummyProject>) : RecyclerView.Adapter<ProjectAdapter.ViewHolder>() {
+class ProjectAdapter : PagingDataAdapter<Project, ProjectAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     companion object {
         const val TAG = "ProjectAdapter"
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Project>() {
+            override fun areItemsTheSame(oldItem: Project, newItem: Project): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Project, newItem: Project): Boolean {
+                return oldItem == newItem
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -16,26 +29,20 @@ class ProjectAdapter(private val listProject: List<DummyProject>) : RecyclerView
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return listProject.size
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val title = listProject[position].title
-        val description = listProject[position].description
-        val salary = listProject[position].salary
-        val duration = listProject[position].duration
-        val skill = listProject[position].skillList
-
-        holder.binding.tvTitle.text = title
-        holder.binding.tvDescription.text = description
-        holder.binding.tvSalary.text = salary
-        holder.binding.tvDuration.text = duration
-
-        // iteratu thru skill (list).
-        // for each, create chip inside flexbox.
-
+        val project = getItem(position)
+        project?.let {
+            holder.bind(it)
+        }
     }
 
-    class ViewHolder(var binding: ItemProjectBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(private val binding: ItemProjectBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(project: Project) {
+            binding.tvTitle.text = project.title
+            binding.tvDescription.text = project.description
+            binding.tvSalary.text = project.budget.toString()
+            binding.tvDuration.text = project.durationMonth.toString()
+        }
+    }
 }

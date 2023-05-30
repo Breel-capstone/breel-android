@@ -1,5 +1,6 @@
 package com.example.breel.data.repository.project
 
+import androidx.paging.PagingData
 import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
@@ -22,6 +23,15 @@ interface ProjectRepositorySource {
         isMentored: Boolean? = null,
         keyword: String? = null
     ): Flow<Resource<BackendResponse<List<Project>>>>
+
+    fun getProjectsPaging(
+        page: Int? = null,
+        limit: Int? = null,
+        disableLimit: Boolean? = null,
+        status: String? = null,
+        isMentored: Boolean? = null,
+        keyword: String? = null
+    ): Flow<PagingData<Project>>
 
     fun requestProjectMentorship(
         projectId: Int,
