@@ -46,20 +46,13 @@ class HomeFragment : Fragment() {
         mentorProjectAdapter = ProjectAdapter()
         setClientProject()
         setMentorProject()
+        setMentor()
 
-
-
-//        val adapter2 = ProjectAdapter(lstProject)
-//        rv_mentor_project.adapter = adapter2
-
-        // Third RV
-        val rv_mentor = binding.rvMentor
-        rv_mentor.layoutManager =
-            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
 
 //        val adapter3 = MentorAdapter(lstMentor)
 //        rv_mentor.adapter = adapter3
     }
+
 
     private fun setClientProject() {
         binding.rvClientProject.layoutManager = LinearLayoutManager(requireActivity())
@@ -69,6 +62,11 @@ class HomeFragment : Fragment() {
     private fun setMentorProject() {
         binding.rvMentorProject.layoutManager = LinearLayoutManager(requireActivity())
         binding.rvMentorProject.adapter = mentorProjectAdapter
+    }
+
+    private fun setMentor() {
+        binding.rvMentor.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
     }
 
     private fun observeViewModel() {

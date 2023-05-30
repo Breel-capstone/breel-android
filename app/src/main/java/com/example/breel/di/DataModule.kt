@@ -1,5 +1,7 @@
 package com.example.breel.di
 
+import com.example.breel.data.repository.mentor.MentorRepository
+import com.example.breel.data.repository.mentor.MentorRepositorySource
 import com.example.breel.data.repository.project.ProjectRepository
 import com.example.breel.data.repository.project.ProjectRepositorySource
 import com.example.breel.data.repository.user.UserRepository
@@ -25,4 +27,10 @@ abstract class DataModule {
     abstract fun provideProjectRepository(
         projectRepository: ProjectRepository
     ): ProjectRepositorySource
+
+    @Binds
+    @Singleton
+    abstract fun provideMentorRepository(
+        mentorRepository: MentorRepository
+    ): MentorRepositorySource
 }

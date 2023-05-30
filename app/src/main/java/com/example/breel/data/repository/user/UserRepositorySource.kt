@@ -3,7 +3,7 @@ package com.example.breel.data.repository.user
 import com.example.breel.data.Resource
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
-import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.mentor.MyMentor
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
@@ -35,7 +35,7 @@ interface UserRepositorySource {
         page: Int? = null,
         limit: Int? = null,
         disableLimit: Boolean? = null
-    ): Flow<Resource<BackendResponse<List<Mentor>>>>
+    ): Flow<Resource<BackendResponse<List<MyMentor>>>>
 
     fun checkUserDetailComplete(): Flow<Resource<Boolean>>
 

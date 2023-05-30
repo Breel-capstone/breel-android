@@ -3,10 +3,10 @@ package com.example.breel.ui.fragment.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.mentor.MyMentor
 import com.example.breel.databinding.ItemMentorBinding
 
-class MentorAdapter(private val listMentor: List<Mentor>) : RecyclerView.Adapter<MentorAdapter.ViewHolder>(){
+class MentorAdapter(private val listMyMentor: List<MyMentor>) : RecyclerView.Adapter<MentorAdapter.ViewHolder>(){
 
     companion object {
         const val TAG = "MentorAdapter"
@@ -18,12 +18,12 @@ class MentorAdapter(private val listMentor: List<Mentor>) : RecyclerView.Adapter
     }
 
     override fun getItemCount(): Int {
-        return listMentor.size
+        return listMyMentor.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val name = listMentor[position].fullName
-        val price = listMentor[position].price
+        val name = listMyMentor[position].fullName
+        val price = listMyMentor[position].price
 
         holder.binding.tvName.text = name
         holder.binding.tvSalary.text = price.toString()
