@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:fadeScrollbars="true"
         android:padding="16dp"
-        app:layout_constraintBaseline_toTopOf="@id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,9 +26,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="28dp"
-                android:textStyle="bold"
                 android:text="@string/welcome_text"
-                android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium" />
+                android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium"
+                android:textStyle="bold" />
 
             <com.google.android.material.search.SearchBar
                 android:id="@+id/search_view"
@@ -135,12 +134,19 @@
 
                 </com.google.android.flexbox.FlexboxLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_mentor_project"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/ll_project_mentor"
-                    android:layout_alignParentBottom="true" />
+                    android:layout_alignParentBottom="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_mentor_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
