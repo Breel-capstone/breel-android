@@ -5,4 +5,10 @@
         <item name="tabTextColor">@color/green_pakistan_900</item>
         <item name="android:backgroundTint">@color/green_hookers_50</item>
     </style>
+    <style name="Widget.Breel.TabLayout.Searching" parent="Widget.Material3.TabLayout">
+        <item name="backgroundTint">@color/green_hookers_50</item>
+        <item name="selectableItemBackground">@color/green_hookers_900</item>
+        <item name="background">@color/green_hookers_900</item>
+        <item name="selectorSize">40dp</item>
+    </style>
 </resources>

@@ -8,4 +8,7 @@
     <string name="tab_text_2">Rekap &amp; Saran</string>
     <string name="lorem_2sen">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat.</string>
     <string name="welcome_text">Hai, <font color="#426A5A">User</font> Ribuan proyek menantimu</string>
+    <string name="tab_searching_1">Proyek</string>
+    <string name="tab_searching_2">Proyek Mentor</string>
+    <string name="tab_searching_3">Mentor</string>
 </resources>
