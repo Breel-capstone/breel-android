@@ -3,6 +3,7 @@
     <style name="Theme.Breel" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
+        <item name="colorPrimaryDark">@color/green_hookers_900</item>
         <item name="colorPrimary">@color/green_hookers_800</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/green_hookers_200</item>

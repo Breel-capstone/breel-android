@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.breel.R
 import com.example.breel.databinding.FragmentProjectMentorTabBinding
-import com.example.breel.ui.fragment.home.DummyProject
 import com.example.breel.ui.fragment.home.ProjectAdapter
 
 class ProjectMentorTabFragment : Fragment() {
@@ -27,53 +25,11 @@ class ProjectMentorTabFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var lstProject = listOf<DummyProject>(
-            DummyProject(
-                "Title 1",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2")
-            ),
-            DummyProject(
-                "Title 2",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2")
-            ),
-            DummyProject(
-                "Title 3",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2")
-            ),
-            DummyProject(
-                "Title 4",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5")
-            ),
-            DummyProject(
-                "Title 5",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5")
-            )
-        )
 
         val rv = binding.rvProjectmentor
         rv.layoutManager = LinearLayoutManager(requireActivity())
 
-        val adapter = ProjectAdapter(lstProject)
+        val adapter = ProjectAdapter()
         rv.adapter = adapter
     }
 }

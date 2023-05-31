@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
+import androidx.lifecycle.lifecycleScope
+import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
+import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -19,75 +21,83 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
+    private lateinit var projectAdapter: ProjectAdapter
+    private lateinit var mentorProjectAdapter: ProjectAdapter
+    private lateinit var mentorAdapter: MentorAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpRecyclerView()
+        observeViewModel()
+    }
 
-        viewModel.getUserProfile()
 
-        var lstProject = listOf<DummyProject>(
-            DummyProject(
-                "Title 1",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2")
-            ),
-            DummyProject(
-                "Title 2",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2")
-            ),
-            DummyProject(
-                "Title 3",
-                getString(R.string.lorem_2sen),
-                "1.000.000",
-                "1 Month",
-                false,
-                listOf("Skill 1", "Skill 2")
-            )
-        )
-        var lstMentor = listOf<DummyMentor>(
-            DummyMentor("Lorem Ipsum", "1.000.000"),
-            DummyMentor("Lorem Ipsum", "2.000.000"),
-            DummyMentor("Lorem Ipsum", "3.000.000"),
-            DummyMentor("Lorem Ipsum", "4.000.000"),
+    private fun setUpRecyclerView() {
+        projectAdapter = ProjectAdapter()
+        mentorProjectAdapter = ProjectAdapter()
+        mentorAdapter = MentorAdapter(requireContext())
+        setClientProject()
+        setMentorProject()
+        setMentor()
+    }
 
-            )
 
-        // First RV
-        val rv_client_project: RecyclerView = binding.rvClientProject
-        rv_client_project.layoutManager = LinearLayoutManager(requireActivity())
+    private fun setClientProject() {
+        binding.rvClientProject.layoutManager = LinearLayoutManager(requireActivity())
+        binding.rvClientProject.adapter = projectAdapter
+    }
 
-        val adapter = ProjectAdapter(lstProject)
-        rv_client_project.adapter = adapter
+    private fun setMentorProject() {
+        binding.rvMentorProject.layoutManager = LinearLayoutManager(requireActivity())
+        binding.rvMentorProject.adapter = mentorProjectAdapter
+    }
 
-        // Second RV
-        val rv_mentor_project: RecyclerView = binding.rvMentorProject
-        rv_mentor_project.layoutManager = LinearLayoutManager(requireActivity())
+    private fun setMentor() {
+        binding.rvMentor.layoutManager =
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvMentor.adapter = mentorAdapter
+    }
 
-        val adapter2 = ProjectAdapter(lstProject)
-        rv_mentor_project.adapter = adapter2
+    private fun observeViewModel() {
+        viewModel.getProjects()
+        viewModel.getMentorProjects()
+        viewModel.getMentors()
+        viewModel.projectPagingLiveData.observe(viewLifecycleOwner) {
+            handleProjectResult(it)
+        }
+        viewModel.mentorProjectPagingLiveData.observe(viewLifecycleOwner) {
+            handleMentorProjectResult(it)
+        }
+        viewModel.mentorPagingLiveData.observe(viewLifecycleOwner) {
+            handleMentorResult(it)
+        }
 
-        // Third RV
-        val rv_mentor = binding.rvMentor
-        rv_mentor.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+    }
 
-        val adapter3 = MentorAdapter(lstMentor)
-        rv_mentor.adapter = adapter3
 
+    private fun handleProjectResult(pagingData: PagingData<Project>) {
+        lifecycleScope.launch {
+            projectAdapter.submitData(pagingData)
+        }
+    }
+
+    private fun handleMentorProjectResult(pagingData: PagingData<Project>) {
+        lifecycleScope.launch {
+            mentorProjectAdapter.submitData(pagingData)
+        }
+    }
+
+    private fun handleMentorResult(pagingData: PagingData<Mentor>) {
+        lifecycleScope.launch {
+            mentorAdapter.submitData(pagingData)
+        }
     }
 }

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.breel.R
 import com.example.breel.databinding.FragmentMentorTabBinding
-import com.example.breel.ui.fragment.home.DummyMentor
 import com.example.breel.ui.fragment.home.MentorAdapter
 
 class MentorTabFragment : Fragment() {
@@ -28,17 +27,10 @@ class MentorTabFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var lstMentor = listOf<DummyMentor>(
-            DummyMentor("Lorem Ipsum", "1.000.000"),
-            DummyMentor("Lorem Ipsum", "2.000.000"),
-            DummyMentor("Lorem Ipsum", "3.000.000"),
-            DummyMentor("Lorem Ipsum", "4.000.000"),
-            )
-
         val rv = binding.rvMentor
         rv.layoutManager = GridLayoutManager(requireActivity(), 2)
 
-        val adapter = MentorAdapter(lstMentor)
+        val adapter = MentorAdapter(requireContext())
         rv.adapter = adapter
     }
 }

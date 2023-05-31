@@ -1,29 +1,56 @@
 package com.example.breel.ui.fragment.home
 
-import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.breel.data.repository.user.UserRepository
+import androidx.paging.PagingData
+import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.project.Project
+import com.example.breel.data.repository.mentor.MentorRepository
+import com.example.breel.data.repository.project.ProjectRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val userRepository: UserRepository
-): ViewModel() {
+    private val projectRepository: ProjectRepository,
+    private val mentorRepository: MentorRepository
+) : ViewModel() {
+    val projectPagingLiveData: MutableLiveData<PagingData<Project>> by lazy {
+        MutableLiveData<PagingData<Project>>()
+    }
 
-    fun getUserProfile() {
+    val mentorProjectPagingLiveData: MutableLiveData<PagingData<Project>> by lazy {
+        MutableLiveData<PagingData<Project>>()
+    }
+
+    val mentorPagingLiveData: MutableLiveData<PagingData<Mentor>> by lazy {
+        MutableLiveData<PagingData<Mentor>>()
+    }
+
+    fun getProjects() {
         viewModelScope.launch {
-//            userRepository.getProfile().collect {
-//                Log.d("HomeViewModel", "$it")
-//            }
-//            userRepository.getUserMentors().collect {
-//                Log.d("getUserMentors", "$it")
-//            }
-//            userRepository.getProfile("ogrlVRdYjIOzGYmxDhQdCXTQzi62").collect {
-//                Log.d("getUserMentors", "$it")
-//            }
+            projectRepository.getProjectsPaging().collectLatest {
+                projectPagingLiveData.postValue(it)
+            }
+        }
+    }
+
+    fun getMentorProjects() {
+        viewModelScope.launch {
+            projectRepository.getProjectsPaging(isMentored = true).collectLatest {
+                mentorProjectPagingLiveData.postValue(it)
+            }
+        }
+    }
+
+    fun getMentors() {
+        viewModelScope.launch {
+            mentorRepository.getMentors().collectLatest {
+                mentorPagingLiveData.postValue(it)
+            }
         }
     }
 }

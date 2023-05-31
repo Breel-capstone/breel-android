@@ -10,12 +10,11 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toTopOf="@id/bottom_nav"
+        android:fadeScrollbars="true"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="16dp"
-        android:fadeScrollbars="true">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,16 +25,10 @@
                 android:id="@+id/tv_greeting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hai, User!"
-                android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium" />
-
-            <TextView
-                android:id="@+id/tv_wording"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Proyek menantimu."
+                android:layout_marginBottom="28dp"
+                android:text="@string/welcome_text"
                 android:textAppearance="@style/TextAppearance.Breel.HeadlineMedium"
-                android:layout_marginBottom="28dp"/>
+                android:textStyle="bold" />
 
             <com.google.android.material.search.SearchBar
                 android:id="@+id/search_view"
@@ -43,23 +36,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="28dp"
-                android:hint="Cari proyek atau mentor"/>
+                android:hint="Cari proyek atau mentor"
+                app:defaultMarginsEnabled="false" />
 
             <RelativeLayout
                 android:id="@+id/project_client"
                 android:layout_width="match_parent"
                 android:layout_height="386dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/background_rv_projectclient"
-                android:padding="24dp"
-                android:layout_marginBottom="40dp">
+                android:padding="24dp">
 
                 <com.google.android.flexbox.FlexboxLayout
                     android:id="@+id/ll_project_client"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:justifyContent="space_between"
+                    android:layout_marginBottom="16dp"
                     app:alignItems="baseline"
-                    android:layout_marginBottom="16dp">
+                    app:justifyContent="space_between">
 
                     <TextView
                         android:id="@+id/tv_project_client"
@@ -83,12 +77,22 @@
 
                 </com.google.android.flexbox.FlexboxLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_client_project"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/ll_project_client"
-                    android:layout_alignParentBottom="true" />
+                    android:layout_alignParentBottom="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_client_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true" />
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
@@ -96,17 +100,17 @@
                 android:id="@+id/project_mentor"
                 android:layout_width="match_parent"
                 android:layout_height="386dp"
+                android:layout_marginBottom="40dp"
                 android:background="@drawable/background_rv_projectmentor"
-                android:padding="24dp"
-                android:layout_marginBottom="40dp">
+                android:padding="24dp">
 
                 <com.google.android.flexbox.FlexboxLayout
                     android:id="@+id/ll_project_mentor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:justifyContent="space_between"
+                    android:layout_marginBottom="16dp"
                     app:alignItems="baseline"
-                    android:layout_marginBottom="16dp">
+                    app:justifyContent="space_between">
 
                     <TextView
                         android:id="@+id/tv_project_mentor"
@@ -130,38 +134,45 @@
 
                 </com.google.android.flexbox.FlexboxLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_mentor_project"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/ll_project_mentor"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_mentor_project"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/mentor"
                 android:layout_width="match_parent"
-                android:layout_height="306dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
                 android:background="@drawable/background_rv_mentor"
-                android:padding="24dp"
-                android:layout_marginBottom="100dp">
+                android:padding="24dp">
 
                 <com.google.android.flexbox.FlexboxLayout
                     android:id="@+id/ll_mentor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:justifyContent="space_between"
+                    android:layout_marginBottom="16dp"
                     app:alignItems="baseline"
-                    android:layout_marginBottom="16dp">
+                    app:justifyContent="space_between">
 
                     <TextView
                         android:id="@+id/tv_mentor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proyek Mentor"
+                        android:text="Mentor"
                         android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
-                        android:textColor="@color/green_hookers_900"
+                        android:textColor="?attr/colorPrimaryDark"
                         android:textStyle="bold" />
 
                     <TextView
@@ -172,7 +183,7 @@
                         android:onClick="onClick"
                         android:text="Lihat Semua"
                         android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
-                        android:textColor="@color/green_hookers_900"
+                        android:textColor="?attr/colorPrimaryDark"
                         android:textStyle="bold" />
 
                 </com.google.android.flexbox.FlexboxLayout>
@@ -180,9 +191,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_mentor"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/ll_mentor"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true" />
 
             </RelativeLayout>
 

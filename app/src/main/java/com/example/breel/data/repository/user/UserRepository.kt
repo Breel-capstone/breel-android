@@ -5,7 +5,7 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.api.BackendResponse
 import com.example.breel.data.api.BackendResponseNoData
-import com.example.breel.data.api.mentor.Mentor
+import com.example.breel.data.api.mentor.MyMentor
 import com.example.breel.data.api.user.detail.RegisterDetailRequest
 import com.example.breel.data.api.user.detail.User
 import com.example.breel.data.api.user.detail.UserExperience
@@ -120,7 +120,7 @@ class UserRepository @Inject constructor(
         page: Int?,
         limit: Int?,
         disableLimit: Boolean?
-    ): Flow<Resource<BackendResponse<List<Mentor>>>> {
+    ): Flow<Resource<BackendResponse<List<MyMentor>>>> {
         return flow {
             emit(Resource.Loading())
             val token = userUtil.getUserBearerToken()
