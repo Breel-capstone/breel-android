@@ -3,7 +3,9 @@ package com.example.breel.ui.fragment.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.breel.R
 import com.example.breel.databinding.ItemProjectBinding
+import com.google.android.material.chip.Chip
 
 class ProjectAdapter(private val listProject: List<DummyProject>) : RecyclerView.Adapter<ProjectAdapter.ViewHolder>() {
 
@@ -35,6 +37,12 @@ class ProjectAdapter(private val listProject: List<DummyProject>) : RecyclerView
         // iteratu thru skill (list).
         // for each, create chip inside flexbox.
 
+        var tempChip: Chip
+        skill.forEach {
+            tempChip = Chip(holder.itemView.context)
+            tempChip.text = it
+            holder.binding.chipGroup.addView(tempChip)
+        }
     }
 
     class ViewHolder(var binding: ItemProjectBinding) : RecyclerView.ViewHolder(binding.root)
