@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="144dp"
     android:layout_height="212dp"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="@drawable/background_mentor"
-    android:paddingVertical="20dp"
-    android:paddingHorizontal="6dp"
     android:layout_marginRight="6dp"
-    android:layout_marginBottom="24dp">
+    android:layout_marginBottom="24dp"
+    android:background="@drawable/background_mentor"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="6dp"
+    android:paddingVertical="20dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_profile_picture"
         android:layout_width="82dp"
         android:layout_height="82dp"
-        tools:src="@tools:sample/avatars"/>
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -23,8 +24,8 @@
         android:layout_height="wrap_content"
         android:text="Lorem Ipsum"
         android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
-        android:textStyle="bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_salary"
@@ -32,6 +33,17 @@
         android:layout_height="wrap_content"
         android:text="1.000.000"
         android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:dividerDrawable="@drawable/divider_profile_register_detail_chip"
+        app:flexWrap="wrap"
+        app:justifyContent="space_between">
+
+    </com.google.android.flexbox.FlexboxLayout>
 
 </LinearLayout>

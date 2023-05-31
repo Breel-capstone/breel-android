@@ -8,11 +8,14 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.breel.R
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.mentor.MyMentor
 import com.example.breel.databinding.ItemMentorBinding
+import com.google.android.material.chip.Chip
 
-class MentorAdapter constructor(private val context: Context) : PagingDataAdapter<Mentor, MentorAdapter.ViewHolder>(MENTOR_COMPARATOR) {
+class MentorAdapter constructor(private val context: Context) :
+    PagingDataAdapter<Mentor, MentorAdapter.ViewHolder>(MENTOR_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemMentorBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -32,8 +35,15 @@ class MentorAdapter constructor(private val context: Context) : PagingDataAdapte
         fun bind(mentor: Mentor) {
             binding.tvName.text = mentor.fullName
             binding.tvSalary.text = mentor.price.toString()
-            Log.d(TAG, "bind: ${mentor.profileUrl}")
-            Glide.with(context)
+            for (skill in mentor.skills) {
+                val skillView = LayoutInflater.from(binding.root.context)
+                    .inflate(R.layout.item_profile_chip_skill, null) as Chip
+                
+
+                skillView.text = skill
+                binding.chipGroup.addView(skillView)
+            }
+            Glide.with(binding.root.context)
                 .load(mentor.profileUrl)
                 .into(binding.ivProfilePicture)
         }
