@@ -11,12 +11,14 @@ import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.example.breel.R
 import com.example.breel.databinding.FragmentSearchingBinding
+import com.example.breel.ui.component.MainActionBar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class SearchingFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchingBinding
+    private lateinit var mainActionBar: MainActionBar
 
     companion object {
         @StringRes
@@ -34,6 +36,7 @@ class SearchingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSearchingBinding.inflate(inflater, container, false)
+        setUpActionBar()
         setUpTabLayoutWithViewPager()
         return binding.root
     }
@@ -56,5 +59,11 @@ class SearchingFragment : Fragment() {
 //            textView.width = ww / 3
             binding.tabLayout.getTabAt(i)?.customView = textView
         }
+    }
+
+    private fun setUpActionBar() {
+        mainActionBar = MainActionBar(this)
+        mainActionBar.setTitle("Pencarian")
+        mainActionBar.setBackButton()
     }
 }
