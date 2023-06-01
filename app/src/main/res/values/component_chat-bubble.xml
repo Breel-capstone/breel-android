@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.ChatBubble" parent="Widget.AppCompat.TextView">
+        <item name="background">@drawable/background_chatbubble</item>
+        <item name="maxWidth">300dp</item>
+    </style>
+</resources>
