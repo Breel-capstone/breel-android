@@ -5,18 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.chat.ChatFragment"
-    android:padding="16dp">
+    android:fitsSystemWindows="true"
+    android:layout_alignParentBottom="true">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="72dp"/>
 
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:padding="8dp"
         android:layout_alignParentBottom="true">
 
         <ImageView
@@ -34,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingHorizontal="4dp"
-            android:backgroundTint="@color/white">
+            android:backgroundTint="@color/white"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_type"

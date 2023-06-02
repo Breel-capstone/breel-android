@@ -9,10 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.R
 import com.example.breel.databinding.FragmentChatBinding
+import com.example.breel.ui.component.MainActionBar
 
 class ChatFragment : Fragment() {
 
     private lateinit var binding: FragmentChatBinding
+    private lateinit var mainActionBar: MainActionBar
 
     companion object {
         const val TAG = "ChatFragment"
@@ -24,6 +26,7 @@ class ChatFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentChatBinding.inflate(inflater, container, false)
+        setUpActionBar()
         return binding.root
     }
 
@@ -42,5 +45,12 @@ class ChatFragment : Fragment() {
 
         val adapter = MessageAdapter(lst)
         rv.adapter = adapter
+    }
+
+    private fun setUpActionBar() {
+        mainActionBar = MainActionBar(this)
+        // todo: change the title to the recipient's name
+        mainActionBar.setTitle("Chat")
+        mainActionBar.setBackButton()
     }
 }

@@ -1,6 +1,7 @@
 package com.example.breel.ui.activity.testing
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +10,7 @@ import com.example.breel.R
 import com.example.breel.databinding.ActivityTestBinding
 import com.example.breel.ui.fragment.chat.MessageAdapter
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class TestActivity : AppCompatActivity() {
@@ -24,6 +26,7 @@ class TestActivity : AppCompatActivity() {
         setContentView(binding.root)
 //        setSupportActionBar(binding.toolbar)
         supportActionBar?.hide()
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
 
         val lst = listOf(
             getString(R.string.lorem_2sen),
@@ -31,7 +34,11 @@ class TestActivity : AppCompatActivity() {
             getString(R.string.lorem_2sen),
             getString(R.string.lorem_2sen),
             getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen)
+            getString(R.string.lorem_2sen),
+            getString(R.string.lorem_2sen),
+            getString(R.string.lorem_2sen),
+            getString(R.string.lorem_2sen),
+            getString(R.string.lorem_2sen),
         )
 
         val rv: RecyclerView = binding.recyclerView
