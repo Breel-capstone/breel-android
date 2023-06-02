@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/test_navigation"
-    app:startDestination="@id/registerDetailFragment">
+    app:startDestination="@id/chatFragment">
 
     <fragment
-        android:id="@+id/registerDetailFragment"
-        android:name="com.example.breel.ui.fragment.authentication.detail.RegisterDetailFragment"
-        android:label="fragment_register_detail"
-        tools:layout="@layout/fragment_register_detail" />
+        android:id="@+id/chatFragment"
+        android:name="com.example.breel.ui.fragment.searching.SearchingFragment"
+        android:label="fragment_searching"
+        tools:layout="@layout/fragment_chat" />
 </navigation>
