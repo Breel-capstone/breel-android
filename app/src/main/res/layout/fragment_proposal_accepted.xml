@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.notification.ProposalAcceptedFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_gravity="center"
+    android:paddingHorizontal="22dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/diterima"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_congratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selamat, kamu lolos!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold"
+        android:layout_marginBottom="4dp"
+        android:textColor="@color/green_hookers_900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="untuk posisi Web Develop dengan Agnes Monika. Pelajari dulu tawaran ini sebelum merespon ya!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:layout_marginBottom="36dp"
+        android:textColor="@color/green_hookers_900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Batas respon 23 Mei 2023."
+        android:textAlignment="center"
+        android:layout_marginBottom="58dp"
+        android:textColor="@color/green_hookers_900"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:justifyContent="center">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Breel.Button.Outline.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tolak" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Breel.Button.Filled.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terima" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+</LinearLayout>
