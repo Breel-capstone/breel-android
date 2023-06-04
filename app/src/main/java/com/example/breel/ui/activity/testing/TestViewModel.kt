@@ -3,6 +3,7 @@ package com.example.breel.ui.activity.testing
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.breel.data.repository.chat.ChatRepository
 import com.example.breel.data.repository.project.ProjectRepository
 import com.example.breel.data.repository.user.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -11,16 +12,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TestViewModel @Inject constructor(
-    private val userRepository: UserRepository,
-    private val projectRepository: ProjectRepository
+    private val chatRepository: ChatRepository
 ) : ViewModel() {
     fun test() {
+        Log.d("TestViewModel", "test: ")
         viewModelScope.launch {
-//            projectRepository.respondProposal(1, 1, "Accepted", 1).collect {
-//                Log.d(this.toString(), "$it")
-//            }
-            userRepository.checkUserDetailComplete().collect {
-                Log.d("TestViewModel", "${it}")
+            chatRepository.getChatList().collect {
+                Log.d("TestViewModel", "$it")
             }
         }
     }

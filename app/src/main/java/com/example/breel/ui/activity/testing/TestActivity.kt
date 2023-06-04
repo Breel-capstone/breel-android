@@ -24,28 +24,6 @@ class TestActivity : AppCompatActivity() {
         viewModel.test()
         _binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setSupportActionBar(binding.toolbar)
-        supportActionBar?.hide()
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-
-        val lst = listOf(
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-            getString(R.string.lorem_2sen),
-        )
-
-        val rv: RecyclerView = binding.recyclerView
-        rv.layoutManager = LinearLayoutManager(this)
-
-        val adapter = MessageAdapter(lst)
-        rv.adapter = adapter
     }
 
 
