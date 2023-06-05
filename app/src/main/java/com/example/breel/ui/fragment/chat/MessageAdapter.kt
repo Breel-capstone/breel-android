@@ -1,15 +1,31 @@
 package com.example.breel.ui.fragment.chat
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.breel.data.model.chat.Message
 import com.example.breel.databinding.ItemMessageBinding
-import com.example.breel.ui.fragment.notification.NotificationAdapter
 
-class MessageAdapter(private val listMessages: List<String>) : RecyclerView.Adapter<MessageAdapter.ViewHolder>() {
 
-    companion object {
-        const val TAG = "MessageAdapter"
+class MessageAdapter(private val uid: String) :
+    ListAdapter<Message, MessageAdapter.ViewHolder>(MessageDiffCallback()) {
+
+    inner class ViewHolder(private val binding: ItemMessageBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(message: Message) {
+            binding.tvMessage.text = message.text
+
+            if (message.sender == uid) {
+                binding.messageContainer.gravity = Gravity.RIGHT
+            }
+            else {
+                binding.messageContainer.gravity = Gravity.LEFT
+
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,14 +33,19 @@ class MessageAdapter(private val listMessages: List<String>) : RecyclerView.Adap
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return listMessages.size
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.tvMessage.text = listMessages[position]
+        val message = getItem(position)
+        holder.bind(message)
     }
 
-    class ViewHolder(var binding: ItemMessageBinding) : RecyclerView.ViewHolder(binding.root)
+    // Create a custom DiffUtil.ItemCallback for Message
+    class MessageDiffCallback : DiffUtil.ItemCallback<Message>() {
+        override fun areItemsTheSame(oldItem: Message, newItem: Message): Boolean {
+            return oldItem === newItem // Modify this based on your item uniqueness logic
+        }
 
+        override fun areContentsTheSame(oldItem: Message, newItem: Message): Boolean {
+            return oldItem.text == newItem.text
+        }
+    }
 }

@@ -7,60 +7,11 @@
     tools:context=".ui.fragment.chat.ChatFragment"
     android:fitsSystemWindows="true"
     android:layout_alignParentBottom="true">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:paddingHorizontal="16dp"
-        android:layout_marginBottom="72dp"/>
-
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="8dp"
-        android:layout_alignParentBottom="true">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="40dp"
-            android:minHeight="40dp"
-            android:src="@drawable/ic_add_p900"
-            android:clickable="true"
-            android:onClick="onClick" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingHorizontal="4dp"
-            android:backgroundTint="@color/white"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ketik pesan"
-                android:backgroundTint="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="32dp"
-            android:minWidth="32dp"
-            android:src="@drawable/ic_send_p900"
-            android:clickable="true"
-            android:onClick="onClick"/>
-
-    </LinearLayout>
-
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/test_navigation" />
 </RelativeLayout>
