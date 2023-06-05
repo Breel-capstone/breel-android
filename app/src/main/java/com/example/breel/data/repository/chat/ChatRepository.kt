@@ -5,7 +5,7 @@ import com.example.breel.data.Resource
 import com.example.breel.data.api.ApiService
 import com.example.breel.data.model.chat.ChatList
 import com.example.breel.data.model.chat.ChatRoom
-import com.example.breel.data.model.chat.ChatRoomReference
+import com.example.breel.data.model.chat.ChatRoomData
 import com.example.breel.data.model.chat.Message
 import com.example.breel.data.model.chat.Participant
 import com.example.breel.utils.UserUtil
@@ -78,7 +78,7 @@ class ChatRepository @Inject constructor(
             val chatListRef = fireStoreDb.collection("chat_list").document(myProfileData.uid)
             val updateField = hashMapOf<String, Any>(
                 "chat_rooms" to FieldValue.arrayUnion(
-                    ChatRoomReference(
+                    ChatRoomData(
                         receiver,
                         chatRoomRefResult
                     )
@@ -113,5 +113,24 @@ class ChatRepository @Inject constructor(
         }
     }
 
-
+    fun sendMessage(
+        text: String,
+        chatRoomReference: DocumentReference
+    ): Flow<Resource<Message>> {
+        return flow {
+            emit(Resource.Loading())
+            val uid = firebaseAuth.uid
+            val sendMessage = Message(uid, text)
+            val updateField = hashMapOf<String, Any>(
+                "messages" to FieldValue.arrayUnion(
+                    sendMessage
+                )
+            )
+            chatRoomReference.update(updateField).await()
+            emit(Resource.Success(sendMessage))
+        }.catch {
+            Log.e("ChatRepository", "createChatRoom: $it")
+            emit(Resource.DataError(it.hashCode(), it.message))
+        }
+    }
 }

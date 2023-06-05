@@ -21,6 +21,9 @@ class TestViewModel @Inject constructor(
                 if (it is Resource.Success) {
                     val reference = it.data?.chat_rooms?.get(0)?.reference
                     reference?.let {
+                        chatRepository.sendMessage("hello", reference).collect { message ->
+                            Log.d(TAG, "addMessage: $message")
+                        }
                         chatRepository.addMessageSnapshotListener(reference, successCallBack)
                     }
                 }
