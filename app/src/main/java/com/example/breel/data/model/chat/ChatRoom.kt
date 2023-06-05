@@ -8,13 +8,13 @@ data class ChatRoom(
 )
 
 data class Participant(
-    val uid: String,
-    val name: String,
-    val profileUrl: String
+    val uid: String? = null,
+    val name: String? = null,
+    val profileUrl: String? = null
 )
 
 data class Message(
-    val sender: String,
-    val text: String,
-    val timestamp: Timestamp
+    val sender: String? = null,
+    val text: String? = null,
+    val timestamp: Timestamp = Timestamp.now()
 )

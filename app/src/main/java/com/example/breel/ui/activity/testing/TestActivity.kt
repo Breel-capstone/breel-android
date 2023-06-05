@@ -1,14 +1,10 @@
 package com.example.breel.ui.activity.testing
 
 import android.os.Bundle
-import android.view.WindowManager
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
 import com.example.breel.databinding.ActivityTestBinding
-import com.example.breel.ui.fragment.chat.MessageAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -21,7 +17,9 @@ class TestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.test()
+        viewModel.test {
+            Log.d(TAG, "onCreate: $it")
+        }
         _binding = ActivityTestBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
@@ -30,5 +28,9 @@ class TestActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    companion object {
+        const val TAG = "TestActivity"
     }
 }

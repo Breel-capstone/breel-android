@@ -3,6 +3,8 @@ package com.example.breel.ui.activity.testing
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.breel.data.Resource
+import com.example.breel.data.model.chat.Message
 import com.example.breel.data.repository.chat.ChatRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -12,12 +14,21 @@ import javax.inject.Inject
 class TestViewModel @Inject constructor(
     private val chatRepository: ChatRepository
 ) : ViewModel() {
-    fun test() {
-        Log.d("TestViewModel", "test: ")
+    fun test(successCallBack: (messages: List<Message>) -> Unit) {
         viewModelScope.launch {
-            chatRepository.createChatRoom("E2cyCoEW1dcmC0NGG5O21ZAEcX53").collect {
-                Log.d("TestViewModel", "test: $it")
+            chatRepository.getChatList().collect {
+                Log.d(TAG, "test: $it")
+                if (it is Resource.Success) {
+                    val reference = it.data?.chat_rooms?.get(0)?.reference
+                    reference?.let {
+                        chatRepository.addMessageSnapshotListener(reference, successCallBack)
+                    }
+                }
             }
         }
+    }
+
+    companion object {
+        const val TAG = "TestViewModel"
     }
 }

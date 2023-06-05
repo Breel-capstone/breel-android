@@ -6,6 +6,7 @@ import com.example.breel.data.api.ApiService
 import com.example.breel.data.model.chat.ChatList
 import com.example.breel.data.model.chat.ChatRoom
 import com.example.breel.data.model.chat.ChatRoomReference
+import com.example.breel.data.model.chat.Message
 import com.example.breel.data.model.chat.Participant
 import com.example.breel.utils.UserUtil
 import com.google.firebase.auth.FirebaseAuth
@@ -38,6 +39,7 @@ class ChatRepository @Inject constructor(
 
             val snapshot = chatListRef.get().await()
             if (snapshot.exists()) {
+                Log.d("ChatRespository", "getChatList: ${snapshot.data}")
                 val chatList = snapshot.toObject(ChatList::class.java)
                 emit(Resource.Success(data = chatList!!))
                 return@flow
@@ -51,7 +53,7 @@ class ChatRepository @Inject constructor(
         }
     }
 
-    fun createChatRoom(uid: String): Flow<Resource<DocumentReference>> {
+    override fun createChatRoom(uid: String): Flow<Resource<DocumentReference>> {
         return flow {
             emit(Resource.Loading())
             val token = userUtil.getUserBearerToken()
@@ -90,4 +92,26 @@ class ChatRepository @Inject constructor(
             emit(Resource.DataError(it.hashCode(), it.message))
         }
     }
+
+    override fun addMessageSnapshotListener(
+        chatRoomReference: DocumentReference,
+        successCallBack: (messages: List<Message>) -> Unit
+    ) {
+        chatRoomReference.addSnapshotListener { snapshots, e ->
+            if (e != null) {
+                Log.w("ChatRepository", "listen:error", e)
+                return@addSnapshotListener
+            }
+
+            snapshots?.let {
+                val chatRoom = it.toObject(ChatRoom::class.java)
+                chatRoom?.let {
+                    successCallBack(chatRoom.messages)
+                    return@addSnapshotListener
+                }
+            }
+        }
+    }
+
+
 }
