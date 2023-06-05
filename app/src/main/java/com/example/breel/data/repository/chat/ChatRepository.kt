@@ -15,7 +15,10 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.drop
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.skip
 import kotlinx.coroutines.tasks.await
 import retrofit2.await
 import javax.inject.Inject
@@ -27,10 +30,10 @@ class ChatRepository @Inject constructor(
     private val userUtil: UserUtil
 ) : ChatRepositorySource {
 
-    override fun getChatList(): Flow<Resource<ChatList>> {
+    override fun getChatList(uid: String?): Flow<Resource<ChatList>> {
         return flow {
             emit(Resource.Loading())
-            val userId = firebaseAuth.uid ?: run {
+            val userId = uid ?: firebaseAuth.uid ?: run {
                 emit(Resource.DataError(0, "User ID is null"))
                 return@flow
             }
@@ -75,16 +78,33 @@ class ChatRepository @Inject constructor(
             val chatRoom = ChatRoom(participants)
             val chatRoomRefResult = chatRoomRef.add(chatRoom).await()
 
-            val chatListRef = fireStoreDb.collection("chat_list").document(myProfileData.uid)
-            val updateField = hashMapOf<String, Any>(
+            getChatList(profileData.uid).drop(1).first()
+            getChatList(myProfileData.uid).drop(1).first()
+
+            val chatListRefSender = fireStoreDb.collection("chat_list").document(myProfileData.uid)
+            val updateFieldSender = hashMapOf<String, Any>(
                 "chat_rooms" to FieldValue.arrayUnion(
                     ChatRoomData(
                         receiver,
-                        chatRoomRefResult
+                        chatRoomRefResult,
+                        "Halo terimakasih sudah chat"
                     )
                 )
             )
-            chatListRef.update(updateField).await()
+            chatListRefSender.update(updateFieldSender).await()
+
+            val chatListRefReceiver = fireStoreDb.collection("chat_list").document(profileData.uid)
+
+            val updateFieldReceiver = hashMapOf<String, Any>(
+                "chat_rooms" to FieldValue.arrayUnion(
+                    ChatRoomData(
+                        sender,
+                        chatRoomRefResult,
+                        "Halo terimakasih sudah chat"
+                    )
+                )
+            )
+            chatListRefReceiver.update(updateFieldReceiver).await()
 
             emit(Resource.Success(chatRoomRefResult))
         }.catch {

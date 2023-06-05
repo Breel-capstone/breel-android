@@ -7,5 +7,6 @@ data class ChatList(
 )
 data class ChatRoomData(
     val receiver: Participant? = null,
-    val reference: DocumentReference? = null
+    val reference: DocumentReference? = null,
+    val lastMessage: String? = null
 )

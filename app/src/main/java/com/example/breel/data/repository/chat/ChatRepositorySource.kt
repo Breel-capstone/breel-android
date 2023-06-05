@@ -7,7 +7,7 @@ import com.google.firebase.firestore.DocumentReference
 import kotlinx.coroutines.flow.Flow
 
 interface ChatRepositorySource {
-    fun getChatList(): Flow<Resource<ChatList>>
+    fun getChatList(uid: String? = null): Flow<Resource<ChatList>>
 
     fun createChatRoom(uid: String): Flow<Resource<DocumentReference>>
 
