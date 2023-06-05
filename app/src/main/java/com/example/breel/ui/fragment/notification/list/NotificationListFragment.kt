@@ -1,27 +1,27 @@
-package com.example.breel.ui.fragment.notification
+package com.example.breel.ui.fragment.notification.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
-import com.example.breel.databinding.FragmentPemberitahuanBinding
+import com.example.breel.data.model.notification.DummyNotification
+import com.example.breel.databinding.FragmentNotificationListBinding
+import com.example.breel.ui.fragment.notification.NotificationAdapter
 
 
-class PemberitahuanFragment : Fragment() {
+class NotificationListFragment : Fragment() {
 
-    private lateinit var binding: FragmentPemberitahuanBinding
+    private lateinit var binding: FragmentNotificationListBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentPemberitahuanBinding.inflate(inflater, container, false)
+        binding = FragmentNotificationListBinding.inflate(inflater, container, false)
         return binding.root
     }
 

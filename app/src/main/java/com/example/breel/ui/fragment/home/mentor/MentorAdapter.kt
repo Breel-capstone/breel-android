@@ -1,7 +1,6 @@
-package com.example.breel.ui.fragment.home
+package com.example.breel.ui.fragment.home.mentor
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.breel.R
 import com.example.breel.data.api.mentor.Mentor
-import com.example.breel.data.api.mentor.MyMentor
 import com.example.breel.databinding.ItemMentorBinding
 import com.google.android.material.chip.Chip
 

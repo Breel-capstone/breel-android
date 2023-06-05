@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.chat.ChatFragment"
+    tools:context=".ui.fragment.chat.ChatRoomFragment"
     android:fitsSystemWindows="true"
     android:layout_alignParentBottom="true">
     <androidx.fragment.app.FragmentContainerView

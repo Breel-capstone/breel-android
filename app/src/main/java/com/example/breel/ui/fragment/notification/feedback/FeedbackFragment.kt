@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.notification
+package com.example.breel.ui.fragment.notification.feedback
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
+import com.example.breel.data.model.notification.DummyNotification
 import com.example.breel.databinding.FragmentRekapSaranBinding
+import com.example.breel.ui.fragment.notification.NotificationAdapter
 
 
-class RekapSaranFragment : Fragment() {
+class FeedbackFragment : Fragment() {
 
     private lateinit var binding: FragmentRekapSaranBinding
 

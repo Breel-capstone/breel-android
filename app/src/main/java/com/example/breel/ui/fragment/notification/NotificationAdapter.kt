@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.breel.data.model.notification.DummyNotification
 import com.example.breel.databinding.ItemNotificationBinding
 
 class NotificationAdapter(private val listNotification: List<DummyNotification>) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {

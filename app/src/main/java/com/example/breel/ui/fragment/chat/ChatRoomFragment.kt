@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.Resource
 import com.example.breel.data.model.chat.Message
-import com.example.breel.databinding.FragmentChatBinding
+import com.example.breel.databinding.FragmentChatRoomBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.component.StatusSnackBar
 import com.google.firebase.auth.FirebaseAuth
@@ -20,12 +20,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ChatFragment : Fragment() {
+class ChatRoomFragment : Fragment() {
 
     private lateinit var statusSnackBar: StatusSnackBar
     private val viewModel: ChatViewModel by viewModels()
     private lateinit var messageAdapter: MessageAdapter
-    private lateinit var binding: FragmentChatBinding
+    private lateinit var binding: FragmentChatRoomBinding
     private lateinit var mainActionBar: MainActionBar
     private lateinit var chatRoomReference: DocumentReference
 
@@ -44,7 +44,7 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentChatBinding.inflate(inflater, container, false)
+        binding = FragmentChatRoomBinding.inflate(inflater, container, false)
         setUpActionBar()
         chatRoomReference = fireStoreDb.document("chat_room/amLXJKISnEjg2eD9YnIz")
         return binding.root

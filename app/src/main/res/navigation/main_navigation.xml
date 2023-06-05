@@ -11,12 +11,6 @@
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/auth_group" />
-        <action
-            android:id="@+id/action_splashFragment_to_notificationFragment"
-            app:destination="@id/notificationFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_searchingFragment"
-            app:destination="@id/searchingFragment" />
     </fragment>
     <navigation android:id="@+id/auth_group"
         app:startDestination="@id/loginFragment">
@@ -70,23 +64,13 @@
         </fragment>
         <fragment
             android:id="@+id/projectFormFragment"
-            android:name="com.example.breel.ui.fragment.home.ProjectFormFragment"
+            android:name="com.example.breel.ui.fragment.home.project.ProjectFormFragment"
             android:label="fragment_project_form"
             tools:layout="@layout/fragment_project_form" />
         <fragment
             android:id="@+id/mentoringFormFragment"
-            android:name="com.example.breel.ui.fragment.home.MentoringFormFragment"
+            android:name="com.example.breel.ui.fragment.home.mentor.MentoringFormFragment"
             android:label="fragment_mentoring_form"
             tools:layout="@layout/fragment_mentoring_form" />
     </navigation>
-    <fragment
-        android:id="@+id/notificationFragment"
-        android:name="com.example.breel.ui.fragment.notification.NotificationFragment"
-        android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
-    <fragment
-        android:id="@+id/searchingFragment"
-        android:name="com.example.breel.ui.fragment.searching.SearchingFragment"
-        android:label="fragment_searching"
-        tools:layout="@layout/fragment_searching" />
 </navigation>

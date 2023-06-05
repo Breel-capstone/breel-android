@@ -1,9 +1,10 @@
 package com.example.breel.ui.fragment.notification
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.breel.ui.fragment.notification.feedback.FeedbackFragment
+import com.example.breel.ui.fragment.notification.list.NotificationListFragment
 
 class SectionsPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
     override fun getItemCount(): Int {
@@ -13,8 +14,8 @@ class SectionsPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(ac
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
-            0 -> fragment = PemberitahuanFragment()
-            1 -> fragment = RekapSaranFragment()
+            0 -> fragment = NotificationListFragment()
+            1 -> fragment = FeedbackFragment()
         }
         return fragment as Fragment
     }
