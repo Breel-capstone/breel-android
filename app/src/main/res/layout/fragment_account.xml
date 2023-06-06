@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.account.AccountFragment"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@tools:sample/avatars"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profil Saya"
+        style="?android:borderlessButtonStyle"
+        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_person"
+        app:iconTint="@color/black"
+        android:textAlignment="textStart" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        style="?android:borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mentoring"
+        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_people"
+        app:iconTint="@color/black"
+        android:textAlignment="textStart" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dompet Saya"
+        style="?android:borderlessButtonStyle"
+        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_setting"
+        app:iconTint="@color/black"
+        android:textAlignment="textStart" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pengaturan"
+        style="?android:borderlessButtonStyle"
+        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_wallet"
+        app:iconTint="@color/black"
+        android:textAlignment="textStart" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keluar"
+        style="?android:borderlessButtonStyle"
+        android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
+        android:textColor="@color/errorColor"
+        android:textStyle="bold"
+        app:icon="@drawable/ic_exit"
+        app:iconTint="@color/errorColor"
+        android:textAlignment="textStart" />
+
+</LinearLayout>
