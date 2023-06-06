@@ -1,66 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.chat.ChatFragment"
-    android:fitsSystemWindows="true"
-    android:layout_alignParentBottom="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.notification.ProposalAcceptedFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:paddingHorizontal="22dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:paddingHorizontal="16dp"
-        android:layout_marginBottom="72dp"/>
+        android:src="@drawable/ditolak"
+        android:layout_marginBottom="16dp"/>
 
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="8dp"
-        android:layout_alignParentBottom="true">
+        android:text="Mohon maaf!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold"
+        android:textColor="@color/errorColor"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="40dp"
-            android:minHeight="40dp"
-            android:src="@drawable/ic_add_p900"
-            android:clickable="true"
-            android:onClick="onClick" />
+    <TextView
+        android:id="@+id/tv_subheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anda tidak terpilih untuk proyek kami."
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/errorColor"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingHorizontal="4dp"
-            android:backgroundTint="@color/white"
-            app:hintEnabled="false">
+    <TextView
+        android:id="@+id/tv_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Terima kasih atas ketertarikan dan partisipasi Anda terhadap Video Editing dengan Michael Kusumawijaya."
+        android:textAlignment="center"
+        android:layout_marginBottom="24dp"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textColor="@color/green_hookers_900"/>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Ketik pesan"
-                android:backgroundTint="@color/white"/>
-        </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/tv_closing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tetap semangat dan daftar di projek lain ya!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textColor="@color/green_hookers_900"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="32dp"
-            android:minWidth="32dp"
-            android:src="@drawable/ic_send_p900"
-            android:clickable="true"
-            android:onClick="onClick"/>
 
-    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
