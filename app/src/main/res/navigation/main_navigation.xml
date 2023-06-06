@@ -53,29 +53,23 @@
             android:id="@+id/navigationFragment"
             android:name="com.example.breel.ui.fragment.navigation.NavigationFragment"
             android:label="fragment_navigation"
-            tools:layout="@layout/fragment_navigation" />
+            tools:layout="@layout/fragment_navigation" >
+            <action
+                android:id="@+id/action_navigationFragment_to_chatRoomFragment"
+                app:destination="@id/chatRoomFragment" />
+        </fragment>
 
         <fragment
-            android:id="@+id/homeFragment"
-            android:name="com.example.breel.ui.fragment.home.HomeFragment"
-            android:label="fragment_home"
-            tools:layout="@layout/fragment_home" >
+            android:id="@+id/chatRoomFragment"
+            android:name="com.example.breel.ui.fragment.chat.room.ChatRoomFragment"
+            android:label="fragment_chat_room"
+            tools:layout="@layout/fragment_chat_room" >
             <action
-                android:id="@+id/action_homeFragment_to_projectFormFragment"
-                app:destination="@id/projectFormFragment" />
-            <action
-                android:id="@+id/action_homeFragment_to_mentoringFormFragment"
-                app:destination="@id/mentoringFormFragment" />
+                android:id="@+id/action_chatRoomFragment_to_navigationFragment"
+                app:destination="@id/navigationFragment" />
+            <argument
+                android:name="id"
+                app:argType="string" />
         </fragment>
-        <fragment
-            android:id="@+id/projectFormFragment"
-            android:name="com.example.breel.ui.fragment.home.project.ProjectFormFragment"
-            android:label="fragment_project_form"
-            tools:layout="@layout/fragment_project_form" />
-        <fragment
-            android:id="@+id/mentoringFormFragment"
-            android:name="com.example.breel.ui.fragment.home.mentor.MentoringFormFragment"
-            android:label="fragment_mentoring_form"
-            tools:layout="@layout/fragment_mentoring_form" />
     </navigation>
 </navigation>

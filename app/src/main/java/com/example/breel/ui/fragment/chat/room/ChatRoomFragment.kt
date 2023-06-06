@@ -1,7 +1,9 @@
 package com.example.breel.ui.fragment.chat.room
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -34,6 +36,7 @@ class ChatRoomFragment : Fragment() {
 
     @Inject
     lateinit var fireStoreDb: FirebaseFirestore
+    private var path: String? = null
 
     companion object {
         const val TAG = "ChatFragment"
@@ -45,9 +48,17 @@ class ChatRoomFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentChatRoomBinding.inflate(inflater, container, false)
+        mainActionBar = MainActionBar(this)
         setUpActionBar()
-        chatRoomReference = fireStoreDb.document("chat_room/amLXJKISnEjg2eD9YnIz")
+        getPath()
+        chatRoomReference = fireStoreDb.document(path ?: "")
         return binding.root
+    }
+
+    private fun getPath() {
+        arguments?.let {
+            path = ChatRoomFragmentArgs.fromBundle(it).id
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,6 +67,26 @@ class ChatRoomFragment : Fragment() {
         setMessageAdapter()
         setOnClickListener()
         observeViewModel()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mainActionBar.hideActionBar()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        setUpActionBar()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                requireActivity().onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 
@@ -92,8 +123,6 @@ class ChatRoomFragment : Fragment() {
     }
 
     private fun setUpActionBar() {
-        mainActionBar = MainActionBar(this)
-        // todo: change the title to the recipient's name
         mainActionBar.setTitle("Chat")
         mainActionBar.setBackButton()
     }

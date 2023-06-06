@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding
+import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.home.mentor.MentorAdapter
 import com.example.breel.ui.fragment.home.project.ProjectAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,6 +34,11 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        MainActionBar(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
