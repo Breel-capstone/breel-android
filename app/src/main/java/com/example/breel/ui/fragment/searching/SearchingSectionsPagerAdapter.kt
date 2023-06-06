@@ -3,8 +3,6 @@ package com.example.breel.ui.fragment.searching
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.breel.ui.fragment.notification.PemberitahuanFragment
-import com.example.breel.ui.fragment.notification.RekapSaranFragment
 
 class SearchingSectionsPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
     override fun getItemCount(): Int {
