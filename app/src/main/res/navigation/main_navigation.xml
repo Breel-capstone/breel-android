@@ -48,7 +48,12 @@
     </navigation>
 
     <navigation android:id="@+id/home_navigation"
-        app:startDestination="@id/homeFragment">
+        app:startDestination="@id/navigationFragment">
+        <fragment
+            android:id="@+id/navigationFragment"
+            android:name="com.example.breel.ui.fragment.navigation.NavigationFragment"
+            android:label="fragment_navigation"
+            tools:layout="@layout/fragment_navigation" />
 
         <fragment
             android:id="@+id/homeFragment"
