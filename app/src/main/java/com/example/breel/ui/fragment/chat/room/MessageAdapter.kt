@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.chat
+package com.example.breel.ui.fragment.chat.room
 
 import android.view.Gravity
 import android.view.LayoutInflater

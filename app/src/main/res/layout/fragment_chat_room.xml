@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
     android:fitsSystemWindows="true"
-    tools:context=".ui.fragment.chat.ChatRoomFragment">
+    tools:context=".ui.fragment.chat.room.ChatRoomFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

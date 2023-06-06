@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.chat
+package com.example.breel.ui.fragment.chat.room
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +23,7 @@ import javax.inject.Inject
 class ChatRoomFragment : Fragment() {
 
     private lateinit var statusSnackBar: StatusSnackBar
-    private val viewModel: ChatViewModel by viewModels()
+    private val viewModel: ChatRoomViewModel by viewModels()
     private lateinit var messageAdapter: MessageAdapter
     private lateinit var binding: FragmentChatRoomBinding
     private lateinit var mainActionBar: MainActionBar

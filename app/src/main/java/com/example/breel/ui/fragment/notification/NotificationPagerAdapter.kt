@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.breel.ui.fragment.notification.feedback.FeedbackFragment
 import com.example.breel.ui.fragment.notification.list.NotificationListFragment
 
-class SectionsPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
+class NotificationPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
     override fun getItemCount(): Int {
         return 2
     }
