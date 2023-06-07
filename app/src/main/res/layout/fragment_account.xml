@@ -10,8 +10,8 @@
     android:padding="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         tools:src="@tools:sample/avatars"
         android:layout_marginBottom="32dp"/>
 
@@ -57,7 +57,7 @@
         android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:icon="@drawable/ic_setting"
+        app:icon="@drawable/ic_wallet"
         app:iconTint="@color/black"
         android:textAlignment="textStart" />
 
@@ -74,7 +74,7 @@
         android:textAppearance="@style/TextAppearance.Breel.BodyLarge"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:icon="@drawable/ic_wallet"
+        app:icon="@drawable/ic_setting"
         app:iconTint="@color/black"
         android:textAlignment="textStart" />
 
