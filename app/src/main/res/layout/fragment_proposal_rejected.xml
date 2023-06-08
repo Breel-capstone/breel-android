@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.notification.ProposalAcceptedFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:paddingHorizontal="22dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ditolak"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mohon maaf!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold"
+        android:textColor="@color/errorColor"/>
+
+    <TextView
+        android:id="@+id/tv_subheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anda tidak terpilih untuk proyek kami."
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/errorColor"/>
+
+    <TextView
+        android:id="@+id/tv_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Terima kasih atas ketertarikan dan partisipasi Anda terhadap Video Editing dengan Michael Kusumawijaya."
+        android:textAlignment="center"
+        android:layout_marginBottom="24dp"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textColor="@color/green_hookers_900"/>
+
+    <TextView
+        android:id="@+id/tv_closing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tetap semangat dan daftar di projek lain ya!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textColor="@color/green_hookers_900"/>
+
+
+
+</LinearLayout>

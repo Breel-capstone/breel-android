@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.notification.RekapSaranDetailFragment"
+        android:orientation="vertical"
+        android:background="@drawable/decor"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rekap Kegiatan"
+            android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rekapsaran"
+            tools:text="@string/lorem_2sen"
+            android:lineHeight="22dp"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saran"
+            android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rekapsaran"
+            tools:text="@string/lorem_1pg"
+            android:lineHeight="22dp"/>
+
+    </LinearLayout>
+</ScrollView>

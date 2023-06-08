@@ -9,6 +9,9 @@ import com.example.breel.data.api.ApiService
 import com.example.breel.data.local.UserPreferences
 import com.example.breel.utils.UserUtil
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -38,6 +41,10 @@ class AppModule {
     @Provides
     @Singleton
     fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
+
+    @Provides
+    @Singleton
+    fun provideFireStoreDb(): FirebaseFirestore = Firebase.firestore
 
     @Provides
     @Singleton

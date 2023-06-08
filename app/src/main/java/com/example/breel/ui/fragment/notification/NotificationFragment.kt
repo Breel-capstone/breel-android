@@ -7,12 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.breel.R
-import com.example.breel.databinding.FragmentLoginBinding
 import com.example.breel.databinding.FragmentNotificationBinding
-import com.example.breel.ui.activity.main.MainActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -33,7 +30,7 @@ class NotificationFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentNotificationBinding.inflate(inflater, container, false)
         return binding.root
@@ -43,7 +40,7 @@ class NotificationFragment : Fragment() {
         Log.i(TAG, "masuk on view created")
         super.onViewCreated(view, savedInstanceState)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(requireActivity())
+        val sectionsPagerAdapter = NotificationPagerAdapter(requireActivity())
         val viewPager: ViewPager2 = binding.viewPager
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = binding.tabLayout
