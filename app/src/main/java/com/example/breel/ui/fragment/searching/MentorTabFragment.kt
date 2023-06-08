@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.breel.R
 import com.example.breel.databinding.FragmentMentorTabBinding
-import com.example.breel.ui.fragment.home.MentorAdapter
+import com.example.breel.ui.fragment.home.mentor.MentorAdapter
 
 class MentorTabFragment : Fragment() {
 

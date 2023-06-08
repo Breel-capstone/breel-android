@@ -1,9 +1,7 @@
-package com.example.breel.ui.fragment.home
+package com.example.breel.ui.fragment.home.project
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.marginEnd
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

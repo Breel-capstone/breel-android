@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/message_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:text="@string/lorem_2sen"
-    android:maxWidth="300dp"
-    android:background="@drawable/background_chatbubble"
-    android:layout_marginBottom="10dp"
-    android:textAppearance="@style/TextAppearance.Breel.LabelSmall"
-    android:id="@+id/tv_message"/>
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_chatbubble"
+        android:maxWidth="300dp"
+        android:textAppearance="@style/TextAppearance.Breel.LabelSmall"
+        android:textColor="@color/black"
+        tools:text="@string/lorem_2sen" />
+
+</LinearLayout>

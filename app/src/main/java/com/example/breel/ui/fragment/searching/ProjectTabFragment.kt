@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.breel.R
 import com.example.breel.databinding.FragmentProjectTabBinding
-import com.example.breel.ui.fragment.home.ProjectAdapter
+import com.example.breel.ui.fragment.home.project.ProjectAdapter
 
 class ProjectTabFragment : Fragment() {
 
