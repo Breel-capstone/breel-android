@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.mentorship
+package com.example.breel.ui.fragment.mentorship.daily
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.breel.R
 import com.example.breel.databinding.FragmentDailyMentorshipBinding
-import com.example.breel.databinding.FragmentMentorshipBinding
 import com.example.breel.ui.component.MainActionBar
+import com.example.breel.ui.fragment.mentorship.adapter.PendingMenteeAdapter
+import com.example.breel.ui.fragment.mentorship.adapter.YourMenteeAdapter
 
 class DailyMentorshipFragment : Fragment() {
 

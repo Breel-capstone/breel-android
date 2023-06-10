@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.breel.ui.fragment.chat.list.ChatListFragment
 import com.example.breel.ui.fragment.home.HomeFragment
+import com.example.breel.ui.fragment.mentorship.MentorshipFragment
 import com.example.breel.ui.fragment.notification.NotificationFragment
 import com.example.breel.ui.fragment.searching.SearchingFragment
 
@@ -17,7 +18,7 @@ class NavigationPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(
             1 -> ChatListFragment()
             2 -> SearchingFragment()
             3 -> NotificationFragment()
-            4 -> NotificationFragment()
+            4 -> MentorshipFragment()
             else -> throw IllegalArgumentException("Invalid position: $position")
         }
     }

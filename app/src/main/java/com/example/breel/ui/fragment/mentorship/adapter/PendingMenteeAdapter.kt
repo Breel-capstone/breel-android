@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.mentorship
+package com.example.breel.ui.fragment.mentorship.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
