@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.mentorship.MentorshipFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:background="@drawable/background_mentorship_option"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mentor Proyek"
+            android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/mentor_proyek" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tampilkan keahlian Anda sebagai profesional senior dengan fitur Mentoring Proyek kami. Kolaborasi dengan para freelancer, memberdayakan bakat, dan capai hasil yang lebih besar bersama-sama."
+            android:textAppearance="@style/TextAppearance.Breel.BodyMedium"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/hello_blank_fragment"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:gravity="center"
+        android:background="@drawable/background_mentorship_option"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mentor Harian"
+            android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/mentor_harian" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tingkatkan pengalaman Anda sebagai profesional senior dengan Mentoring. Bimbing dan beri arahan kepada freelancer junior untuk mencapai kesuksesan. Berikan dampak melalui mentoring harian."
+            android:textAppearance="@style/TextAppearance.Breel.BodyMedium"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+</LinearLayout>

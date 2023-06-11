@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="108dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_mentee"
+    android:layout_marginBottom="16dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        tools:src="@tools:sample/avatars"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="16dp"
+        android:layout_centerVertical="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/iv_profile"
+        android:layout_toLeftOf="@id/ll"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Doe"
+            android:textAppearance="@style/TextAppearance.Breel.BodyMedium"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Design"
+                app:chipBackgroundColor="@color/green_hookers_900"
+                android:textColor="@color/white"
+                style="@style/Widget.Breel.Chip.Filled"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="38dp"
+            android:layout_height="44dp"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            app:icon="@drawable/ic_cross_white"
+            app:iconPadding="0dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp"/>
+
+        <Space
+            android:layout_width="14dp"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="38dp"
+            android:layout_height="44dp"
+            android:minWidth="0dp"
+            android:padding="10dp"
+            app:icon="@drawable/baseline_check_24"
+            app:iconPadding="0dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Breel.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <!-- Text input layout box stroke color -->
+
+        <item name="boxStrokeColor">@color/green_hookers_800</item>
+        <item name="android:strokeColor">@color/green_hookers_800</item>
+        <!-- Text input layout hint color -->
+        <item name="android:textColorHint">@color/green_pakistan_900</item>
+        <!-- Text input layout counter text color -->
+        <item name="android:textColor">@color/green_pakistan_900</item>
+    </style>
+</resources>
