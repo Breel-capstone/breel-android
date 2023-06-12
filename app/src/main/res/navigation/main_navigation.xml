@@ -80,6 +80,9 @@
             <action
                 android:id="@+id/action_navigationFragment2_to_chatRoomFragment"
                 app:destination="@id/chatRoomFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_searchingFragment"
+                app:destination="@id/searchingFragment" />
         </fragment>
         <fragment
             android:id="@+id/projectDetailFragment"
@@ -102,5 +105,10 @@
                 android:name="id"
                 app:argType="string" />
         </fragment>
+        <fragment
+            android:id="@+id/searchingFragment"
+            android:name="com.example.breel.ui.fragment.searching.SearchingFragment"
+            android:label="fragment_searching"
+            tools:layout="@layout/fragment_searching" />
     </navigation>
 </navigation>

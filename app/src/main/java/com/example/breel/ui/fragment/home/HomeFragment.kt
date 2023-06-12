@@ -47,13 +47,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
+        setUpLihatSemua()
         observeViewModel()
     }
 
-
     private fun setUpRecyclerView() {
-//        projectAdapter = ProjectAdapter()
-//        mentorProjectAdapter = ProjectAdapter()
         mentorAdapter = MentorAdapter(requireContext())
         setClientProject()
         setMentorProject()
@@ -101,6 +99,27 @@ class HomeFragment : Fragment() {
             handleMentorResult(it)
         }
 
+    }
+
+    private fun setUpLihatSemua() {
+        // todo navigate to spesific tab in Searching Fragment
+        val btnLihatSemua1 = binding.btnLihatSemua1
+        btnLihatSemua1.setOnClickListener {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToSearchingFragment()
+            findNavController().navigate(destination)
+        }
+
+        val btnLihatSemua2 = binding.btnLihatSemua2
+        btnLihatSemua2.setOnClickListener {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToSearchingFragment()
+            findNavController().navigate(destination)
+        }
+
+        val btnLihatSemua3 = binding.btnLihatSemua3
+        btnLihatSemua3.setOnClickListener {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToSearchingFragment()
+            findNavController().navigate(destination)
+        }
     }
 
 
