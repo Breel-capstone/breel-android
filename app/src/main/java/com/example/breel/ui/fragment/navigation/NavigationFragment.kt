@@ -32,7 +32,7 @@ class NavigationFragment : Fragment() {
             when (item.itemId) {
                 R.id.menu_beranda -> binding.viewPager.setCurrentItem(0, true)
                 R.id.menu_chat -> binding.viewPager.setCurrentItem(1, true)
-                R.id.menu_mentor -> binding.viewPager.setCurrentItem(2, true)
+                R.id.menu_eksplor -> binding.viewPager.setCurrentItem(2, true)
                 R.id.menu_notifikasi -> binding.viewPager.setCurrentItem(3, true)
                 R.id.menu_akun -> binding.viewPager.setCurrentItem(4, true)
             }
