@@ -49,7 +49,7 @@ class ChatListFragment : Fragment() {
         chatAdapter = NotificationAdapter {
             Log.d("ChatListFragment", "observeViewModel: $it")
             val destination =
-                NavigationFragmentDirections.actionNavigationFragmentToChatRoomFragment(it)
+                NavigationFragmentDirections.actionNavigationFragment2ToChatRoomFragment(it)
             findNavController().navigate(destination)
         }
         rv.adapter = chatAdapter

@@ -8,6 +8,7 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/green_hookers_200</item>
         <item name="colorOnPrimaryContainer">@color/green_hookers_900</item>
+        <item name="android:statusBarColor">@color/white</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/green_pakistan_800</item>

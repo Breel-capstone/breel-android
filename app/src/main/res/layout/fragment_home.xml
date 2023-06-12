@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.home.HomeFragment">
+    tools:context=".ui.fragment.home.HomeFragment"
+    android:layout_marginTop="16dp">
 
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fadeScrollbars="true"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp">
 
             <TextView
                 android:id="@+id/tv_greeting"
@@ -155,7 +156,7 @@
                 android:id="@+id/mentor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/background_rv_mentor"
                 android:padding="24dp">
 
@@ -201,19 +202,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottom_nav"-->
-<!--        style="@style/Widget.Breel.BottomNav"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/nav_corner"-->
-<!--        app:itemActiveIndicatorStyle="@style/MyIndicator"-->
-<!--        app:itemIconTint="@color/green_hookers_800"-->
-<!--        app:labelVisibilityMode="labeled"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/menu" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

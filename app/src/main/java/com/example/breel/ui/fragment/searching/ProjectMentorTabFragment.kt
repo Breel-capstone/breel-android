@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.breel.databinding.FragmentProjectMentorTabBinding
 import com.example.breel.ui.fragment.home.project.ProjectAdapter
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 
 class ProjectMentorTabFragment : Fragment() {
 
@@ -29,7 +31,11 @@ class ProjectMentorTabFragment : Fragment() {
         val rv = binding.rvProjectmentor
         rv.layoutManager = LinearLayoutManager(requireActivity())
 
-        val adapter = ProjectAdapter()
+        val adapter = ProjectAdapter {
+            // todo fix this
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
+            findNavController().navigate(destination)
+        }
         rv.adapter = adapter
     }
 }

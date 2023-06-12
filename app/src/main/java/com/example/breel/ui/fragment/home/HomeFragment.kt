@@ -7,14 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.home.mentor.MentorAdapter
 import com.example.breel.ui.fragment.home.project.ProjectAdapter
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -49,8 +52,8 @@ class HomeFragment : Fragment() {
 
 
     private fun setUpRecyclerView() {
-        projectAdapter = ProjectAdapter()
-        mentorProjectAdapter = ProjectAdapter()
+//        projectAdapter = ProjectAdapter()
+//        mentorProjectAdapter = ProjectAdapter()
         mentorAdapter = MentorAdapter(requireContext())
         setClientProject()
         setMentorProject()
@@ -59,13 +62,23 @@ class HomeFragment : Fragment() {
 
 
     private fun setClientProject() {
-        binding.rvClientProject.layoutManager = LinearLayoutManager(requireActivity())
-        binding.rvClientProject.adapter = projectAdapter
+        val rv: RecyclerView = binding.rvClientProject
+        rv.layoutManager = LinearLayoutManager(requireActivity())
+        projectAdapter = ProjectAdapter {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
+//            findNavController().navigate(destination)
+        }
+        rv.adapter = projectAdapter
     }
 
     private fun setMentorProject() {
-        binding.rvMentorProject.layoutManager = LinearLayoutManager(requireActivity())
-        binding.rvMentorProject.adapter = mentorProjectAdapter
+        val rv: RecyclerView = binding.rvMentorProject
+        rv.layoutManager = LinearLayoutManager(requireActivity())
+        mentorProjectAdapter = ProjectAdapter {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
+//            findNavController().navigate(destination)
+        }
+        rv.adapter = mentorProjectAdapter
     }
 
     private fun setMentor() {
