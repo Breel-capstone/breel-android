@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.Resource
 import com.example.breel.data.model.notification.NotificationData
 import com.example.breel.databinding.FragmentChatListBinding
+import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.component.StatusSnackBar
 import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 import com.example.breel.ui.fragment.notification.NotificationAdapter
@@ -26,6 +27,7 @@ class ChatListFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel: ChatListViewModel by viewModels()
     private lateinit var statusSnackBar: StatusSnackBar
+    private lateinit var mainActionBar: MainActionBar
 
 
     override fun onCreateView(
@@ -33,6 +35,8 @@ class ChatListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentChatListBinding.inflate(inflater, container, false)
+        mainActionBar = MainActionBar(this)
+        setUpActionBar()
         return binding.root
     }
 
@@ -77,6 +81,15 @@ class ChatListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mainActionBar.hideActionBar()
+    }
+
+    private fun setUpActionBar() {
+        mainActionBar.setTitle("Chat")
     }
 
 }
