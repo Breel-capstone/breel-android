@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.model.notification.NotificationData
 import com.example.breel.databinding.FragmentRekapSaranBinding
-import com.example.breel.ui.fragment.notification.NotificationAdapter
+import com.example.breel.ui.fragment.notification.adapter.NotificationAdapter
 
 
 class FeedbackFragment : Fragment() {
@@ -40,7 +40,13 @@ class FeedbackFragment : Fragment() {
             NotificationData("1","Title 16", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
             NotificationData("1","Title 17", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
             NotificationData("1","Title 18", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-        )
+            NotificationData("1","Title 19", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
+            NotificationData("1","Title 20", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
+            NotificationData("1","Title 21", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
+            NotificationData("1","Title 22", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
+            NotificationData("1","Title 23", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
+
+            )
 
         val adapter = NotificationAdapter({})
         adapter.submitList(lst)

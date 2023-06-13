@@ -10,6 +10,7 @@ import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.example.breel.R
 import com.example.breel.databinding.FragmentNotificationBinding
+import com.example.breel.ui.fragment.notification.adapter.NotificationPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

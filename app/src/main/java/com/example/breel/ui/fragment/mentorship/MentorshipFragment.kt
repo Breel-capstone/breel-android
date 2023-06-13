@@ -27,7 +27,7 @@ class MentorshipFragment : Fragment() {
 
     private fun setUpActionBar() {
         mainActionBar = MainActionBar(this)
-        mainActionBar.setTitle("Pencarian")
+        mainActionBar.setTitle("Mentor")
         mainActionBar.setBackButton()
     }
 }

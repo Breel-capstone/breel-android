@@ -16,7 +16,7 @@ import com.example.breel.databinding.FragmentChatListBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.component.StatusSnackBar
 import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
-import com.example.breel.ui.fragment.notification.NotificationAdapter
+import com.example.breel.ui.fragment.notification.adapter.NotificationAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
