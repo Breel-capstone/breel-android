@@ -66,4 +66,9 @@ class SearchingFragment : Fragment() {
         mainActionBar.setTitle("Pencarian")
         mainActionBar.setBackButton()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mainActionBar.hideActionBar()
+    }
 }

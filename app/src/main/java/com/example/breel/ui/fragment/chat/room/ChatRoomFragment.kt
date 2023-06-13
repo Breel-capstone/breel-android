@@ -1,11 +1,14 @@
 package com.example.breel.ui.fragment.chat.room
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -119,6 +122,12 @@ class ChatRoomFragment : Fragment() {
         binding.ivSend.setOnClickListener {
             viewModel.sendMessage(chatRoomReference, binding.edtType.text.toString())
             binding.edtType.text = null
+            val imm = context?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(it.windowToken, 0)
+
+        }
+        binding.ivPlus.setOnClickListener {
+            Toast.makeText(requireContext(), "You clicked the button!", Toast.LENGTH_SHORT).show()
         }
     }
 
