@@ -41,7 +41,6 @@ class ProjectAdapter(
         val project = getItem(position)
         project?.let {
             holder.bind(it)
-            onItemClick(it.id)
         }
     }
 
@@ -53,6 +52,9 @@ class ProjectAdapter(
             binding.tvDescription.text = project.description
             binding.tvSalary.text = project.budget.toString()
             binding.tvDuration.text = project.durationMonth.toString()
+            itemView.setOnClickListener {
+                onItemClick(project.id)
+            }
             for (skill in project.skills) {
                 val skillView = LayoutInflater.from(binding.root.context)
                     .inflate(R.layout.item_profile_chip_skill, null) as Chip

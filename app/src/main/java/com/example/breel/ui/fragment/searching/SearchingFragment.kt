@@ -36,9 +36,18 @@ class SearchingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentSearchingBinding.inflate(inflater, container, false)
-        setUpActionBar()
         setUpTabLayoutWithViewPager()
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setUpActionBar()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mainActionBar.hideActionBar()
     }
 
     private fun setUpTabLayoutWithViewPager() {
@@ -62,6 +71,7 @@ class SearchingFragment : Fragment() {
     }
 
     private fun setUpActionBar() {
+        Log.d(TAG, "setUpActionBar: ")
         mainActionBar = MainActionBar(this)
         mainActionBar.setTitle("Pencarian")
         mainActionBar.setBackButton()
