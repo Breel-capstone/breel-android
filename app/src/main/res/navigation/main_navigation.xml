@@ -95,6 +95,12 @@
             <action
                 android:id="@+id/action_navigationFragment2_to_rekapSaranDetailFragment"
                 app:destination="@id/rekapSaranDetailFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_mentorshipFragment"
+                app:destination="@id/mentorshipFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_profileOpenedFragment"
+                app:destination="@id/profileOpenedFragment" />
         </fragment>
         <fragment
             android:id="@+id/projectDetailFragment"

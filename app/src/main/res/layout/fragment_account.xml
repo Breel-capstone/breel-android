@@ -16,6 +16,7 @@
         android:layout_marginBottom="32dp"/>
 
     <Button
+        android:id="@+id/btn_my_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Profil Saya"
@@ -33,6 +34,7 @@
         android:layout_marginBottom="8dp"/>
 
     <Button
+        android:id="@+id/btn_mentoring"
         style="?android:borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,6 +52,7 @@
         android:layout_marginBottom="8dp" />
 
     <Button
+        android:id="@+id/btn_my_wallet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dompet Saya"
@@ -67,6 +70,7 @@
         android:layout_marginBottom="8dp" />
 
     <Button
+        android:id="@+id/btn_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pengaturan"
@@ -84,6 +88,7 @@
         android:layout_marginBottom="8dp" />
 
     <Button
+        android:id="@+id/btn_exit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Keluar"

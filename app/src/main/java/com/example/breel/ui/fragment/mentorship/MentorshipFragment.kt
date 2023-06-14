@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.breel.R
 import com.example.breel.databinding.FragmentMentorshipBinding
 import com.example.breel.databinding.FragmentSearchingBinding
@@ -22,7 +23,17 @@ class MentorshipFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMentorshipBinding.inflate(inflater, container, false)
         setUpActionBar()
+        setUpClickListener()
         return binding.root
+    }
+
+    private fun setUpClickListener() {
+        binding.btnProjectMentor.setOnClickListener {
+            Toast.makeText(requireContext(), "Mentor Proyek clicked!", Toast.LENGTH_SHORT).show()
+        }
+        binding.btnDailyMentor.setOnClickListener {
+            Toast.makeText(requireContext(), "Mentor Harian clicked!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setUpActionBar() {
