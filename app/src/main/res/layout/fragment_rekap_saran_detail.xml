@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background_rekapsaran"
-            tools:text="@string/lorem_2sen"
+            android:text="@string/lorem_2sen"
             android:lineHeight="22dp"
             android:layout_marginBottom="32dp"/>
 
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/background_rekapsaran"
-            tools:text="@string/lorem_1pg"
+            android:text="@string/lorem_1pg"
             android:lineHeight="22dp"/>
 
     </LinearLayout>
