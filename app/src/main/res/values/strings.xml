@@ -11,4 +11,8 @@
     <string name="tab_searching_1">Proyek</string>
     <string name="tab_searching_2">Proyek Mentor</string>
     <string name="tab_searching_3">Mentor</string>
+    <string name="saran_sen1">Dengan apa yang sudah kamu lakukan sebanyak ini, kamu sudah <b>cukup baik</b>! Akan tetapi, berikut beberapa <b>improvements</b> yang dapat kamu lakukan:</string>
+    <string name="saran_sen2"><b> - </b>Persiapkan sesi wawancara dengan lebih baik</string>
+    <string name="saran_sen3"><b> - </b>Coba untuk hubungi client untuk menarik mereka</string>
+    <string name="petik">\'\'</string>
 </resources>

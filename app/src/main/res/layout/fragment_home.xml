@@ -42,6 +42,66 @@
                 app:defaultMarginsEnabled="false" />
 
             <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_saran"
+                android:padding="24dp"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:id="@+id/tv_saran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saran"
+                    android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                    android:textColor="@color/green_hookers_900"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_petik1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/petik"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/green_hookers_900"
+                    android:textSize="42dp"
+                    android:layout_below="@id/tv_saran"/>
+
+                <TextView
+                    android:id="@+id/tv_sen1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saran_sen1"
+                    android:lineHeight="22dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_below="@id/tv_saran"
+                    android:layout_toRightOf="@+id/tv_petik1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_sen2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saran_sen2"
+                    android:lineHeight="22dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/tv_sen1"
+                    android:layout_alignStart="@id/tv_sen1"/>
+
+                <TextView
+                    android:id="@+id/tv_sen3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saran_sen3"
+                    android:lineHeight="22dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/tv_sen2"
+                    android:layout_alignStart="@id/tv_sen1"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:id="@+id/project_client"
                 android:layout_width="match_parent"
                 android:layout_height="386dp"
