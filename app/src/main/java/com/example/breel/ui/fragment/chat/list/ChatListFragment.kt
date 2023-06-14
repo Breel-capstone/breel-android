@@ -36,8 +36,12 @@ class ChatListFragment : Fragment() {
     ): View {
         _binding = FragmentChatListBinding.inflate(inflater, container, false)
         mainActionBar = MainActionBar(this)
-        setUpActionBar()
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setUpActionBar()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

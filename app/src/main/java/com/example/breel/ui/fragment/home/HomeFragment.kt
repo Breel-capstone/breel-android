@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.breel.R
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding
@@ -36,6 +37,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        setUpRecyclerView()
+        observeViewModel()
         return binding.root
     }
 
@@ -46,9 +49,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpRecyclerView()
         setUpLihatSemua()
-        observeViewModel()
     }
 
     private fun setUpRecyclerView() {
@@ -64,7 +65,7 @@ class HomeFragment : Fragment() {
         rv.layoutManager = LinearLayoutManager(requireActivity())
         projectAdapter = ProjectAdapter {
             val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
-//            findNavController().navigate(destination)
+            findNavController().navigate(destination)
         }
         rv.adapter = projectAdapter
     }
@@ -74,7 +75,7 @@ class HomeFragment : Fragment() {
         rv.layoutManager = LinearLayoutManager(requireActivity())
         mentorProjectAdapter = ProjectAdapter {
             val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
-//            findNavController().navigate(destination)
+            findNavController().navigate(destination)
         }
         rv.adapter = mentorProjectAdapter
     }
