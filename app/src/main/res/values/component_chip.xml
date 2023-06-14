@@ -16,4 +16,12 @@
         <item name="chipBackgroundColor">@color/white</item>
         <item name="android:textColor">@color/green_hookers_500</item>
     </style>
+    <style name="Widget.Breel.Chip.Filled.Dark" parent="Widget.Material3.Chip.Suggestion">
+        <item name="chipCornerRadius">100dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="chipBackgroundColor">@color/green_hookers_900</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
 </resources>

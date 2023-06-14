@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.breel.R
 import com.example.breel.databinding.FragmentMentorshipBinding
 import com.example.breel.databinding.FragmentSearchingBinding
 import com.example.breel.ui.component.MainActionBar
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 
 class MentorshipFragment : Fragment() {
 
@@ -29,7 +31,9 @@ class MentorshipFragment : Fragment() {
 
     private fun setUpClickListener() {
         binding.btnProjectMentor.setOnClickListener {
-            Toast.makeText(requireContext(), "Mentor Proyek clicked!", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), "Mentor Proyek clicked!", Toast.LENGTH_SHORT).show()
+            val destination = MentorshipFragmentDirections.actionMentorshipFragmentToMentorshipProjectFragment()
+            findNavController().navigate(destination)
         }
         binding.btnDailyMentor.setOnClickListener {
             Toast.makeText(requireContext(), "Mentor Harian clicked!", Toast.LENGTH_SHORT).show()

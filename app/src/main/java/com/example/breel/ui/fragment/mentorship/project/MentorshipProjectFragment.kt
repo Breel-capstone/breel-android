@@ -11,6 +11,7 @@ import com.example.breel.databinding.FragmentDailyMentorshipBinding
 import com.example.breel.databinding.FragmentMentorshipProjectBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.home.project.ProjectAdapter
+import com.example.breel.ui.fragment.mentorship.adapter.MentorshipProjectAdapter
 
 class MentorshipProjectFragment : Fragment() {
 
@@ -29,12 +30,20 @@ class MentorshipProjectFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpRecyclerView()
+    }
 
+    private fun setUpRecyclerView() {
+        val lst = listOf("Item 1", "Item 2", "Item 3")
+        val rv = binding.rvProjects
+        val adapter = MentorshipProjectAdapter(lst)
+        rv.layoutManager = LinearLayoutManager(requireContext())
+        rv.adapter = adapter
     }
 
     private fun setUpActionBar() {
         mainActionBar = MainActionBar(this)
-        mainActionBar.setTitle("Mentorship Harianmu")
+        mainActionBar.setTitle("Mentorship Proyek")
         mainActionBar.setBackButton()
     }
 }

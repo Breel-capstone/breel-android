@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background_simple_project">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="Pengembangan Web untuk Landing Page Perusahaan"
+        android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <com.google.android.material.chip.Chip
+        style="@style/Widget.Breel.Chip.Filled.Dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mencari" />
+
+</LinearLayout>

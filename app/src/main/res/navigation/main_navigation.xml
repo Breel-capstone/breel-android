@@ -189,7 +189,16 @@
             android:id="@+id/mentorshipFragment"
             android:name="com.example.breel.ui.fragment.mentorship.MentorshipFragment"
             android:label="MentorshipFragment"
-            tools:layout="@layout/fragment_mentorship"/>
+            tools:layout="@layout/fragment_mentorship">
+            <action
+                android:id="@+id/action_mentorshipFragment_to_mentorshipProjectFragment"
+                app:destination="@id/mentorshipProjectFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/mentorshipProjectFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.MentorshipProjectFragment"
+            android:label="MentorshipProjectFragment"
+            tools:layout="@layout/fragment_mentorship_project"/>
     </navigation>
 
 </navigation>
