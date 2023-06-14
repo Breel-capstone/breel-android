@@ -51,7 +51,7 @@ class ProjectAdapter(
             binding.tvTitle.text = project.title
             binding.tvDescription.text = project.description
             binding.tvSalary.text = project.budget.toString()
-            binding.tvDuration.text = project.durationMonth.toString()
+            binding.tvDuration.text = "${project.durationMonth} Bulan"
             itemView.setOnClickListener {
                 onItemClick(project.id)
             }

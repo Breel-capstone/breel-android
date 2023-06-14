@@ -72,11 +72,6 @@ class ChatRoomFragment : Fragment() {
         observeViewModel()
     }
 
-    override fun onStop() {
-        super.onStop()
-        mainActionBar.hideActionBar()
-    }
-
     override fun onStart() {
         super.onStart()
         setUpActionBar()

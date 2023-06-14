@@ -8,13 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.StringRes
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.breel.R
 import com.example.breel.databinding.FragmentSearchingBinding
 import com.example.breel.ui.component.MainActionBar
+import com.example.breel.ui.fragment.home.HomeViewModel
+import com.example.breel.ui.fragment.home.mentor.MentorAdapter
+import com.example.breel.ui.fragment.home.project.ProjectAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchingFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchingBinding

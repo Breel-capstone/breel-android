@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.model.notification.NotificationData
 import com.example.breel.databinding.FragmentNotificationListBinding
 import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
+import com.example.breel.ui.fragment.notification.NotificationFragmentDirections
 import com.example.breel.ui.fragment.notification.adapter.NotificationAdapter
 
 
@@ -56,7 +57,7 @@ class NotificationListFragment : Fragment() {
             ),
         )
 
-        lst.forEach { }
+//        lst.forEach { }
         val adapter = NotificationAdapter {
             val destination =
                 NavigationFragmentDirections.actionNavigationFragment2ToProposalAcceptedFragment()

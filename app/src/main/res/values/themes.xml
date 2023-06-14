@@ -8,13 +8,17 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/green_hookers_200</item>
         <item name="colorOnPrimaryContainer">@color/green_hookers_900</item>
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">#80334D41</item>
+        <item name="android:navigationBarColor">#00FFFFFF</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/green_pakistan_800</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="colorSecondaryContainer">@color/green_hookers_100</item>
         <item name="colorOnSecondaryContainer">@color/green_pakistan_900</item>
+
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
 
         <!-- Status bar color. -->
 <!--        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>-->
