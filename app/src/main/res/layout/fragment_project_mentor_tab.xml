@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.searching.mentorproject.ProjectMentorTabFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="test mentor project tab" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_projectmentor"
         android:layout_width="match_parent"
