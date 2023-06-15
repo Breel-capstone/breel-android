@@ -43,12 +43,12 @@ class SearchingFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSearchingBinding.inflate(inflater, container, false)
         setUpTabLayoutWithViewPager()
+        setUpActionBar()
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
-        setUpActionBar()
     }
 
     override fun onStop() {

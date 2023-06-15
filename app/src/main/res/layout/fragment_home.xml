@@ -77,7 +77,8 @@
                     android:layout_below="@id/tv_saran"
                     android:layout_toRightOf="@+id/tv_petik1"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    style="@style/TextAppearance.Breel.BodyMedium"/>
 
                 <TextView
                     android:id="@+id/tv_sen2"
@@ -87,7 +88,8 @@
                     android:lineHeight="22dp"
                     android:layout_marginBottom="2dp"
                     android:layout_below="@id/tv_sen1"
-                    android:layout_alignStart="@id/tv_sen1"/>
+                    android:layout_alignStart="@id/tv_sen1"
+                    style="@style/TextAppearance.Breel.BodyMedium"/>
 
                 <TextView
                     android:id="@+id/tv_sen3"
@@ -97,7 +99,8 @@
                     android:lineHeight="22dp"
                     android:layout_marginBottom="2dp"
                     android:layout_below="@id/tv_sen2"
-                    android:layout_alignStart="@id/tv_sen1"/>
+                    android:layout_alignStart="@id/tv_sen1"
+                    style="@style/TextAppearance.Breel.BodyMedium"/>
 
             </RelativeLayout>
 
