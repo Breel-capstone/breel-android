@@ -101,6 +101,9 @@
             <action
                 android:id="@+id/action_navigationFragment2_to_profileOpenedFragment"
                 app:destination="@id/profileOpenedFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_mentorDetailFragment"
+                app:destination="@id/mentorDetailFragment" />
         </fragment>
         <fragment
             android:id="@+id/projectDetailFragment"
@@ -110,6 +113,9 @@
             <argument
                 android:name="id"
                 app:argType="integer" />
+            <action
+                android:id="@+id/action_projectDetailFragment_to_proposalFormFragment"
+                app:destination="@id/proposalFormFragment" />
         </fragment>
         <fragment
             android:id="@+id/chatRoomFragment"
@@ -199,6 +205,20 @@
             android:name="com.example.breel.ui.fragment.mentorship.project.MentorshipProjectFragment"
             android:label="MentorshipProjectFragment"
             tools:layout="@layout/fragment_mentorship_project"/>
+        <fragment
+            android:id="@+id/proposalFormFragment"
+            android:name="com.example.breel.ui.fragment.project.proposal.ProposalFormFragment"
+            android:label="ProposalFormFragment"
+            tools:layout="@layout/fragment_proposal_form" />
+        <fragment
+            android:id="@+id/mentorDetailFragment"
+            android:name="com.example.breel.ui.fragment.home.mentor.MentorDetailFragment"
+            android:label="MentorDetailFragment" >
+            <argument
+                android:name="id"
+                app:argType="integer"
+                android:defaultValue="-1" />
+        </fragment>
     </navigation>
 
 </navigation>

@@ -28,7 +28,9 @@ class MentorTabFragment : Fragment() {
         val rv = binding.rvMentor
         rv.layoutManager = GridLayoutManager(requireActivity(), 2)
 
-        val adapter = MentorAdapter(requireContext())
+        val adapter = MentorAdapter{
+
+        }
         rv.adapter = adapter
     }
 }

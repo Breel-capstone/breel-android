@@ -12,7 +12,9 @@ import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.databinding.ItemMentorBinding
 import com.google.android.material.chip.Chip
 
-class MentorAdapter constructor(private val context: Context) :
+class MentorAdapter constructor(
+    private val onItemClick: (id: Int) -> Unit
+) :
     PagingDataAdapter<Mentor, MentorAdapter.ViewHolder>(MENTOR_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +35,9 @@ class MentorAdapter constructor(private val context: Context) :
         fun bind(mentor: Mentor) {
             binding.tvName.text = mentor.fullName
             binding.tvSalary.text = mentor.price.toString()
+            itemView.setOnClickListener {
+                onItemClick(mentor.id)
+            }
             for (skill in mentor.skills) {
                 val skillView = LayoutInflater.from(binding.root.context)
                     .inflate(R.layout.item_profile_chip_skill, null) as Chip

@@ -53,7 +53,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpRecyclerView() {
-        mentorAdapter = MentorAdapter(requireContext())
         setClientProject()
         setMentorProject()
         setMentor()
@@ -81,9 +80,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun setMentor() {
-        binding.rvMentor.layoutManager =
-            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvMentor.adapter = mentorAdapter
+        val rv: RecyclerView = binding.rvMentor
+        rv.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        mentorAdapter = MentorAdapter {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToMentorDetailFragment(it)
+            findNavController().navigate(destination)
+        }
+        rv.adapter = mentorAdapter
     }
 
     private fun observeViewModel() {

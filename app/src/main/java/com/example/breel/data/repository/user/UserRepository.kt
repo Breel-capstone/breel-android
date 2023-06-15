@@ -31,11 +31,16 @@ class UserRepository @Inject constructor(
     private val userUtil: UserUtil
 ) : UserRepositorySource {
 
+    companion object {
+        const val TAG = "UserRepository"
+    }
+
     override fun login(email: String, password: String): Flow<Resource<AuthResult>> {
         return flow {
             emit(Resource.Loading())
             val result = firebaseAuth.signInWithEmailAndPassword(email, password).await()
             emit(Resource.Success(result))
+            Log.i(TAG, "login success")
         }.catch {
             emit(Resource.DataError(errorCode = 0))
         }
@@ -46,6 +51,7 @@ class UserRepository @Inject constructor(
             emit(Resource.Loading())
             val result = firebaseAuth.createUserWithEmailAndPassword(email, password).await()
             emit(Resource.Success(result))
+            Log.i(TAG, "register success")
         }.catch {
             emit(Resource.DataError(errorCode = 0))
         }
