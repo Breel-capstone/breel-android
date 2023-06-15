@@ -1,6 +1,7 @@
-package com.example.breel.ui.fragment.searching
+package com.example.breel.ui.fragment.searching.clientproject
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentProjectTabBinding
-import com.example.breel.ui.fragment.home.HomeViewModel
 import com.example.breel.ui.fragment.home.project.ProjectAdapter
 import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
-import com.example.breel.ui.fragment.searching.viewmodel.ProjectViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -24,7 +23,7 @@ import kotlinx.coroutines.launch
 class ProjectTabFragment : Fragment() {
 
     private lateinit var binding: FragmentProjectTabBinding
-//    private val viewModel: ProjectViewModel by viewModels()
+    private val viewModel: ProjectViewModel by viewModels()
     private lateinit var projectAdapter: ProjectAdapter
 
     override fun onCreateView(
@@ -34,7 +33,7 @@ class ProjectTabFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentProjectTabBinding.inflate(inflater, container, false)
         setUpRecyclerView()
-//        observeViewModel()
+        observeViewModel()
         return binding.root
     }
 
@@ -52,30 +51,21 @@ class ProjectTabFragment : Fragment() {
         rv.adapter = projectAdapter
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val rv = binding.rvProject
-        rv.layoutManager = LinearLayoutManager(requireActivity())
-
-        val adapter = ProjectAdapter {
-            // todo fix this
-            val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
-            findNavController().navigate(destination)
+    private fun observeViewModel() {
+        viewModel.getProjects()
+        viewModel.projectPagingLiveData.observe(viewLifecycleOwner) {
+            handleProjectResult(it)
         }
-        rv.adapter = adapter
     }
-
-//    private fun observeViewModel() {
-//        viewModel.getProjects()
-//        viewModel.projectPagingLiveData.observe(viewLifecycleOwner) {
-//            handleProjectResult(it)
-//        }
-//    }
 
     private fun handleProjectResult(pagingData: PagingData<Project>) {
         lifecycleScope.launch {
             projectAdapter.submitData(pagingData)
         }
+        Log.i(TAG, "hallo!")
+    }
+
+    companion object {
+        const val TAG = "ProjectTabFragment"
     }
 }

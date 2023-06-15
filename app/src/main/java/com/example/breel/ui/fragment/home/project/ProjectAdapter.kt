@@ -1,5 +1,6 @@
 package com.example.breel.ui.fragment.home.project
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -34,6 +35,7 @@ class ProjectAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemProjectBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
+        Log.i(TAG, "halo!")
     }
 
 
