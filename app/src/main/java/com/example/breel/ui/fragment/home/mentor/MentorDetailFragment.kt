@@ -58,44 +58,14 @@ class MentorDetailFragment : Fragment() {
     private fun getDummyListProjectExperience() : List<UserProjectExperience> {
         return listOf<UserProjectExperience>(
             UserProjectExperience(
-                "Lorem Ipsum 01",
+                "Filter Instagram",
                 "http://example.com/",
-                getString(R.string.lorem_2sen)
+                "Proyek yang menggunakan image recognition. Filter ini dapat dengan bebas digunakan."
             ),
             UserProjectExperience(
-                "Lorem Ipsum 02",
+                "Covid Statistik",
                 "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 03",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 04",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 05",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 06",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 07",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 08",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
+                "Aplikasi yang mengizinkan penggunanya memasang widget grafik statistik Covid di Indonesia. Data terupdate secara berkala. "
             ),
         )
     }
@@ -103,44 +73,20 @@ class MentorDetailFragment : Fragment() {
     private fun getDummyListExperience() : List<UserExperience> {
         return listOf<UserExperience>(
             UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 01",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
+                "EduCare",
+                "South Jakarta",
+                "e-Learning App Developer",
+                "Januari 2022",
+                "Desember 2022",
+                "Applikasi yang dilengkapi dengan personalisasi dan gamifikasi, serta memanfaatkan animasi untuk menghasilkan pengalaman pengguna yang sebaik-baiknya. Di-download oleh lebih dari 10k pengguna di Google Play Store."
             ),
             UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 02",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
-            ),
-            UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 03",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
-            ),
-            UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 04",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
-            ),
-            UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 05",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
+                "EduCare",
+                "South Jakarta",
+                "IT Project Manager",
+                "Januari 2023",
+                "Maret 2023",
+                "Memimpin squad berisi 8 orang dengan 4 role untuk meng-improve performa aplikasi."
             ),
         )
     }
