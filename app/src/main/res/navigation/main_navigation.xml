@@ -199,6 +199,12 @@
             <action
                 android:id="@+id/action_mentorshipFragment_to_mentorshipProjectFragment"
                 app:destination="@id/mentorshipProjectFragment" />
+            <action
+                android:id="@+id/action_mentorshipFragment_to_dailyMentorshipFragment"
+                app:destination="@id/dailyMentorshipFragment" />
+            <action
+                android:id="@+id/action_mentorshipFragment_to_createDailyMentorshipFragment"
+                app:destination="@id/createDailyMentorshipFragment" />
         </fragment>
         <fragment
             android:id="@+id/mentorshipProjectFragment"
@@ -219,6 +225,14 @@
                 app:argType="integer"
                 android:defaultValue="-1" />
         </fragment>
+        <fragment
+            android:id="@+id/dailyMentorshipFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.daily.DailyMentorshipFragment"
+            android:label="DailyMentorshipFragment" />
+        <fragment
+            android:id="@+id/createDailyMentorshipFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.daily.CreateDailyMentorshipFragment"
+            android:label="CreateDailyMentorshipFragment" />
     </navigation>
 
 </navigation>

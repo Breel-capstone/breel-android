@@ -31,12 +31,12 @@ class MentorshipFragment : Fragment() {
 
     private fun setUpClickListener() {
         binding.btnProjectMentor.setOnClickListener {
-//            Toast.makeText(requireContext(), "Mentor Proyek clicked!", Toast.LENGTH_SHORT).show()
             val destination = MentorshipFragmentDirections.actionMentorshipFragmentToMentorshipProjectFragment()
             findNavController().navigate(destination)
         }
         binding.btnDailyMentor.setOnClickListener {
-            Toast.makeText(requireContext(), "Mentor Harian clicked!", Toast.LENGTH_SHORT).show()
+            val destination = MentorshipFragmentDirections.actionMentorshipFragmentToDailyMentorshipFragment()
+            findNavController().navigate(destination)
         }
     }
 
