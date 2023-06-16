@@ -34,7 +34,7 @@ class MentorAdapter constructor(
 
         fun bind(mentor: Mentor) {
             binding.tvName.text = mentor.fullName
-            binding.tvSalary.text = mentor.price.toString()
+            binding.tvSalary.text = mentor.priceString
             itemView.setOnClickListener {
                 onItemClick(mentor.id)
             }

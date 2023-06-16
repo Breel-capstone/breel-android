@@ -16,5 +16,6 @@ data class Mentor(
     val updatedBy: String,
     val deletedBy: String,
     val price: Int,
+    val priceString: String,
     val skills: List<String>
 )
