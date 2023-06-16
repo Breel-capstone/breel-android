@@ -62,7 +62,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="300.000"/>
+                    android:text="300.000"
+                    android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,7 +94,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="1"/>
+                    android:text="1"
+                    android:editable="false"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
