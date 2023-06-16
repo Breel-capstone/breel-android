@@ -15,4 +15,6 @@
     <string name="saran_sen2"><b> - </b>Persiapkan sesi wawancara dengan lebih baik</string>
     <string name="saran_sen3"><b> - </b>Coba untuk hubungi client untuk menarik mereka</string>
     <string name="petik">\'\'</string>
+    <string name="dummy_rekap_detailpage">Hari ini, kamu sudah mengajukan Project Proposal kepada 3 clients. Mereka menyukai portofoliomu! Mereka juga tertarik untuk mewawancarai kamu!</string>
+    <string name="dummy_saran_detailpage">Dengan apa yang sudah kamu lakukan sebanyak ini, kamu sudah cukup baik! Akan tetapi, berikut beberapa improvements yang dapat kamu lakukan: \n\t\tPersiapkan sesi wawancara dengan lebih baik \n\t\tCoba untuk hubungi client untuk menarik mereka</string>
 </resources>

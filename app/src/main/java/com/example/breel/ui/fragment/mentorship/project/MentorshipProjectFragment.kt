@@ -25,7 +25,8 @@ class MentorshipProjectFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMentorshipProjectBinding.inflate(inflater, container, false)
         setUpActionBar()
-        return inflater.inflate(R.layout.fragment_mentorship_project, container, false)
+//        setUpRecyclerView()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,9 +36,11 @@ class MentorshipProjectFragment : Fragment() {
 
     private fun setUpRecyclerView() {
         val lst = listOf("Item 1", "Item 2", "Item 3")
+
         val rv = binding.rvProjects
-        val adapter = MentorshipProjectAdapter(lst)
         rv.layoutManager = LinearLayoutManager(requireContext())
+
+        val adapter = MentorshipProjectAdapter(lst)
         rv.adapter = adapter
     }
 
