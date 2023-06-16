@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
-import com.example.breel.R
 import com.example.breel.databinding.FragmentAccountBinding
 import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 

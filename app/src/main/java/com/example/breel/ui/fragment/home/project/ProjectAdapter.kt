@@ -3,16 +3,12 @@ package com.example.breel.ui.fragment.home.project
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.R
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.ItemProjectBinding
-import com.example.breel.ui.fragment.navigation.NavigationFragment
-import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 import com.google.android.material.chip.Chip
 
 class ProjectAdapter(

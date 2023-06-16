@@ -7,13 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.breel.R
-import com.example.breel.data.api.project.Project
 import com.example.breel.data.model.temp.ProjectTempData
-import com.example.breel.databinding.FragmentDailyMentorshipBinding
 import com.example.breel.databinding.FragmentMentorshipProjectBinding
 import com.example.breel.ui.component.MainActionBar
-import com.example.breel.ui.fragment.home.project.ProjectAdapter
 import com.example.breel.ui.fragment.mentorship.adapter.MentorshipProjectAdapter
 
 class MentorshipProjectFragment : Fragment() {

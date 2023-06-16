@@ -10,7 +10,6 @@ import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.data.api.user.detail.UserSkill
 import com.example.breel.data.repository.user.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

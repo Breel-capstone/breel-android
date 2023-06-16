@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.breel.databinding.FragmentProjectDetailBinding
-import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 
 class ProjectDetail : Fragment() {
     private var _binding: FragmentProjectDetailBinding? = null

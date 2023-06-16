@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.api.user.detail.UserProjectExperience
-import com.example.breel.databinding.ItemRprofileExperienceBinding
 import com.example.breel.databinding.ItemRprofileProjectexperienceBinding
 
 class UserProjectExperienceAdapter(private val listUserProjectExperience: List<UserProjectExperience>) : RecyclerView.Adapter<UserProjectExperienceAdapter.ViewHolder>() {

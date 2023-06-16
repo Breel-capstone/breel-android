@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding

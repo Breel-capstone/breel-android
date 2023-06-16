@@ -7,14 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.databinding.FragmentProfileOpenedBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.account.adapter.UserExperienceAdapter
 import com.example.breel.ui.fragment.account.adapter.UserProjectExperienceAdapter
-import com.google.api.Distribution.BucketOptions.Linear
 
 class ProfileOpenedFragment : Fragment() {
 

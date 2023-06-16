@@ -6,7 +6,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.breel.ui.fragment.account.AccountFragment
 import com.example.breel.ui.fragment.chat.list.ChatListFragment
 import com.example.breel.ui.fragment.home.HomeFragment
-import com.example.breel.ui.fragment.mentorship.MentorshipFragment
 import com.example.breel.ui.fragment.notification.NotificationFragment
 import com.example.breel.ui.fragment.searching.SearchingFragment
 

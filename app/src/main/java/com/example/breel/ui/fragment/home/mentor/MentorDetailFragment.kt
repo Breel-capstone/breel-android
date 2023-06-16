@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.breel.R
 import com.example.breel.data.api.user.detail.UserExperience
 import com.example.breel.data.api.user.detail.UserProjectExperience
 import com.example.breel.databinding.FragmentMentorDetailBinding
