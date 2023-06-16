@@ -29,7 +29,7 @@
                 android:id="@+id/tv_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Miranty Anjani"
+                android:text="Purba Sekeon"
                 app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
@@ -41,7 +41,7 @@
                 android:id="@+id/tv_position"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="Android Developer"
+                android:text="AI/ML Engineer"
                 app:layout_constraintTop_toBottomOf="@id/tv_name"
                 app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -51,18 +51,19 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!--        <TextView-->
-        <!--            android:textAppearance="@style/TextAppearance.Breel.TitleMedium"-->
-        <!--            android:textStyle="bold"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="Freelance" />-->
+                <TextView
+                    android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Freelance" />
 
-        <!--        <androidx.recyclerview.widget.RecyclerView-->
-        <!--            android:background="@drawable/background_profile_mentor"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginBottom="20dp"/>-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_freelance"
+                    android:background="@drawable/background_profile_mentor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
 
         <TextView
             android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
@@ -93,6 +94,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="20dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Breel.Button.Filled.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Request Mentor" />
 
     </LinearLayout>
 

@@ -25,7 +25,6 @@ class MentorshipProjectFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentMentorshipProjectBinding.inflate(inflater, container, false)
         setUpActionBar()
-//        setUpRecyclerView()
         return binding.root
     }
 

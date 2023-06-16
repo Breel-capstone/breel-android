@@ -11,7 +11,7 @@
         android:id="@+id/iv_profile"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        tools:src="@tools:sample/avatars"
+        android:src="@drawable/open_peeps2"
         android:layout_alignParentStart="true"
         android:layout_marginEnd="16dp"
         android:layout_centerVertical="true"/>
@@ -28,7 +28,7 @@
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="Adiva"
             android:textAppearance="@style/TextAppearance.Breel.BodyMedium"
             android:textStyle="bold"
             android:textColor="@color/white"/>
@@ -40,7 +40,7 @@
             <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Product Design"
+                android:text="UX Design"
                 app:chipBackgroundColor="@color/green_hookers_900"
                 android:textColor="@color/white"
                 style="@style/Widget.Breel.Chip.Filled"/>

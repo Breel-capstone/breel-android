@@ -33,15 +33,21 @@ class MentorDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setUpActionBar()
 
+        val lstFreelance = getDummyFreelance()
         val lstProject = getDummyListProjectExperience()
         val lstExperience = getDummyListExperience()
 
+        val rvFreelance: RecyclerView = binding.rvFreelance
         val rvProject: RecyclerView = binding.rvProject
         val rvExperience: RecyclerView = binding.rvExperience
 
+        rvFreelance.layoutManager = LinearLayoutManager(requireActivity())
         rvProject.layoutManager = LinearLayoutManager(requireActivity())
         rvExperience.layoutManager = LinearLayoutManager(requireActivity())
 
+
+        val adapterFreelance = UserProjectExperienceAdapter(lstFreelance)
+        rvFreelance.adapter = adapterFreelance
 
         val adapterProject = UserProjectExperienceAdapter(lstProject)
         rvProject.adapter = adapterProject
@@ -53,6 +59,21 @@ class MentorDetailFragment : Fragment() {
     private fun setUpActionBar() {
         mainActionBar = MainActionBar(this)
         mainActionBar.setTitle("Detail Mentor")
+    }
+
+    private fun getDummyFreelance() : List<UserProjectExperience> {
+        return listOf<UserProjectExperience>(
+            UserProjectExperience(
+                "MIS Dashboard",
+                "http://example.com/",
+                "Mengolah data dan menyajikannya dalam bentuk tabel dan grafik untuk keperluan pengambilan keputusan manajerial."
+            ),
+            UserProjectExperience(
+                "Chatting Feature",
+                "http://example.com/",
+                "Mengimplementasikan fitur chatting di sebuah software perusahaan dengan menggunakan firestore."
+            ),
+        )
     }
 
     private fun getDummyListProjectExperience() : List<UserProjectExperience> {

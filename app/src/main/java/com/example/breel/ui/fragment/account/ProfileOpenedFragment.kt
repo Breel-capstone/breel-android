@@ -14,6 +14,7 @@ import com.example.breel.databinding.FragmentProfileOpenedBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.account.adapter.UserExperienceAdapter
 import com.example.breel.ui.fragment.account.adapter.UserProjectExperienceAdapter
+import com.google.api.Distribution.BucketOptions.Linear
 
 class ProfileOpenedFragment : Fragment() {
 
@@ -33,15 +34,20 @@ class ProfileOpenedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setUpActionBar()
 
+        val lstFreelance = getDummyFreelance()
         val lstProject = getDummyListProjectExperience()
         val lstExperience = getDummyListExperience()
 
+        val rvFreelance: RecyclerView = binding.rvFreelance
         val rvProject: RecyclerView = binding.rvProject
         val rvExperience: RecyclerView = binding.rvExperience
 
+        rvFreelance.layoutManager = LinearLayoutManager(requireActivity())
         rvProject.layoutManager = LinearLayoutManager(requireActivity())
         rvExperience.layoutManager = LinearLayoutManager(requireActivity())
 
+        val adapterFreelance = UserProjectExperienceAdapter(lstFreelance)
+        rvFreelance.adapter = adapterFreelance
 
         val adapterProject = UserProjectExperienceAdapter(lstProject)
         rvProject.adapter = adapterProject
@@ -56,6 +62,16 @@ class ProfileOpenedFragment : Fragment() {
         mainActionBar.setTitle("Akun")
     }
 
+    private fun getDummyFreelance() : List<UserProjectExperience> {
+        return listOf<UserProjectExperience>(
+            UserProjectExperience(
+                "Company Profile Website",
+                "http://example.com/",
+                "Website sederhana berisi informasi mengenai sebuah perusahaan."
+            ),
+        )
+    }
+
     private fun getDummyListProjectExperience() : List<UserProjectExperience> {
         return listOf<UserProjectExperience>(
             UserProjectExperience(
@@ -66,7 +82,7 @@ class ProfileOpenedFragment : Fragment() {
             UserProjectExperience(
                 "Online-Offline To Do List App",
                 "http://example.com/",
-                "Mengkimplementasikan online-offline app, aplikasi ini melakukan penyimpanan data di remote server dan juga melakukan caching."
+                "Mengimplementasikan online-offline app, aplikasi ini melakukan penyimpanan data di remote server dan juga melakukan caching."
             ),
         )
     }
