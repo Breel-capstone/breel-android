@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.breel.R
+import com.example.breel.data.api.project.Project
+import com.example.breel.data.model.temp.ProjectTempData
 import com.example.breel.databinding.FragmentDailyMentorshipBinding
 import com.example.breel.databinding.FragmentMentorshipProjectBinding
 import com.example.breel.ui.component.MainActionBar
@@ -31,10 +34,11 @@ class MentorshipProjectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpRecyclerView()
+        setUpAddButton()
     }
 
     private fun setUpRecyclerView() {
-        val lst = listOf("Item 1", "Item 2", "Item 3")
+        val lst = getDummyData()
 
         val rv = binding.rvProjects
         rv.layoutManager = LinearLayoutManager(requireContext())
@@ -47,5 +51,20 @@ class MentorshipProjectFragment : Fragment() {
         mainActionBar = MainActionBar(this)
         mainActionBar.setTitle("Mentorship Proyek")
         mainActionBar.setBackButton()
+    }
+
+    private fun setUpAddButton() {
+        binding.btnAddProject.setOnClickListener {
+            val destination = MentorshipProjectFragmentDirections.actionMentorshipProjectFragmentToCreateMentorshipProjectFragment()
+            findNavController().navigate(destination)
+        }
+    }
+
+    private fun getDummyData() : List<ProjectTempData> {
+        val lst = listOf(
+            ProjectTempData(0, "Pengembangan Web untuk Aplikasi Toko Online", "Mencari"),
+            ProjectTempData(1, "Model untuk Klasifikasi Gambar Sampah", "Mencari"),
+        )
+        return lst
     }
 }
