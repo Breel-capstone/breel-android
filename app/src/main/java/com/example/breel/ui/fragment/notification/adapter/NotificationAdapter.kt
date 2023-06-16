@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.notification
+package com.example.breel.ui.fragment.notification.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,6 +21,7 @@ class NotificationAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        Log.i(TAG, "parent : $parent")
         val binding =
             ItemNotificationBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)

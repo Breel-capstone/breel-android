@@ -13,5 +13,8 @@
         <item name="colorOnSecondaryContainer">@color/green_hookers_50</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/green_hookers_900</item>
+
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
     </style>
 </resources>

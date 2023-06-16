@@ -29,7 +29,7 @@ class CreateMentorshipProjectFragment : Fragment() {
 
     private fun setUpDropdownItem() {
         val dropdownLayout = binding.dropdownLayout
-        val items = arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
+        val items = getDummyDropdownItems()
         (dropdownLayout.editText as? MaterialAutoCompleteTextView)?.setSimpleItems(items)
     }
 
@@ -37,5 +37,13 @@ class CreateMentorshipProjectFragment : Fragment() {
         mainActionBar = MainActionBar(this)
         mainActionBar.setTitle("Mentorhsip Proyek")
         mainActionBar.setBackButton()
+    }
+
+    fun getDummyDropdownItems(): Array<String> {
+        val lst = arrayOf(
+            "Sistem Prediksi Tindakan Pelanggan - PT ABC",
+            "Sistem Informasi Konten Sosial Media - PT XYZ"
+        )
+        return lst
     }
 }

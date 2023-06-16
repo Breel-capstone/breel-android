@@ -1,16 +1,23 @@
 package com.example.breel.ui.fragment.home.project
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.R
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.ItemProjectBinding
+import com.example.breel.ui.fragment.navigation.NavigationFragment
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 import com.google.android.material.chip.Chip
 
-class ProjectAdapter : PagingDataAdapter<Project, ProjectAdapter.ViewHolder>(DIFF_CALLBACK) {
+class ProjectAdapter(
+    private val onItemClick: (id: Int) -> Unit
+) : PagingDataAdapter<Project, ProjectAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     companion object {
         const val TAG = "ProjectAdapter"
@@ -28,6 +35,7 @@ class ProjectAdapter : PagingDataAdapter<Project, ProjectAdapter.ViewHolder>(DIF
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemProjectBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
+        Log.i(TAG, "halo!")
     }
 
 
@@ -44,8 +52,11 @@ class ProjectAdapter : PagingDataAdapter<Project, ProjectAdapter.ViewHolder>(DIF
         fun bind(project: Project) {
             binding.tvTitle.text = project.title
             binding.tvDescription.text = project.description
-            binding.tvSalary.text = project.budget.toString()
-            binding.tvDuration.text = project.durationMonth.toString()
+            binding.tvSalary.text = project.budgetString
+            binding.tvDuration.text = "${project.durationMonth} Bulan"
+            itemView.setOnClickListener {
+                onItemClick(project.id)
+            }
             for (skill in project.skills) {
                 val skillView = LayoutInflater.from(binding.root.context)
                     .inflate(R.layout.item_profile_chip_skill, null) as Chip

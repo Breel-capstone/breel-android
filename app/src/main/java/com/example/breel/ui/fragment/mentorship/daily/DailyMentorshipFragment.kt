@@ -35,7 +35,7 @@ class DailyMentorshipFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val lst = listOf("Item 1", "Item 2", "Item 3")
+        val lst = listOf("Item 1")
 
         val rv = binding.rvYourMentee
         rv.layoutManager = LinearLayoutManager(requireActivity())

@@ -14,6 +14,7 @@ import com.example.breel.databinding.FragmentProfileOpenedBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.account.adapter.UserExperienceAdapter
 import com.example.breel.ui.fragment.account.adapter.UserProjectExperienceAdapter
+import com.google.api.Distribution.BucketOptions.Linear
 
 class ProfileOpenedFragment : Fragment() {
 
@@ -25,22 +26,28 @@ class ProfileOpenedFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_opened, container, false)
+        binding = FragmentProfileOpenedBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpActionBar()
 
+        val lstFreelance = getDummyFreelance()
         val lstProject = getDummyListProjectExperience()
         val lstExperience = getDummyListExperience()
 
+        val rvFreelance: RecyclerView = binding.rvFreelance
         val rvProject: RecyclerView = binding.rvProject
         val rvExperience: RecyclerView = binding.rvExperience
 
+        rvFreelance.layoutManager = LinearLayoutManager(requireActivity())
         rvProject.layoutManager = LinearLayoutManager(requireActivity())
         rvExperience.layoutManager = LinearLayoutManager(requireActivity())
 
+        val adapterFreelance = UserProjectExperienceAdapter(lstFreelance)
+        rvFreelance.adapter = adapterFreelance
 
         val adapterProject = UserProjectExperienceAdapter(lstProject)
         rvProject.adapter = adapterProject
@@ -55,47 +62,27 @@ class ProfileOpenedFragment : Fragment() {
         mainActionBar.setTitle("Akun")
     }
 
+    private fun getDummyFreelance() : List<UserProjectExperience> {
+        return listOf<UserProjectExperience>(
+            UserProjectExperience(
+                "Company Profile Website",
+                "http://example.com/",
+                "Website sederhana berisi informasi mengenai sebuah perusahaan."
+            ),
+        )
+    }
+
     private fun getDummyListProjectExperience() : List<UserProjectExperience> {
         return listOf<UserProjectExperience>(
             UserProjectExperience(
-                "Lorem Ipsum 01",
+                "Running Tracker App",
                 "http://example.com/",
-                getString(R.string.lorem_2sen)
+                "Mengimplementasikan konsep Geolocation, aplikasi ini melakukan penggambaran rute berlari user. Data histori disimpan di local storage pengguna."
             ),
             UserProjectExperience(
-                "Lorem Ipsum 02",
+                "Online-Offline To Do List App",
                 "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 03",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 04",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 05",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 06",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 07",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
-            ),
-            UserProjectExperience(
-                "Lorem Ipsum 08",
-                "http://example.com/",
-                getString(R.string.lorem_2sen)
+                "Mengimplementasikan online-offline app, aplikasi ini melakukan penyimpanan data di remote server dan juga melakukan caching."
             ),
         )
     }
@@ -103,44 +90,20 @@ class ProfileOpenedFragment : Fragment() {
     private fun getDummyListExperience() : List<UserExperience> {
         return listOf<UserExperience>(
             UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 01",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
+                "Bangkit Capstone",
+                "Online",
+                "Project Manager",
+                "April 2023",
+                "Juli 2023",
+                "Menjadi Project Manager untuk tim Product Capstone program Bangkit 2023. Memimpin dan mengatur anggota untuk mengerjakan tugas sesuai Learning Path yang mereka pelajari."
             ),
             UserExperience(
-                "Lorem",
+                "PIPTEK",
                 "Jakarta",
                 "Lorem Ipsum 02",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
-            ),
-            UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 03",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
-            ),
-            UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 04",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
-            ),
-            UserExperience(
-                "Lorem",
-                "Jakarta",
-                "Lorem Ipsum 05",
-                "01-01-2002",
-                "07-07-2002",
-                getString(R.string.lorem_2sen)
+                "Januari 2022",
+                "Juli 2022",
+                "Bertanggung jawab sebagai Ketua Bidang PIPTEK IME FTUI. Mendukung warga DTE serta anggota untuk melakukan riset dan perlombaan yang sesuai core competence Elektro."
             ),
         )
     }

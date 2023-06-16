@@ -11,10 +11,10 @@
         android:title="Chat"
         android:icon="@drawable/outline_chat_bubble_outline_24"/>
     <item
-        android:id="@+id/menu_mentor"
+        android:id="@+id/menu_eksplor"
         android:enabled="true"
-        android:title="Mentor"
-        android:icon="@drawable/baseline_people_outline_24"/>
+        android:title="Eksplor"
+        android:icon="@drawable/ic_search_900"/>
     <item
         android:id="@+id/menu_notifikasi"
         android:enabled="true"

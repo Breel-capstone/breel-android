@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,12 +7,13 @@
     android:padding="16dp">
 
     <ScrollView
+        android:id="@+id/sv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/ll_bottom">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/ll_bottom">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,11 +55,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-                android:layout_marginBottom="14dp">
+                android:layout_marginBottom="14dp"
+                app:hintEnabled="false"
+                app:startIconDrawable="@drawable/ic_rupiah">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="300.000"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,11 +86,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-                android:layout_marginBottom="32dp">
+                android:layout_marginBottom="32dp"
+                app:hintEnabled="false"
+                app:startIconDrawable="@drawable/ic_time">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="1"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -124,12 +131,12 @@
         android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
         android:background="@color/white"
-        android:paddingTop="16dp">
+        android:paddingTop="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true">
 
         <Button
             android:id="@+id/btn_update"
@@ -140,4 +147,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

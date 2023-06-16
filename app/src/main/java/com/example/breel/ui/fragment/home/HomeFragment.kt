@@ -7,14 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.breel.R
 import com.example.breel.data.api.mentor.Mentor
 import com.example.breel.data.api.project.Project
 import com.example.breel.databinding.FragmentHomeBinding
 import com.example.breel.ui.component.MainActionBar
 import com.example.breel.ui.fragment.home.mentor.MentorAdapter
 import com.example.breel.ui.fragment.home.project.ProjectAdapter
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -33,6 +37,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        setUpRecyclerView()
+        observeViewModel()
         return binding.root
     }
 
@@ -43,15 +49,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpRecyclerView()
-        observeViewModel()
+        setUpLihatSemua()
     }
 
-
     private fun setUpRecyclerView() {
-        projectAdapter = ProjectAdapter()
-        mentorProjectAdapter = ProjectAdapter()
-        mentorAdapter = MentorAdapter(requireContext())
         setClientProject()
         setMentorProject()
         setMentor()
@@ -59,19 +60,33 @@ class HomeFragment : Fragment() {
 
 
     private fun setClientProject() {
-        binding.rvClientProject.layoutManager = LinearLayoutManager(requireActivity())
-        binding.rvClientProject.adapter = projectAdapter
+        val rv: RecyclerView = binding.rvClientProject
+        rv.layoutManager = LinearLayoutManager(requireActivity())
+        projectAdapter = ProjectAdapter {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
+            findNavController().navigate(destination)
+        }
+        rv.adapter = projectAdapter
     }
 
     private fun setMentorProject() {
-        binding.rvMentorProject.layoutManager = LinearLayoutManager(requireActivity())
-        binding.rvMentorProject.adapter = mentorProjectAdapter
+        val rv: RecyclerView = binding.rvMentorProject
+        rv.layoutManager = LinearLayoutManager(requireActivity())
+        mentorProjectAdapter = ProjectAdapter {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToProjectDetailFragment(it)
+            findNavController().navigate(destination)
+        }
+        rv.adapter = mentorProjectAdapter
     }
 
     private fun setMentor() {
-        binding.rvMentor.layoutManager =
-            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
-        binding.rvMentor.adapter = mentorAdapter
+        val rv: RecyclerView = binding.rvMentor
+        rv.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+        mentorAdapter = MentorAdapter {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToMentorDetailFragment(it)
+            findNavController().navigate(destination)
+        }
+        rv.adapter = mentorAdapter
     }
 
     private fun observeViewModel() {
@@ -88,6 +103,27 @@ class HomeFragment : Fragment() {
             handleMentorResult(it)
         }
 
+    }
+
+    private fun setUpLihatSemua() {
+        // todo navigate to spesific tab in Searching Fragment
+        val btnLihatSemua1 = binding.btnLihatSemua1
+        btnLihatSemua1.setOnClickListener {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToSearchingFragment()
+            findNavController().navigate(destination)
+        }
+
+        val btnLihatSemua2 = binding.btnLihatSemua2
+        btnLihatSemua2.setOnClickListener {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToSearchingFragment()
+            findNavController().navigate(destination)
+        }
+
+        val btnLihatSemua3 = binding.btnLihatSemua3
+        btnLihatSemua3.setOnClickListener {
+            val destination = NavigationFragmentDirections.actionNavigationFragment2ToSearchingFragment()
+            findNavController().navigate(destination)
+        }
     }
 
 

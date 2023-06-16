@@ -1,4 +1,4 @@
-package com.example.breel.ui.fragment.notification
+package com.example.breel.ui.fragment.notification.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

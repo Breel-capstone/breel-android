@@ -1,19 +1,19 @@
-package com.example.breel.ui.fragment.notification
+package com.example.breel.ui.fragment.notification.detail
 
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.breel.R
+import androidx.fragment.app.Fragment
 import com.example.breel.databinding.FragmentProposalAcceptedBinding
 import com.example.breel.ui.component.MainActionBar
 
-class ProposalRejectedFragment : Fragment() {
+
+class ProposalAcceptedFragment : Fragment() {
 
     private lateinit var binding: FragmentProposalAcceptedBinding
     private lateinit var mainActionBar: MainActionBar
@@ -27,11 +27,10 @@ class ProposalRejectedFragment : Fragment() {
         setUpActionBar()
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dummyPosisi = "Video Editing dengan Michael Kusumawijaya"
+        val dummyPosisi = "Web Development dengan Agnes Monika"
         setBodyText(dummyPosisi)
     }
 
@@ -50,7 +49,7 @@ class ProposalRejectedFragment : Fragment() {
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
 
-        val temp: CharSequence = "Terima kasih atas ketertarikan dan partisipasi Anda terhadap " + str
+        val temp: CharSequence = "untuk posisi " + str + ". Pelajari dulu tawaran ini sebelum merespon, ya!"
         binding.tvBody.text = temp
         // masih belum sesuai expected.
 

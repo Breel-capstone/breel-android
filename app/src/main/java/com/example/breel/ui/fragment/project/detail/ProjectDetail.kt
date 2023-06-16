@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.breel.databinding.FragmentProjectDetailBinding
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
 
 class ProjectDetail : Fragment() {
     private var _binding: FragmentProjectDetailBinding? = null
@@ -22,6 +24,14 @@ class ProjectDetail : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnCreateProposal.setOnClickListener {
+            val destination = ProjectDetailDirections.actionProjectDetailFragmentToProposalFormFragment()
+            findNavController().navigate(destination)
+        }
     }
 
 }

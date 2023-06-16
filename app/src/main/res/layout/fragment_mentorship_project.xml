@@ -14,7 +14,7 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/addExperienceButton"
+        android:id="@+id/btn_add_project"
         style="@style/Widget.Breel.IconButton.Primary.Large"
         android:layout_width="48dp"
         android:layout_height="48dp"

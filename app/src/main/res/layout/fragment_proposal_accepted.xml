@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.notification.ProposalAcceptedFragment"
+    tools:context=".ui.fragment.notification.detail.ProposalAcceptedFragment"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_gravity="center"
@@ -52,6 +52,7 @@
         app:justifyContent="center">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_tolak"
             style="@style/Widget.Breel.Button.Outline.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,12 +63,20 @@
             android:layout_height="wrap_content" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_terima"
             style="@style/Widget.Breel.Button.Filled.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Terima" />
 
     </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_hubungi_klien"
+        style="@style/Widget.Breel.Button.Filled.Large"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:text="Hubungi Klien" />
 
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.breel.ui.component
 
+import android.util.Log
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -18,13 +19,19 @@ class MainActionBar(fragment: Fragment) {
 
     fun setTitle(title: String) {
         actionBar?.let {
+            Log.d("MainActionBar", "setTitle: $title")
+            it.hide()
             it.show()
             it.title = title
         }
     }
 
     fun hideActionBar() {
-        actionBar?.hide()
+        actionBar?.let {
+            it.setDisplayShowHomeEnabled(false)
+            it.setDisplayHomeAsUpEnabled(false)
+            it.hide()
+        }
     }
 
     fun setBackButton() {

@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.home.HomeFragment">
+    tools:context=".ui.fragment.home.HomeFragment"
+    android:paddingTop="24dp">
 
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fadeScrollbars="true"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp">
 
             <TextView
                 android:id="@+id/tv_greeting"
@@ -32,13 +33,76 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.search.SearchBar
-                android:id="@+id/search_view"
+                android:id="@+id/search_bar"
                 style="@style/Widget.Breel.SearchBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="28dp"
                 android:hint="Cari proyek atau mentor"
                 app:defaultMarginsEnabled="false" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_saran"
+                android:padding="24dp"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:id="@+id/tv_saran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Saran"
+                    android:textAppearance="@style/TextAppearance.Breel.TitleLarge"
+                    android:textColor="@color/green_hookers_900"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_petik1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/petik"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/green_hookers_900"
+                    android:textSize="42dp"
+                    android:layout_below="@id/tv_saran"/>
+
+                <TextView
+                    android:id="@+id/tv_sen1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saran_sen1"
+                    android:lineHeight="22dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_below="@id/tv_saran"
+                    android:layout_toRightOf="@+id/tv_petik1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    style="@style/TextAppearance.Breel.BodyMedium"/>
+
+                <TextView
+                    android:id="@+id/tv_sen2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saran_sen2"
+                    android:lineHeight="22dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/tv_sen1"
+                    android:layout_alignStart="@id/tv_sen1"
+                    style="@style/TextAppearance.Breel.BodyMedium"/>
+
+                <TextView
+                    android:id="@+id/tv_sen3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saran_sen3"
+                    android:lineHeight="22dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/tv_sen2"
+                    android:layout_alignStart="@id/tv_sen1"
+                    style="@style/TextAppearance.Breel.BodyMedium"/>
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/project_client"
@@ -155,7 +219,7 @@
                 android:id="@+id/mentor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/background_rv_mentor"
                 android:padding="24dp">
 
@@ -201,19 +265,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottom_nav"-->
-<!--        style="@style/Widget.Breel.BottomNav"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/nav_corner"-->
-<!--        app:itemActiveIndicatorStyle="@style/MyIndicator"-->
-<!--        app:itemIconTint="@color/green_hookers_800"-->
-<!--        app:labelVisibilityMode="labeled"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:menu="@menu/menu" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

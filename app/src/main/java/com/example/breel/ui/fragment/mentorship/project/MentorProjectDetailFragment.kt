@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.breel.R
+import com.example.breel.data.model.temp.ApplicantTempData
 import com.example.breel.databinding.FragmentDailyMentorshipBinding
 import com.example.breel.databinding.FragmentMentorProjectDetailBinding
 import com.example.breel.ui.component.MainActionBar
@@ -23,13 +24,14 @@ class MentorProjectDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentMentorProjectDetailBinding.inflate(inflater, container, false)
+        setUpActionBar()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val lst = listOf("Item 1", "Item 2", "Item 3")
+        val lst = getApplicantDummyData()
 
         val rv = binding.rvPendaftar
         rv.layoutManager = LinearLayoutManager(requireActivity())
@@ -42,5 +44,13 @@ class MentorProjectDetailFragment : Fragment() {
         mainActionBar = MainActionBar(this)
         mainActionBar.setTitle("Detail Proyek")
         mainActionBar.setBackButton()
+    }
+
+    private fun getApplicantDummyData() : List<ApplicantTempData> {
+        val lst = listOf(
+            ApplicantTempData(0, "Adiva", "Golang"),
+            ApplicantTempData(1, "Yerobal", "KMM")
+        )
+        return lst
     }
 }

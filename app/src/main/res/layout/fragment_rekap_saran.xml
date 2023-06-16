@@ -6,12 +6,6 @@
     tools:context=".ui.fragment.notification.feedback.FeedbackFragment"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment Rekap dan Saran" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_rekap_saran"
         android:layout_width="match_parent"

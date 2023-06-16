@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.breel.data.model.notification.NotificationData
 import com.example.breel.databinding.FragmentNotificationListBinding
-import com.example.breel.ui.fragment.notification.NotificationAdapter
+import com.example.breel.ui.fragment.navigation.NavigationFragmentDirections
+import com.example.breel.ui.fragment.notification.NotificationFragmentDirections
+import com.example.breel.ui.fragment.notification.adapter.NotificationAdapter
 
 
 class NotificationListFragment : Fragment() {
@@ -32,18 +35,33 @@ class NotificationListFragment : Fragment() {
         rv.layoutManager = LinearLayoutManager(requireActivity())
 
         var lst = listOf<NotificationData>(
-            NotificationData("1","Title 1", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("2","Title 2", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("3","Title 3", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("4","Title 4", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("5","Title 5", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("6","Title 6", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("7","Title 7", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            NotificationData("8","Title 8", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra, sapien vitae convallis venenatis, dui neque semper mauris, porttitor rutrum eros lorem in erat."),
-            )
+            NotificationData(
+                "1",
+                "Selamat! Proposal Anda telah lolos!",
+                "PT. Blablabla sudah mereview proposal project Anda dan tertarik untuk bekerja sama dengan Anda!"
+            ),
+            NotificationData(
+                "2",
+                "Michael Kusumawijaya menerima Anda sebagai mentee",
+                "Michael Kusumawijaya menerima proposal Anda sebagai mentee untuk program Mentor On A Project."
+            ),
+            NotificationData(
+                "3",
+                "Mohon Maaf! Proposal Anda telah ditolak!",
+                "PT. Blablabla sudah mereview proposal project Anda dan tertarik untuk bekerja sama dengan Anda!"
+            ),
+            NotificationData(
+                "4",
+                "Agnes Monika melihat profil Anda",
+                "Agnes Monika telah melihat profil Anda. Agnes Monika merupakan Design Editor pada majalah Harper Bazaar’s."
+            ),
+        )
 
+//        lst.forEach { }
         val adapter = NotificationAdapter {
-
+            val destination =
+                NavigationFragmentDirections.actionNavigationFragment2ToProposalAcceptedFragment()
+            findNavController().navigate(destination)
         }
         rv.adapter = adapter
         adapter.submitList(lst)

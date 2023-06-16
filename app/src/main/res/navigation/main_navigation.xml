@@ -48,28 +48,217 @@
     </navigation>
 
     <navigation android:id="@+id/home_navigation"
-        app:startDestination="@id/navigationFragment">
+        app:startDestination="@id/navigationFragment2">
+<!--        <fragment-->
+<!--            android:id="@+id/navigationFragment"-->
+<!--            android:name="com.example.breel.ui.fragment.navigation.NavigationFragment"-->
+<!--            android:label="fragment_navigation"-->
+<!--            tools:layout="@layout/fragment_navigation" >-->
+<!--            <action-->
+<!--                android:id="@+id/action_navigationFragment_to_clientProjectDetailFragment"-->
+<!--                app:destination="@id/clientProjectDetailFragment" />-->
+<!--        </fragment>-->
+
+<!--        <fragment-->
+<!--            android:id="@+id/clientProjectDetailFragment"-->
+<!--            android:name="com.example.breel.ui.fragment.project.detail.ProjectDetail"-->
+<!--            android:label="fragment_client_project_detail"-->
+<!--            tools:layout="@layout/fragment_project_detail" >-->
+<!--            <argument-->
+<!--                android:name="id"-->
+<!--                app:argType="integer"-->
+<!--                android:defaultValue="-1" />-->
+<!--        </fragment>-->
         <fragment
-            android:id="@+id/navigationFragment"
+            android:id="@+id/navigationFragment2"
             android:name="com.example.breel.ui.fragment.navigation.NavigationFragment"
             android:label="fragment_navigation"
             tools:layout="@layout/fragment_navigation" >
             <action
-                android:id="@+id/action_navigationFragment_to_chatRoomFragment"
+                android:id="@+id/action_navigationFragment2_to_projectDetailFragment"
+                app:destination="@id/projectDetailFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_chatRoomFragment"
                 app:destination="@id/chatRoomFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_searchingFragment"
+                app:destination="@id/searchingFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_notificationFragment"
+                app:destination="@id/notification_navigation" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_proposalAcceptedFragment"
+                app:destination="@id/proposalAcceptedFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_proposalRejectedFragment"
+                app:destination="@id/proposalRejectedFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_rekapSaranDetailFragment"
+                app:destination="@id/rekapSaranDetailFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_mentorshipFragment"
+                app:destination="@id/mentorshipFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_profileOpenedFragment"
+                app:destination="@id/profileOpenedFragment" />
+            <action
+                android:id="@+id/action_navigationFragment2_to_mentorDetailFragment"
+                app:destination="@id/mentorDetailFragment" />
         </fragment>
-
+        <fragment
+            android:id="@+id/projectDetailFragment"
+            android:name="com.example.breel.ui.fragment.project.detail.ProjectDetail"
+            android:label="fragment_project_detail"
+            tools:layout="@layout/fragment_project_detail" >
+            <argument
+                android:name="id"
+                app:argType="integer" />
+            <action
+                android:id="@+id/action_projectDetailFragment_to_proposalFormFragment"
+                app:destination="@id/proposalFormFragment" />
+        </fragment>
         <fragment
             android:id="@+id/chatRoomFragment"
             android:name="com.example.breel.ui.fragment.chat.room.ChatRoomFragment"
             android:label="fragment_chat_room"
             tools:layout="@layout/fragment_chat_room" >
             <action
-                android:id="@+id/action_chatRoomFragment_to_navigationFragment"
-                app:destination="@id/navigationFragment" />
+                android:id="@+id/action_chatRoomFragment_to_navigationFragment2"
+                app:destination="@id/navigationFragment2" />
             <argument
                 android:name="id"
                 app:argType="string" />
         </fragment>
+        <fragment
+            android:id="@+id/searchingFragment"
+            android:name="com.example.breel.ui.fragment.searching.SearchingFragment"
+            android:label="fragment_searching"
+            tools:layout="@layout/fragment_searching" />
+        <fragment
+            android:id="@+id/proposalAcceptedFragment"
+            android:name="com.example.breel.ui.fragment.notification.detail.ProposalAcceptedFragment"
+            android:label="fragment_proposal_accepted"
+            tools:layout="@layout/fragment_proposal_accepted" />
+        <fragment
+            android:id="@+id/proposalRejectedFragment"
+            android:name="com.example.breel.ui.fragment.notification.detail.ProposalRejectedFragment"
+            android:label="fragment_proposal_rejected"
+            tools:layout="@layout/fragment_proposal_rejected" />
+        <fragment
+            android:id="@+id/rekapSaranDetailFragment"
+            android:name="com.example.breel.ui.fragment.notification.detail.RekapSaranDetailFragment"
+            android:label="RekapSaranDetailFragment"
+            tools:layout="@layout/fragment_rekap_saran_detail">
+            <argument
+                android:name="id"
+                app:argType="string" />
+        </fragment>
+        <navigation android:id="@+id/notification_navigation"
+            app:startDestination="@id/notificationFragment">
+            <fragment
+                android:id="@+id/notificationFragment"
+                android:name="com.example.breel.ui.fragment.notification.NotificationFragment"
+                android:label="fragment_notification"
+                tools:layout="@layout/fragment_notification" >
+                <action
+                    android:id="@+id/action_notificationFragment_to_proposalRejectedFragment"
+                    app:destination="@id/proposalRejectedFragment" />
+                <action
+                    android:id="@+id/action_notificationFragment_to_proposalAcceptedFragment"
+                    app:destination="@id/proposalAcceptedFragment" />
+                <action
+                    android:id="@+id/action_notificationFragment_to_rekapSaranDetailFragment"
+                    app:destination="@id/rekapSaranDetailFragment" />
+            </fragment>
+            <fragment
+                android:id="@+id/proposalAcceptedFragment"
+                android:name="com.example.breel.ui.fragment.notification.detail.ProposalAcceptedFragment"
+                android:label="fragment_proposal_accepted"
+                tools:layout="@layout/fragment_proposal_accepted" />
+            <fragment
+                android:id="@+id/proposalRejectedFragment"
+                android:name="com.example.breel.ui.fragment.notification.detail.ProposalRejectedFragment"
+                android:label="fragment_proposal_rejected"
+                tools:layout="@layout/fragment_proposal_rejected" />
+            <fragment
+                android:id="@+id/rekapSaranDetailFragment"
+                android:name="com.example.breel.ui.fragment.notification.detail.RekapSaranDetailFragment"
+                android:label="RekapSaranDetailFragment"
+                tools:layout="@layout/fragment_rekap_saran_detail"/>
+        </navigation>
+        <fragment
+            android:id="@+id/profileOpenedFragment"
+            android:name="com.example.breel.ui.fragment.account.ProfileOpenedFragment"
+            android:label="ProfileOpenedFragment"
+            tools:layout="@layout/fragment_profile_opened"/>
+        <fragment
+            android:id="@+id/mentorshipFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.MentorshipFragment"
+            android:label="MentorshipFragment"
+            tools:layout="@layout/fragment_mentorship">
+            <action
+                android:id="@+id/action_mentorshipFragment_to_mentorshipProjectFragment"
+                app:destination="@id/mentorshipProjectFragment" />
+            <action
+                android:id="@+id/action_mentorshipFragment_to_dailyMentorshipFragment"
+                app:destination="@id/dailyMentorshipFragment" />
+            <action
+                android:id="@+id/action_mentorshipFragment_to_createDailyMentorshipFragment"
+                app:destination="@id/createDailyMentorshipFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/mentorshipProjectFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.MentorshipProjectFragment"
+            android:label="MentorshipProjectFragment"
+            tools:layout="@layout/fragment_mentorship_project">
+            <action
+                android:id="@+id/action_mentorshipProjectFragment_to_createMentorshipProjectFragment"
+                app:destination="@id/createMentorshipProjectFragment" />
+            <action
+                android:id="@+id/action_mentorshipProjectFragment_to_mentorProjectDetailFragment"
+                app:destination="@id/mentorProjectDetailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/proposalFormFragment"
+            android:name="com.example.breel.ui.fragment.project.proposal.ProposalFormFragment"
+            android:label="ProposalFormFragment"
+            tools:layout="@layout/fragment_proposal_form" />
+        <fragment
+            android:id="@+id/mentorDetailFragment"
+            android:name="com.example.breel.ui.fragment.home.mentor.MentorDetailFragment"
+            android:label="MentorDetailFragment" >
+            <argument
+                android:name="id"
+                app:argType="integer"
+                android:defaultValue="-1" />
+        </fragment>
+        <fragment
+            android:id="@+id/dailyMentorshipFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.daily.DailyMentorshipFragment"
+            android:label="DailyMentorshipFragment" />
+        <fragment
+            android:id="@+id/createDailyMentorshipFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.daily.CreateDailyMentorshipFragment"
+            android:label="CreateDailyMentorshipFragment" />
+        <fragment
+            android:id="@+id/createMentorshipProjectFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.CreateMentorshipProjectFragment"
+            android:label="CreateMentorshipProjectFragment" />
+        <fragment
+            android:id="@+id/mentorProjectDetailFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.MentorProjectDetailFragment"
+            android:label="MentorProjectDetailFragment"
+            tools:layout="@layout/fragment_mentor_project_detail">
+            <action
+                android:id="@+id/action_mentorProjectDetailFragment_to_proposalDetailFragment"
+                app:destination="@id/proposalDetailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/proposalDetailFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.ProposalDetailFragment"
+            android:label="ProposalDetailFragment"
+            tools:layout="@layout/fragment_proposal_detail"/>
+        <fragment android:id="@+id/placeholder" />
     </navigation>
+
 </navigation>

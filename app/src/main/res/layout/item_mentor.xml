@@ -25,13 +25,17 @@
         android:text="Lorem Ipsum"
         android:textAppearance="@style/TextAppearance.Breel.TitleMedium"
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"/>
 
     <TextView
         android:id="@+id/tv_salary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1.000.000"
+        android:drawableStart="@drawable/ic_rupiah_white"
+        android:drawablePadding="4dp"
         android:textAppearance="@style/TextAppearance.Breel.TitleSmall"
         android:textColor="@color/white" />
 

@@ -1,188 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="16dp"
-    tools:context=".ui.fragment.project.detail.ProjectDetail">
+    android:paddingVertical="16dp">
 
-    <androidx.appcompat.widget.Toolbar
-        style="@style/Widget.Material3.Toolbar"
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorSurface"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
     <TextView
+        android:id="@+id/tv_heading"
         style="@style/TextAppearance.Breel.TitleLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Pengembangan Web untuk Main Page Perusahaan"
-        android:textFontWeight="600" />
+        android:textFontWeight="600"
+        android:paddingHorizontal="16dp" />
 
     <View
+        android:id="@+id/devider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/green_hookers_200" />
+        android:background="@color/green_hookers_200"
+        android:layout_below="@+id/tv_heading"
+        android:layout_marginHorizontal="16dp"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/devider"
+        android:layout_above="@id/ll_button">
 
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                style="@style/TextAppearance.Breel.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Proyek ini bertujuan untuk mengembangkan sebuah halaman landing (Landing Page) yang menarik dan fungsional untuk perusahaan. Halaman landing merupakan halaman pertama yang akan dilihat oleh pengunjung ketika mereka mengakses situs web perusahaan. Tujuan dari halaman ini adalah untuk memberikan gambaran yang jelas dan menarik tentang perusahaan, produk, atau layanan yang ditawarkan."
+                android:textColor="@color/green_hookers_900"
+                android:textFontWeight="600" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/green_hookers_200" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
                 android:orientation="vertical">
 
-
                 <TextView
-                    style="@style/TextAppearance.Breel.BodyLarge"
+                    style="@style/TextAppearance.Breel.LabelLarge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Proyek ini bertujuan untuk mengembangkan sebuah halaman landing (Landing Page) yang menarik dan fungsional untuk perusahaan. Halaman landing merupakan halaman pertama yang akan dilihat oleh pengunjung ketika mereka mengakses situs web perusahaan. Tujuan dari halaman ini adalah untuk memberikan gambaran yang jelas dan menarik tentang perusahaan, produk, atau layanan yang ditawarkan."
-                    android:textColor="@color/green_hookers_900"
+                    android:text="Harga Tawaran Anda (RP)"
                     android:textFontWeight="600" />
 
-                <View
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/green_hookers_200" />
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_rupiah"
+                    app:hintEnabled="false">
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="7dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextAppearance.Breel.LabelLarge"
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.Breel.TextInputEditText.Large"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Harga Tawaran Anda (RP)"
-                        android:textFontWeight="600" />
+                        android:hint="1.000.000" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1.000.000"
-                        app:startIconDrawable="@drawable/ic_rupiah">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/Widget.Breel.TextInputEditText.Large"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="7dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextAppearance.Breel.LabelLarge"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Durasi (bulan)"
-                        android:textFontWeight="600" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="1"
-                        app:startIconDrawable="@drawable/ic_time">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/Widget.Breel.TextInputEditText.Large"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginBottom="7dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextAppearance.Breel.LabelLarge"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Surat Lamaran"
-                        android:textFontWeight="600" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            style="@style/Widget.Breel.TextInputEditText.Large"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="start|top"
-                            android:lines="5" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-        </ScrollView>
 
-        <LinearLayout
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:orientation="vertical">
 
-            <Button
-                style="@style/Widget.Breel.Button.Outline.Medium"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Batal"
-                android:layout_marginEnd="8dp"
-                />
-            <Button
-                style="@style/Widget.Breel.Button.Filled.Medium"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Kirim"
-                android:layout_marginStart="8dp"
-                />
+                <TextView
+                    style="@style/TextAppearance.Breel.LabelLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Durasi (bulan)"
+                    android:textFontWeight="600" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@drawable/ic_time"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.Breel.TextInputEditText.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="1"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.Breel.LabelLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Surat Lamaran"
+                    android:textFontWeight="600" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Breel.TextField.OutlinedBox.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/Widget.Breel.TextInputEditText.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|top"
+                        android:lines="5" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </ScrollView>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:paddingHorizontal="16dp">
+
+        <Button
+            style="@style/Widget.Breel.Button.Outline.Small"
+            android:backgroundTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Batal"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            style="@style/Widget.Breel.Button.Filled.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kirim"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

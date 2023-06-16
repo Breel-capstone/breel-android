@@ -29,7 +29,7 @@
                     android:id="@+id/iv_profile_picture"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    tools:src="@tools:sample/avatars"
+                    android:src="@drawable/open_peeps1"
                     app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
                     app:layout_constraintStart_toStartOf="parent"/>
 
@@ -37,7 +37,7 @@
                     android:id="@+id/tv_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Name Name"
+                    android:text="Yerobal"
                     app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/iv_profile_picture"
@@ -49,7 +49,7 @@
                     android:id="@+id/tv_position"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:text="Position"
+                    android:text="Full Stack Engineer"
                     app:layout_constraintTop_toBottomOf="@id/tv_name"
                     app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -64,14 +64,15 @@
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Proyek"
+                android:text="Proposal Freelancer"
                 android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lorem_1pg"
-                android:layout_marginBottom="10dp" />
+                android:text="Saya menulis untuk mengekspresikan minat saya yang besar dalam proyek pengembangan web untuk toko online untuk perusahaan Anda yang terhormat. Dengan latar belakang fullstack development dan keahlian dalam menciptakan pengalaman pengguna yang menarik, saya yakin kemampuan saya dapat berkontribusi dalam proyek ini dan membantu mempresentasikan perusahaan, produk, atau layanan Anda secara efektif."
+                android:layout_marginBottom="10dp"
+                android:textAppearance="@style/TextAppearance.Breel.BodyMedium"/>
 
             <com.google.android.flexbox.FlexboxLayout
                 android:layout_width="match_parent"
