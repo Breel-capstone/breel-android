@@ -214,6 +214,9 @@
             <action
                 android:id="@+id/action_mentorshipProjectFragment_to_createMentorshipProjectFragment"
                 app:destination="@id/createMentorshipProjectFragment" />
+            <action
+                android:id="@+id/action_mentorshipProjectFragment_to_mentorProjectDetailFragment"
+                app:destination="@id/mentorProjectDetailFragment" />
         </fragment>
         <fragment
             android:id="@+id/proposalFormFragment"
@@ -241,6 +244,21 @@
             android:id="@+id/createMentorshipProjectFragment"
             android:name="com.example.breel.ui.fragment.mentorship.project.CreateMentorshipProjectFragment"
             android:label="CreateMentorshipProjectFragment" />
+        <fragment
+            android:id="@+id/mentorProjectDetailFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.MentorProjectDetailFragment"
+            android:label="MentorProjectDetailFragment"
+            tools:layout="@layout/fragment_mentor_project_detail">
+            <action
+                android:id="@+id/action_mentorProjectDetailFragment_to_proposalDetailFragment"
+                app:destination="@id/proposalDetailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/proposalDetailFragment"
+            android:name="com.example.breel.ui.fragment.mentorship.project.ProposalDetailFragment"
+            android:label="ProposalDetailFragment"
+            tools:layout="@layout/fragment_proposal_detail"/>
+        <fragment android:id="@+id/placeholder" />
     </navigation>
 
 </navigation>

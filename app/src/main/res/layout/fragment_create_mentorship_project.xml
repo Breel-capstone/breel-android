@@ -123,7 +123,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="68dp" />
+                android:layout_height="80dp" />
 
         </LinearLayout>
 
@@ -138,7 +138,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingHorizontal="16dp"
-        android:paddingBottom="16dp"/>
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,68 +5,178 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.mentorship.project.MentorProjectDetailFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginVertical="16dp">
 
-    <androidx.appcompat.widget.Toolbar
-        style="@style/Widget.Material3.Toolbar"
-        android:id="@+id/toolbar"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorSurface"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
-    <LinearLayout
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            style="@style/TextAppearance.Breel.TitleLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="Pengembangan Web untuk Main Page Perusahaan"
-            android:textFontWeight="600" />
-
-        <TextView
-            style="@style/TextAppearance.Breel.TitleSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Dibuat 3 hari lalu"
-            android:textColor="@color/green_hookers_900"
-            android:textFontWeight="600" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/green_hookers_200" />
-
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
-                style="@style/TextAppearance.Breel.BodyLarge"
+                style="@style/TextAppearance.Breel.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Pengembangan Web untuk Aplikasi Toko Online"
+                android:textFontWeight="600" />
+
+            <TextView
+                style="@style/TextAppearance.Breel.TitleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Proyek ini bertujuan untuk mengembangkan sebuah halaman landing (Landing Page) yang menarik dan fungsional untuk perusahaan. Halaman landing merupakan halaman pertama yang akan dilihat oleh pengunjung ketika mereka mengakses situs web perusahaan. Tujuan dari halaman ini adalah untuk memberikan gambaran yang jelas dan menarik tentang perusahaan, produk, atau layanan yang ditawarkan."
+                android:text="Dibuat 3 hari lalu"
                 android:textColor="@color/green_hookers_900"
                 android:textFontWeight="600" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/green_hookers_200" />
+
+
+                <TextView
+                    style="@style/TextAppearance.Breel.BodyLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Proyek ini bertujuan untuk mengembangkan sebuah aplikasi jual beli online. Seperti aplikasi jual beli lainnya, aplikasi ini dilengkapi dengan fitur pembelian, checkout (terintegrasi dengan payment gateway), filter dan search, keranjang, status pembelian, dan forum review dari pembeli. Proyek ini menargetkan kemudahan dalam penggunaannya."
+                    android:textColor="@color/green_hookers_900"
+                    android:textFontWeight="600" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/green_hookers_200" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Web Development" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="React js" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="HTML/CSS" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Responsive" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Javascript" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.Breel.Chip.Filled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="Tailwind CSS" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/green_hookers_200" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap"
+                    app:justifyContent="space_between">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_rupiah" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:text="1.000.000"
+                            android:textAppearance="@style/TextAppearance.Breel.BodyLarge" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_time" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:text="1 Bulan"
+                            android:textAppearance="@style/TextAppearance.Breel.BodyLarge" />
+                    </LinearLayout>
+                </com.google.android.flexbox.FlexboxLayout>
+            </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -74,132 +184,22 @@
                 android:layout_marginBottom="8dp"
                 android:background="@color/green_hookers_200" />
 
-            <com.google.android.flexbox.FlexboxLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendaftar"
+                android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold"
+                android:layout_marginBottom="8dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pendaftar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:flexDirection="row"
-                app:flexWrap="wrap">
+                android:layout_height="wrap_content" />
 
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Web Development" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="React js" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="HTML/CSS" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Responsive" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Javascript" />
-
-                <com.google.android.material.chip.Chip
-                    style="@style/Widget.Breel.Chip.Filled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:text="Tailwind CSS" />
-
-            </com.google.android.flexbox.FlexboxLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/green_hookers_200" />
-
-            <com.google.android.flexbox.FlexboxLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:flexDirection="row"
-                app:flexWrap="wrap"
-                app:justifyContent="space_between">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_rupiah" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:text="1.000.000"
-                        android:textAppearance="@style/TextAppearance.Breel.BodyLarge" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_time" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:text="1 Bulan"
-                        android:textAppearance="@style/TextAppearance.Breel.BodyLarge" />
-                </LinearLayout>
-            </com.google.android.flexbox.FlexboxLayout>
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/green_hookers_200" />
+    </ScrollView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pendaftar"
-            android:textAppearance="@style/TextAppearance.Breel.TitleLargeBold"
-            android:layout_marginBottom="8dp"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_pendaftar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
 
 </LinearLayout>

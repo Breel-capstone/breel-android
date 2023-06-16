@@ -16,7 +16,7 @@
             android:id="@+id/iv_profile"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            tools:src="@tools:sample/avatars"
+            android:src="@drawable/open_peeps1"
             android:layout_alignParentStart="true"
             android:layout_marginEnd="16dp"
             android:layout_centerVertical="true"/>
@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.chip.Chip
+                    android:id="@+id/skill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Product Design"
@@ -90,6 +91,7 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/btn_lihat_proposal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Lihat Proposal"
